@@ -1,0 +1,32 @@
+{
+  "name": "sc-fleet-matrix",
+  "version": "1.0.0",
+  "description": "Star Citizen Fleet Matrix",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "Tom Corke",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/clear": "^0.1.4",
+    "@types/fs-extra": "^11.0.4",
+    "@types/isomorphic-fetch": "0.0.39",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.1",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clear": "^0.1.0",
+    "dotenv-safe": "^8.2.0",
+    "fs-extra": "^11.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash": "^4.17.21",
+    "zod": "^3.22.4"
+  }
+}
