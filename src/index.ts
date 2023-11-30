@@ -1,11 +1,16 @@
 import fs from "fs-extra";
 import path from "path";
-import { z } from "zod";
+
+import {
+  MatrixRawDataSchema,
+  ShipRawDataSchema,
+  TopLevelResponseSchema,
+} from "./schema";
 
 const MATRIX_DATA_INDEX_URL =
   "https://robertsspaceindustries.com/ship-matrix/index";
 
-const main = async () => {
+const fetchData = async () => {
   const response = await fetch(MATRIX_DATA_INDEX_URL);
   const rawData = await response.json();
 
@@ -22,10 +27,12 @@ const main = async () => {
 
   const parsedData = MatrixRawDataSchema.parse(rawData);
   const data = parsedData.data;
-  console.log(data);
 
-  const dataFilePath = path.join(cacheDir, "data.json");
-  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+  return data;
+};
+
+const main = async () => {
+  const data = await fetchData();
 };
 
 (async () => {

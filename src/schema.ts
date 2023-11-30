@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-const MediaArraySchema = z.array(z.unknown());
+export const MediaArraySchema = z.array(z.unknown());
 
-const ManufacturerSchema = z.object({
+export const ManufacturerSchema = z.object({
   id: z.number(),
   code: z.string(),
   description: z.string().nullable(),
@@ -11,9 +11,9 @@ const ManufacturerSchema = z.object({
   media: MediaArraySchema,
 });
 
-const ShipComponentsSchema = z.unknown();
+export const ShipComponentsSchema = z.unknown();
 
-const ShipRawDataSchema = z
+export const ShipRawDataSchema = z
   .object({
     id: z.number(),
     name: z.string(),
@@ -76,14 +76,14 @@ const ShipRawDataSchema = z
   })
   .strict();
 
-const TopLevelResponseSchema = z.object({
+export const TopLevelResponseSchema = z.object({
   success: z.literal(1),
   code: z.literal("OK"),
   msg: z.literal("OK"),
   data: z.array(z.any()),
 });
 
-const MatrixRawDataSchema = z
+export const MatrixRawDataSchema = z
   .object({
     success: z.literal(1),
     code: z.literal("OK"),
