@@ -1,0 +1,18 @@
+.ShipRow {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1em;
+
+  padding: 2px;
+
+  background: #eee;
+
+  &:nth-child(odd) {
+    background: #ddd;
+  }
+
+  & > div {
+    flex-basis: 240px;
+  }
+}
