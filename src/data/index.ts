@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import rawData from './processed-data.json';
 import { ProcessedMatrixDataSchema } from './schema';
 

@@ -1,7 +1,0 @@
-{
-  "watch": [
-    "src/server"
-  ],
-  "ext": "ts",
-  "exec": "node --inspect -r ts-node/register ./src/server/data-generation.ts"
-}

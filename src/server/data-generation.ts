@@ -1,8 +1,6 @@
-import { Promise as bluebird } from 'bluebird';
 import * as cheerio from 'cheerio';
-import fs from 'fs-extra';
-import _ from 'lodash';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { z } from 'zod';
 
 import {
@@ -10,7 +8,9 @@ import {
   ProcessedMatrixDataSchema,
   ShipRawDataSchema,
   TopLevelResponseSchema,
-} from '../data/schema';
+} from '../data/schema.ts';
+
+const __dirname = import.meta.dirname;
 
 const MATRIX_DATA_INDEX_URL =
   'https://robertsspaceindustries.com/ship-matrix/index';
@@ -20,7 +20,7 @@ export const fetchData = async () => {
   const rawData = await response.json();
 
   const cacheDir = path.join(__dirname, '../data');
-  fs.mkdirp(cacheDir);
+  fs.mkdirSync(cacheDir, { recursive: true });
   const rawDataFilePath = path.join(cacheDir, 'rawdata.json');
   fs.writeFileSync(rawDataFilePath, JSON.stringify(rawData, null, 2));
 
@@ -40,7 +40,7 @@ const fetchWithCache = async (url: string) => {
   const sanitisedUrl = url.replace(/[^a-zA-Z0-9]/g, '_');
   const cacheDir = path.join(__dirname, '../../cache/fetch-cache');
   const cacheFilePath = path.join(cacheDir, `${sanitisedUrl}`);
-  fs.mkdirp(cacheDir);
+  fs.mkdirSync(cacheDir, { recursive: true });
   if (fs.existsSync(cacheFilePath)) {
     const fileContents = fs.readFileSync(cacheFilePath, 'utf8');
     return fileContents;
@@ -90,21 +90,16 @@ const enhanceShipData = async (ship: z.infer<typeof ShipRawDataSchema>) => {
 const main = async () => {
   const data = await fetchData();
 
-  const shipsBySize = _.groupBy(data, (ship) => ship.size);
+  const shipsBySize = Object.groupBy(data, (ship) => String(ship.size));
   fs.writeFileSync(
     path.join(__dirname, '../data/ships-by-size.json'),
     JSON.stringify(shipsBySize, null, 2),
   );
 
-  const fullMappedData: z.infer<typeof ProcessedMatrixDataSchema> =
-    await bluebird.map(
-      data,
-      async (ship) => {
-        const s = await enhanceShipData(ship);
-        return s;
-      },
-      { concurrency: 1 },
-    );
+  const fullMappedData: z.infer<typeof ProcessedMatrixDataSchema> = [];
+  for (const ship of data) {
+    fullMappedData.push(await enhanceShipData(ship));
+  }
 
   fs.writeFileSync(
     path.join(__dirname, '../data/processed-data.json'),
