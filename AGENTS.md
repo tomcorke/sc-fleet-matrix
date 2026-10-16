@@ -2,13 +2,13 @@
 
 ## Generated data
 
-- `pnpm build-data` writes every JSON file in `src/data/`. Change the scraper in `src/server/data-generation.ts` and regenerate; hand edits are overwritten on the next run.
+- `pnpm build-data` writes every JSON file in `src/data/`. Change the generator in `src/server/data-generation.ts` and regenerate; hand edits are overwritten on the next run.
 - The viewer bundles `src/data/processed-data.json` at build time. The other JSON files are intermediate output.
-- The scraper fetches RSI store pages one at a time and caches them in `cache/fetch-cache/`, which Git ignores. Keep it sequential so RSI isn't flooded with requests.
+- Source data from RSI's APIs: ship stats from the ship-matrix JSON, prices from the store GraphQL (`src/server/store-prices.ts`). Both work without signing in. Probe new GraphQL fields with real requests; introspection is disabled, but validation errors name the invalid input fields.
 
 ## Shared schema
 
-`src/data/schema.ts` belongs to both TypeScript projects: Vite bundles it into the viewer, and Node 22 runs it directly in the scraper. Keep it to erasable TypeScript syntax and import it with an explicit `.ts` extension from `src/server`.
+`src/data/schema.ts` belongs to both TypeScript projects: Vite bundles it into the viewer, and Node 22 runs it directly in the generator. Keep it to erasable TypeScript syntax and import it with an explicit `.ts` extension from `src/server`.
 
 ## Linting
 

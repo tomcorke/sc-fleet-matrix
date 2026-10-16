@@ -8,7 +8,7 @@ import {
   ShipRawDataSchema,
   TopLevelResponseSchema,
 } from '../data/schema.ts';
-import { parseStoreOffer } from './store-offer.ts';
+import { fetchShipMsrps } from './store-prices.ts';
 
 const __dirname = import.meta.dirname;
 
@@ -39,60 +39,6 @@ export const fetchData = async () => {
   return data;
 };
 
-const fetchWithCache = async (url: string) => {
-  const sanitisedUrl = url.replace(/[^a-zA-Z0-9]/g, '_');
-  const cacheDir = path.join(__dirname, '../../cache/fetch-cache');
-  const cacheFilePath = path.join(cacheDir, `${sanitisedUrl}`);
-
-  fs.mkdirSync(cacheDir, { recursive: true });
-
-  if (fs.existsSync(cacheFilePath)) {
-    const fileContents = fs.readFileSync(cacheFilePath, 'utf8');
-
-    return fileContents;
-  }
-
-  const response = await fetch(url);
-  const pageContent = await response.text();
-
-  fs.writeFileSync(cacheFilePath, pageContent);
-
-  return pageContent;
-};
-
-const getShipPrice = async (ship: {
-  id: number;
-  url: string;
-  name: string;
-}) => {
-  const pageContent = await fetchWithCache(
-    `https://robertsspaceindustries.com${ship.url}`,
-  );
-  const offer = parseStoreOffer(pageContent);
-
-  if (!offer) {
-    console.log(`No price for "${ship.name}" from ${ship.url}`);
-
-    return null;
-  }
-
-  const price = Number(offer.price);
-  const formattedPrice = price.toLocaleString('en-US', {
-    style: 'currency',
-    currency: offer.priceCurrency,
-  });
-
-  console.log(`Fetched price of ${formattedPrice} for "${ship.name}"`);
-
-  return { price, formattedPrice };
-};
-
-const enhanceShipData = async (ship: z.infer<typeof ShipRawDataSchema>) => {
-  const price = await getShipPrice(ship);
-
-  return { ...ship, ...price };
-};
-
 const main = async () => {
   const data = await fetchData();
 
@@ -103,11 +49,26 @@ const main = async () => {
     JSON.stringify(shipsBySize, null, 2),
   );
 
-  const fullMappedData: z.infer<typeof ProcessedMatrixDataSchema> = [];
+  const msrps = await fetchShipMsrps();
 
-  for (const ship of data) {
-    fullMappedData.push(await enhanceShipData(ship));
-  }
+  const fullMappedData: z.infer<typeof ProcessedMatrixDataSchema> = data.map(
+    (ship) => {
+      const price = msrps.get(ship.id);
+
+      if (price == null) {
+        console.log(`No price for "${ship.name}"`);
+
+        return ship;
+      }
+
+      const formattedPrice = price.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+
+      return { ...ship, price, formattedPrice };
+    },
+  );
 
   fs.writeFileSync(
     path.join(__dirname, '../data/processed-data.json'),
