@@ -25,25 +25,11 @@ export const ShipRawDataSchema = z.object({
   production_note: z.string().nullable(),
 
   size: z
-    .union([
-      z.literal('small'),
-      z.literal('large'),
-      z.literal('medium'),
-      z.literal('capital'),
-      z.literal('snub'),
-      z.literal('vehicle'),
-    ])
+    .string()
+    .toLowerCase()
+    .pipe(z.enum(['snub', 'small', 'medium', 'large', 'capital', 'vehicle']))
     .nullable(),
-  type: z.union([
-    z.literal('multi'),
-    z.literal('exploration'),
-    z.literal('transport'),
-    z.literal('combat'),
-    z.literal('competition'),
-    z.literal('support'),
-    z.literal('industrial'),
-    z.literal('ground'),
-  ]),
+  type: z.string(),
   focus: z.string(),
   url: z.string(),
 
@@ -77,7 +63,6 @@ export const ShipRawDataSchema = z.object({
 const ShipPriceDataSchema = z.object({
   price: z.number().optional(),
   formattedPrice: z.string().optional(),
-  isWarbond: z.boolean().optional(),
 });
 
 export type ShipRawData = z.infer<typeof ShipRawDataSchema>;
