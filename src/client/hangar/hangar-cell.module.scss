@@ -1,0 +1,26 @@
+.toggle {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.load {
+  align-self: flex-start;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid currentcolor;
+  color: var(--c-mark);
+  background: none;
+  cursor: pointer;
+
+  &:disabled {
+    color: var(--c-line-muted);
+    border-bottom-color: transparent;
+    cursor: default;
+  }
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--c-line-muted);
+}

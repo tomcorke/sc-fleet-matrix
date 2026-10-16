@@ -7,7 +7,7 @@
 /* The drawing's title block: each cell is a ruled box, like a spec sheet. */
 .titleBlock {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
   margin: 16px;
   border: 2px solid var(--c-line-muted);
   background-color: var(--c-paper-deep);

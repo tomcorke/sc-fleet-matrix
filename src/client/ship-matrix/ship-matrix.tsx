@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 
 import { ColumnFilter } from '../column-filter/column-filter';
+import { loadSavedShips } from '../hangar/hangar';
+import { HangarCell } from '../hangar/hangar-cell';
 import { ShipRow } from '../ship-row/ship-row';
 import {
   COLUMNS,
@@ -18,6 +20,9 @@ type Props = {
 
 const DEFAULT_SORT: Sort = { columnId: 'size', direction: 'asc' };
 
+// Hangar names match ship-matrix names, give or take case and spacing.
+const nameKey = (name: string) => name.trim().toLowerCase();
+
 const ariaSort = (column: Column, sort: Sort) => {
   if (column.id !== sort.columnId) {
     return 'none';
@@ -29,10 +34,27 @@ const ariaSort = (column: Column, sort: Sort) => {
 export const ShipMatrix = ({ ships }: Props) => {
   const [filters, setFilters] = useState<Filters>({});
   const [sort, setSort] = useState(DEFAULT_SORT);
+  const [owned, setOwned] = useState(loadSavedShips);
+  const [onlyOwned, setOnlyOwned] = useState(owned.length > 0);
+
+  const ownedKeys = useMemo(() => new Set(owned.map(nameKey)), [owned]);
+
+  const unmatched = useMemo(() => {
+    const shipKeys = new Set(ships.map((ship) => nameKey(ship.name)));
+
+    return owned.filter((name) => !shipKeys.has(nameKey(name)));
+  }, [ships, owned]);
 
   const visibleShips = useMemo(
-    () => applyView(ships, filters, sort),
-    [ships, filters, sort],
+    () =>
+      applyView(
+        onlyOwned
+          ? ships.filter((ship) => ownedKeys.has(nameKey(ship.name)))
+          : ships,
+        filters,
+        sort,
+      ),
+    [ships, onlyOwned, ownedKeys, filters, sort],
   );
 
   const isFiltered = Object.values(filters).some((v) => v.trim() !== '');
@@ -80,6 +102,16 @@ export const ShipMatrix = ({ ships }: Props) => {
           <span className={STYLES.cellNote}>
             Prices are standard-edition MSRP
           </span>
+        </div>
+        <div className={STYLES.cell}>
+          <span className={STYLES.cellLabel}>Your hangar</span>
+          <HangarCell
+            owned={owned}
+            unmatched={unmatched}
+            onlyOwned={onlyOwned}
+            onOwnedChange={setOwned}
+            onOnlyOwnedChange={setOnlyOwned}
+          />
         </div>
       </header>
 
