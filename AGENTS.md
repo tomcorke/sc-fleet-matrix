@@ -12,7 +12,7 @@
 
 ## Linting
 
-The lint rules are copied from [aion2](https://github.com/tomcorke/aion2); keep the two in step. aion2 lints with ESLint and typescript-eslint, but typescript-eslint supports TypeScript only below 6.1, so this project runs those rules in Oxlint instead. `oxlint-plugin.js` holds the one aion2 rule Oxlint can't express (CSS modules imported as `STYLES`).
+Oxlint runs every code lint rule, loading SonarJS and `@stylistic` as JS plugins. ESLint isn't used because typescript-eslint supports TypeScript only below 6.1, and the project uses TypeScript 7. `oxlint-plugin.js` holds a local rule that Oxlint has no built-in equivalent for: CSS modules are imported as `STYLES`.
 
 ## Styles
 
