@@ -1,4 +1,3 @@
-import * as cheerio from 'cheerio';
 import fs from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
@@ -9,6 +8,7 @@ import {
   ShipRawDataSchema,
   TopLevelResponseSchema,
 } from '../data/schema.ts';
+import { parseStoreOffer } from './store-offer.ts';
 
 const __dirname = import.meta.dirname;
 
@@ -68,29 +68,23 @@ const getShipPrice = async (ship: {
   const pageContent = await fetchWithCache(
     `https://robertsspaceindustries.com${ship.url}`,
   );
-  const parsedPage = cheerio.load(pageContent);
-  const buyingOptions = parsedPage('.buying-options-content');
+  const offer = parseStoreOffer(pageContent);
 
-  if (buyingOptions.length === 0) {
+  if (!offer) {
+    console.log(`No price for "${ship.name}" from ${ship.url}`);
+
     return null;
   }
 
-  const price = buyingOptions
-    .find('.price')
-    .find('.final-price')
-    .attr('data-value');
-  const gbpPrice = Number(price) / 100;
-  const formattedPrice = gbpPrice.toLocaleString('en-GB', {
+  const price = Number(offer.price);
+  const formattedPrice = price.toLocaleString('en-US', {
     style: 'currency',
-    currency: 'GBP',
+    currency: offer.priceCurrency,
   });
 
-  console.log(
-    `Fetched price of "${gbpPrice}" for "${ship.name} from ${ship.url}"`,
-  );
-  const isWarbond = buyingOptions.text().includes('Warbond');
+  console.log(`Fetched price of ${formattedPrice} for "${ship.name}"`);
 
-  return { price: gbpPrice, formattedPrice, isWarbond };
+  return { price, formattedPrice };
 };
 
 const enhanceShipData = async (ship: z.infer<typeof ShipRawDataSchema>) => {
@@ -130,7 +124,6 @@ const main = async () => {
       s.cargocapacity,
       s.scm_speed,
       s.price,
-      s.isWarbond ? 'Warbond' : '',
     ];
   });
 

@@ -10,6 +10,7 @@
     "build-data": "node --watch-path=src/server src/server/data-generation.ts",
     "lint": "oxlint && stylelint \"src/**/*.scss\"",
     "typecheck": "tsc -b",
+    "test": "node --test \"src/**/*.test.ts\"",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky"

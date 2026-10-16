@@ -4,7 +4,7 @@ Compares every ship in Star Citizen in a single table: size, role, speeds and st
 
 There are two parts:
 
-- **Data scraper** (`src/server`). Downloads the ship list from the RSI ship-matrix API, scrapes each ship's store page for its GBP price and Warbond status, and writes the results to `src/data/`.
+- **Data scraper** (`src/server`). Downloads the ship list from the RSI ship-matrix API, reads each ship's store page for its USD price, and writes the results to `src/data/`.
 - **Viewer** (`src/client`). A React app that shows the scraped data, sorted by ship size.
 
 ## Prerequisites
@@ -31,6 +31,7 @@ pnpm dev
 | `pnpm build-data`   | Runs the scraper, and runs it again when `src/server` changes  |
 | `pnpm lint`         | Lints TypeScript with Oxlint and SCSS with Stylelint           |
 | `pnpm typecheck`    | Type-checks the client and scraper with their separate configs |
+| `pnpm test`         | Runs the scraper's unit tests                                  |
 | `pnpm format`       | Formats all files with Prettier                                |
 | `pnpm format:check` | Checks formatting without changing anything                    |
 
@@ -40,5 +41,5 @@ pnpm dev
 
 ## Known limitations
 
-- The scraper doesn't work against the current RSI API. RSI now sends capitalised sizes such as `Small`, and new ship types, which `src/data/schema.ts` rejects. The data in the repository is from the last successful run.
+- Ships that the store doesn't sell on their own, such as the F7A Hornet Mk II, have no price.
 - The viewer includes all of the ship data in its bundle, so the built JavaScript is about 4.7MB.

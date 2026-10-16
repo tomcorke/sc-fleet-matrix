@@ -16,12 +16,7 @@ const columns: ShipKey[] = [
   'scm_speed',
   'afterburner_speed',
   'formattedPrice',
-  'isWarbond',
 ];
-
-const formatters: Partial<Record<ShipKey, (value: unknown) => string>> = {
-  isWarbond: (value) => (value ? 'Warbond' : ''),
-};
 
 export const ShipRow = ({ ship }: Props) => {
   return (
@@ -39,7 +34,7 @@ export const ShipRow = ({ ship }: Props) => {
 
         return (
           <div key={key} className={STYLES.cell}>
-            {formatters[key]?.(value) ?? String(value ?? '')}
+            {String(value ?? '')}
           </div>
         );
       })}
