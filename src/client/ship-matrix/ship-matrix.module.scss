@@ -1,0 +1,184 @@
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100dvh;
+}
+
+/* The drawing's title block: each cell is a ruled box, like a spec sheet. */
+.titleBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+  margin: 16px;
+  border: 2px solid var(--c-line-muted);
+  background-color: var(--c-paper-deep);
+  background-image:
+    linear-gradient(var(--c-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+
+  @media (width <= 720px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.titleCell,
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+.cell {
+  border-left: 1px solid var(--c-line-muted);
+
+  @media (width <= 720px) {
+    border-top: 1px solid var(--c-line-muted);
+    border-left: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--c-line-muted);
+}
+
+.cellLabel {
+  font-size: 0.8rem;
+  color: var(--c-line-muted);
+}
+
+.cellNote {
+  font-size: 0.85rem;
+  color: var(--c-line-muted);
+}
+
+.count {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.reset {
+  align-self: flex-start;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid currentcolor;
+  color: var(--c-mark);
+  background: none;
+  cursor: pointer;
+
+  &:disabled {
+    color: var(--c-line-muted);
+    border-bottom-color: transparent;
+    cursor: default;
+  }
+}
+
+.scroller {
+  overflow: auto;
+  margin: 0 16px 16px;
+  border: 1px solid var(--c-rule);
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  th,
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--c-rule);
+    white-space: nowrap;
+  }
+
+  /* Keep the ship name in view while scrolling sideways. */
+  tr > :first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    border-right: 1px solid var(--c-rule);
+  }
+
+  thead :is(th, td) {
+    position: sticky;
+    z-index: 2;
+    background: var(--c-paper-deep);
+  }
+
+  thead tr > :first-child {
+    z-index: 3;
+  }
+
+  thead th {
+    top: 0;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    border-bottom: 0;
+  }
+
+  thead td {
+    top: 32px;
+    border-bottom: 2px solid var(--c-line-muted);
+  }
+}
+
+.number {
+  text-align: right;
+}
+
+.text,
+.choice {
+  text-align: left;
+}
+
+.sortButton {
+  display: inline-flex;
+  gap: 6px;
+  align-items: baseline;
+  padding: 0;
+  border: 0;
+  font-family: var(--f-display);
+  font-weight: 600;
+  color: var(--c-line-muted);
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--c-line);
+  }
+
+  [aria-sort='ascending'] &,
+  [aria-sort='descending'] & {
+    color: var(--c-mark);
+  }
+}
+
+.sortMark {
+  font-size: 0.65em;
+  visibility: hidden;
+
+  [aria-sort='ascending'] &,
+  [aria-sort='descending'] & {
+    visibility: visible;
+  }
+}
+
+.number .sortButton {
+  flex-direction: row-reverse;
+}
+
+.empty {
+  padding: 32px 10px;
+  color: var(--c-line-muted);
+}

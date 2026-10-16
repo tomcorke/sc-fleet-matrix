@@ -13,6 +13,12 @@ export const ManufacturerSchema = z.object({
 
 export const ShipComponentsSchema = z.unknown();
 
+// RSI mixes an older role vocabulary into its current one.
+const ROLE_ALIASES: Record<string, string> = {
+  multi: 'multi-role',
+  transport: 'transporter',
+};
+
 export const ShipRawDataSchema = z.object({
   id: z.number(),
   name: z.string(),
@@ -29,7 +35,10 @@ export const ShipRawDataSchema = z.object({
     .toLowerCase()
     .pipe(z.enum(['snub', 'small', 'medium', 'large', 'capital', 'vehicle']))
     .nullable(),
-  type: z.string(),
+  type: z
+    .string()
+    .toLowerCase()
+    .transform((role) => ROLE_ALIASES[role] ?? role),
   focus: z.string(),
   url: z.string(),
 

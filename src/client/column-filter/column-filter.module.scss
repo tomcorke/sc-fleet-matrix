@@ -1,0 +1,32 @@
+.input,
+.activeInput {
+  width: 100%;
+  min-width: 7ch;
+  padding: 3px 6px;
+  border: 1px solid var(--c-rule);
+  border-radius: 2px;
+  background: var(--c-paper);
+
+  &::placeholder {
+    color: var(--c-line-muted);
+  }
+}
+
+.activeInput {
+  border-color: var(--c-mark);
+}
+
+.range {
+  display: flex;
+  gap: 4px;
+
+  input {
+    width: 8ch;
+    text-align: right;
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+}

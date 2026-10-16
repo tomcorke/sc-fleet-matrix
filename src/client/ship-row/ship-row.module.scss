@@ -1,16 +1,18 @@
-.shipRow {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 1em;
-  padding: 2px;
-  background: var(--c-row);
+.row {
+  > * {
+    background: var(--c-paper);
+  }
 
-  &:nth-child(odd) {
-    background: var(--c-row-alt);
+  &:nth-child(even) > * {
+    background: var(--c-paper-raised);
   }
 }
 
-.cell {
-  flex-basis: 240px;
+.name {
+  font-weight: 600;
+  text-align: left;
+}
+
+.number {
+  text-align: right;
 }

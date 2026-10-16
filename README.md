@@ -5,7 +5,7 @@ Compares every ship in Star Citizen in a single table: size, role, speeds and st
 There are two parts:
 
 - **Data generator** (`src/server`). Downloads ship stats from the RSI ship-matrix API and each ship's USD MSRP from the RSI store GraphQL API, and writes the results to `src/data/`.
-- **Viewer** (`src/client`). A React app that shows the generated data, sorted by ship size.
+- **Viewer** (`src/client`). A React app that shows the generated data in a table you can sort and filter by any column.
 
 ## Prerequisites
 

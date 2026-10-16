@@ -18,6 +18,8 @@
   },
   "include": [
     "src/server",
+    "src/**/*.test.ts",
+    "src/client/ship-matrix/columns.ts",
     "src/data/schema.ts",
     "vite.config.ts",
     "oxlint.config.ts"

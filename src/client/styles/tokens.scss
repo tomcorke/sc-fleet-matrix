@@ -1,5 +1,14 @@
 :root {
-  --f-body: sans-serif;
-  --c-row: #eee;
-  --c-row-alt: #ddd;
+  --f-body: 'Barlow', sans-serif;
+  --f-display: 'Barlow Semi Condensed', 'Barlow', sans-serif;
+
+  /* Blueprint: cyanotype paper, pale line work, red-pencil markup. */
+  --c-paper: #0f2a4a;
+  --c-paper-deep: #0a1f38;
+  --c-paper-raised: #12325a;
+  --c-grid: #163a63;
+  --c-rule: #2c4f78;
+  --c-line: #d6e8f5;
+  --c-line-muted: #8fb3cf;
+  --c-mark: #f2735a;
 }

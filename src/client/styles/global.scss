@@ -1,4 +1,31 @@
 * {
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
   font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--c-line);
+  background: var(--c-paper);
+  font-variant-numeric: tabular-nums;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-mark);
+  outline-offset: 2px;
 }
