@@ -20,12 +20,15 @@ export const fetchData = async () => {
   const rawData = await response.json();
 
   const cacheDir = path.join(__dirname, '../data');
+
   fs.mkdirSync(cacheDir, { recursive: true });
   const rawDataFilePath = path.join(cacheDir, 'rawdata.json');
+
   fs.writeFileSync(rawDataFilePath, JSON.stringify(rawData, null, 2));
 
   const roughParsedData = TopLevelResponseSchema.parse(rawData);
   const roughData = roughParsedData.data;
+
   for (const item of roughData) {
     ShipRawDataSchema.parse(item);
   }
@@ -40,14 +43,20 @@ const fetchWithCache = async (url: string) => {
   const sanitisedUrl = url.replace(/[^a-zA-Z0-9]/g, '_');
   const cacheDir = path.join(__dirname, '../../cache/fetch-cache');
   const cacheFilePath = path.join(cacheDir, `${sanitisedUrl}`);
+
   fs.mkdirSync(cacheDir, { recursive: true });
+
   if (fs.existsSync(cacheFilePath)) {
     const fileContents = fs.readFileSync(cacheFilePath, 'utf8');
+
     return fileContents;
   }
+
   const response = await fetch(url);
   const pageContent = await response.text();
+
   fs.writeFileSync(cacheFilePath, pageContent);
+
   return pageContent;
 };
 
@@ -61,6 +70,7 @@ const getShipPrice = async (ship: {
   );
   const parsedPage = cheerio.load(pageContent);
   const buyingOptions = parsedPage('.buying-options-content');
+
   if (buyingOptions.length === 0) {
     return null;
   }
@@ -74,6 +84,7 @@ const getShipPrice = async (ship: {
     style: 'currency',
     currency: 'GBP',
   });
+
   console.log(
     `Fetched price of "${gbpPrice}" for "${ship.name} from ${ship.url}"`,
   );
@@ -84,6 +95,7 @@ const getShipPrice = async (ship: {
 
 const enhanceShipData = async (ship: z.infer<typeof ShipRawDataSchema>) => {
   const price = await getShipPrice(ship);
+
   return { ...ship, ...price };
 };
 
@@ -91,12 +103,14 @@ const main = async () => {
   const data = await fetchData();
 
   const shipsBySize = Object.groupBy(data, (ship) => String(ship.size));
+
   fs.writeFileSync(
     path.join(__dirname, '../data/ships-by-size.json'),
     JSON.stringify(shipsBySize, null, 2),
   );
 
   const fullMappedData: z.infer<typeof ProcessedMatrixDataSchema> = [];
+
   for (const ship of data) {
     fullMappedData.push(await enhanceShipData(ship));
   }

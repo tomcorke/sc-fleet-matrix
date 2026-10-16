@@ -1,0 +1,69 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "plugins": ["stylelint-use-nesting"],
+  "rules": {
+    "csstools/use-nesting": "always",
+    "color-no-hex": true,
+    "color-named": "never",
+    "function-disallowed-list": [
+      "rgb",
+      "rgba",
+      "hsl",
+      "hsla",
+      "hwb",
+      "lab",
+      "lch",
+      "oklab",
+      "oklch"
+    ],
+    "declaration-property-value-allowed-list": {
+      "font-family": ["/^var.--f-/", "inherit"],
+      "font": ["/var.--f-/", "inherit"]
+    },
+    "declaration-no-important": true,
+    "selector-max-compound-selectors": 3,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ],
+    "max-nesting-depth": 2,
+    "unit-allowed-list": [
+      "px",
+      "rem",
+      "em",
+      "%",
+      "ch",
+      "fr",
+      "vw",
+      "vh",
+      "dvh",
+      "s",
+      "ms",
+      "deg"
+    ],
+    "custom-property-empty-line-before": null
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.module.scss"],
+      "rules": {
+        "selector-class-pattern": [
+          "^[a-z][a-zA-Z0-9]*$",
+          {
+            "message": "Use camelCase module class names, read as STYLES.name"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/client/styles/tokens.scss"],
+      "rules": {
+        "color-no-hex": null,
+        "function-disallowed-list": null,
+        "declaration-property-value-allowed-list": null
+      }
+    }
+  ]
+}

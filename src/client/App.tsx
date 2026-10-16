@@ -1,12 +1,11 @@
 import { loadData } from '../data';
-import './App.scss';
 import { ShipMatrix } from './ship-matrix/ship-matrix';
 
 const data = loadData();
 
 export const App = () => (
   <div>
-    <div>Hello world</div>
+    <h1>Star Citizen Fleet Matrix</h1>
     <div>
       <ShipMatrix data={data} />
     </div>

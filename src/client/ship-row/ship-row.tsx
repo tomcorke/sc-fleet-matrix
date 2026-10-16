@@ -25,21 +25,21 @@ const formatters: Partial<Record<ShipKey, (value: unknown) => string>> = {
 
 export const ShipRow = ({ ship }: Props) => {
   return (
-    <div className={STYLES.ShipRow}>
+    <div className={STYLES.shipRow}>
       {columns.map((key) => {
         let value = ship[key];
+
         if (value === null) {
           value = '-';
         }
+
         if (typeof value === 'object') {
           value = '{}';
         }
-        if (key === 'price') {
-          console.log(ship, ship.price);
-        }
+
         return (
-          <div key={key} className={STYLES.ShipRow__cell}>
-            {formatters[key] ? formatters[key]?.(value) : (value as any)}
+          <div key={key} className={STYLES.cell}>
+            {formatters[key]?.(value) ?? String(value ?? '')}
           </div>
         );
       })}

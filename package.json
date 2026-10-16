@@ -4,9 +4,15 @@
   "description": "Star Citizen Fleet Matrix",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
     "build-data": "node --watch-path=src/server src/server/data-generation.ts",
-    "start": "vite",
-    "typecheck": "tsc"
+    "lint": "oxlint && stylelint \"src/**/*.scss\"",
+    "typecheck": "tsc -b",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Tom Corke",
@@ -38,14 +44,33 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "eslint-plugin-sonarjs": "^4.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "oxlint": "^1.88.0",
     "prettier": "^3.9.10",
     "sass": "^1.105.2",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-use-nesting": "^6.0.2",
     "typescript": "^7.0.2",
     "vite": "^8.3.4"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "oxlint --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,html,yaml,yml}": "prettier --write"
   }
 }
