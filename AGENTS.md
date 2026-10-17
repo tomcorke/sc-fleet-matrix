@@ -16,6 +16,10 @@ The user's owned ships and live store offers load at runtime, never through the 
 
 `credit` reads the store credit balance from the cart totals (`store.cart.totals.credits.amount`, USD cents) with `account.isAnonymous` to detect a signed-out browser.
 
+## RSI account safety
+
+Treat the RSI account as read-only: the app must never melt, upgrade, buy, gift or otherwise change it. The extension may issue GET page requests and read-only GraphQL queries only (RSI GraphQL queries use HTTP POST); never send mutations or other write requests. The planner only describes possible steps and never executes them.
+
 ## Shared schema
 
 `src/data/schema.ts` belongs to both TypeScript projects: Vite bundles it into the viewer, and Node 22 runs it directly in the generator. Keep it to erasable TypeScript syntax and import it with an explicit `.ts` extension from `src/server`.
