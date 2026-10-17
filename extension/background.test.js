@@ -103,3 +103,31 @@ test('accepts an empty store and still stamps the fetch time', async (t) => {
   assert.equal(result.pages.length, 1);
   assert.ok(result.fetchedAt);
 });
+
+const credit = (isAnonymous, amount) =>
+  Response.json([
+    {
+      data: {
+        account: { isAnonymous },
+        store: { cart: { totals: { credits: { amount } } } },
+      },
+    },
+  ]);
+
+test('reads the store credit balance and rejects signed-out sessions', async (t) => {
+  const fetchMock = t.mock.method(globalThis, 'fetch', async () =>
+    credit(false, 12_345),
+  );
+  const result = await request('credit');
+
+  assert.equal(result.amount, 12_345);
+  assert.ok(result.fetchedAt);
+  assert.equal(
+    JSON.parse(fetchMock.mock.calls[0].arguments[1].body)[0].operationName,
+    'Credit',
+  );
+  fetchMock.mock.mockImplementation(async () => credit(true, 0));
+  assert.match((await request('credit')).error, /Sign in/);
+  fetchMock.mock.mockImplementation(async () => credit(false, 'x'));
+  assert.match((await request('credit')).error, /invalid credit/);
+});

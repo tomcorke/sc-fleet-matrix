@@ -1,6 +1,17 @@
+import { useState } from 'react';
+
 import { loadData } from '../data';
+import { Planner } from './planner/planner';
 import { ShipMatrix } from './ship-matrix/ship-matrix';
 
 const ships = loadData();
 
-export const App = () => <ShipMatrix ships={ships} />;
+export const App = () => {
+  const [planning, setPlanning] = useState(false);
+
+  return planning ? (
+    <Planner ships={ships} onClose={() => setPlanning(false)} />
+  ) : (
+    <ShipMatrix ships={ships} onOpenPlanner={() => setPlanning(true)} />
+  );
+};

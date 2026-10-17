@@ -18,6 +18,7 @@ import STYLES from './ship-matrix.module.scss';
 
 type Props = {
   ships: Ship[];
+  onOpenPlanner: () => void;
 };
 
 const DEFAULT_SORT: Sort = { columnId: 'size', direction: 'asc' };
@@ -30,7 +31,7 @@ const ariaSort = (column: Column, sort: Sort) => {
   return sort.direction === 'asc' ? 'ascending' : 'descending';
 };
 
-export const ShipMatrix = ({ ships }: Props) => {
+export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
   const [filters, setFilters] = useState<Filters>({});
   const [sort, setSort] = useState(DEFAULT_SORT);
   const [pledges, setPledges] = useState(loadSavedPledges);
@@ -93,6 +94,13 @@ export const ShipMatrix = ({ ships }: Props) => {
           <p className={STYLES.subtitle}>
             Every Star Citizen ship, side by side
           </p>
+          <button
+            type="button"
+            className={STYLES.reset}
+            onClick={onOpenPlanner}
+          >
+            Plan fleet changes
+          </button>
         </div>
         <div className={STYLES.cell}>
           <span className={STYLES.cellLabel}>Ships shown</span>

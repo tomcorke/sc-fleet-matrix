@@ -1,0 +1,216 @@
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
+}
+
+/* Same ruled title block as the matrix, so the two read as one drawing set. */
+.titleBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+  margin: 16px;
+  border: 2px solid var(--c-line-muted);
+  background-color: var(--c-paper-deep);
+  background-image:
+    linear-gradient(var(--c-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+
+  @media (width <= 720px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.titleCell,
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 16px;
+  border: 0;
+}
+
+.cell {
+  border-left: 1px solid var(--c-line-muted);
+
+  @media (width <= 720px) {
+    border-top: 1px solid var(--c-line-muted);
+    border-left: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.cellLabel {
+  float: left;
+  padding: 0;
+  font-size: 0.8rem;
+  color: var(--c-line-muted);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--c-line-muted);
+}
+
+.count {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.option {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  accent-color: var(--c-mark);
+}
+
+.link {
+  align-self: flex-start;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid currentcolor;
+  color: var(--c-mark);
+  white-space: nowrap;
+  background: none;
+  cursor: pointer;
+
+  &:disabled {
+    color: var(--c-line-muted);
+    border-bottom-color: transparent;
+    cursor: default;
+  }
+}
+
+.plan {
+  align-self: flex-start;
+  padding: 6px 20px;
+  border: 1px dashed var(--c-line-muted);
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--c-line-muted);
+  background: none;
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin: 0 16px 16px;
+
+  @media (width <= 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.group {
+  border: 1px solid var(--c-rule);
+}
+
+/* Trade-in pledges get the red-pencil markup: they're slated to change. */
+.tradeIn {
+  border: 1px dashed var(--c-mark);
+
+  .groupTitle,
+  .melt {
+    color: var(--c-mark);
+  }
+}
+
+.groupHeader {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 12px 6px;
+  border-bottom: 2px solid var(--c-line-muted);
+  background: var(--c-paper-deep);
+}
+
+.groupTitle {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.groupMeta,
+.detail {
+  font-size: 0.85rem;
+  color: var(--c-line-muted);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--c-rule);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  select {
+    margin-left: auto;
+    border: 1px solid var(--c-rule);
+    background: var(--c-paper-deep);
+  }
+}
+
+.rowMain {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.melt {
+  margin-left: auto;
+  font-family: var(--f-display);
+}
+
+.search {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--c-rule);
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 4px 8px;
+    border: 1px solid var(--c-rule);
+    background: var(--c-paper-deep);
+  }
+}
+
+.empty {
+  margin: 0;
+  padding: 24px 12px;
+  color: var(--c-line-muted);
+}
