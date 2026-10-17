@@ -96,12 +96,19 @@
 .plan {
   align-self: flex-start;
   padding: 6px 20px;
-  border: 1px dashed var(--c-line-muted);
+  border: 1px solid var(--c-mark);
   font-family: var(--f-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--c-line-muted);
+  color: var(--c-mark);
   background: none;
+  cursor: pointer;
+
+  &:disabled {
+    border: 1px dashed var(--c-line-muted);
+    color: var(--c-line-muted);
+    cursor: default;
+  }
 }
 
 .groups {

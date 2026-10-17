@@ -4,12 +4,15 @@ const RESULT = z.object({
   type: z.literal('sc-fleet:response'),
   kind: z.literal('credit'),
   amount: z.number().int().nonnegative().optional(),
+  fetchedAt: z.iso.datetime().optional(),
   error: z.string().optional(),
 });
 
-// Resolves to the store credit balance in USD cents.
+export type StoreCredit = { amount: number; fetchedAt: string };
+
+// Resolves to the store credit balance in USD cents and its fetch time.
 export const fetchCredit = () =>
-  new Promise<number>((resolve, reject) => {
+  new Promise<StoreCredit>((resolve, reject) => {
     if (document.documentElement.dataset.scFleetHangar === undefined) {
       reject(
         new Error(
@@ -33,12 +36,12 @@ export const fetchCredit = () =>
         return;
       }
 
-      const { amount, error } = result.data;
+      const { amount, fetchedAt, error } = result.data;
 
       finish(() =>
-        amount === undefined
+        amount === undefined || fetchedAt === undefined
           ? reject(new Error(error ?? 'Invalid store credit response.'))
-          : resolve(amount),
+          : resolve({ amount, fetchedAt }),
       );
     };
 

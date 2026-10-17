@@ -56,6 +56,14 @@ With the extension loaded, the viewer fetches standalone ship offers when it ope
 
 The header shows when offers were fetched. Choose **Refresh offers** after a store change. If you installed or updated the extension, reload it in Chrome and reload the viewer. Without it, the matrix still works and the store column shows an installation hint.
 
+## Planning fleet changes
+
+Choose **Plan fleet changes** from the matrix. Load your hangar first, move pledges you're willing to melt into **Trade in**, and add ships to **Want** with their minimum insurance. Choose a funding mode and press **Plan**.
+
+The planner uses live standalone offers and your store credit balance. It lists melts before purchases, shows the credit and new-money split, and reports wants it cannot meet. It never melts your last game package or a pledge that cannot be reclaimed. Changing your choices clears the result; press **Plan** again to recalculate.
+
+This version plans melts and standalone purchases, not upgrades. It takes no action on your RSI account. Figures are in USD before tax; offers can change or sell out.
+
 ## Known limitations
 
 - Hangar ships are matched to the ship matrix by name. Any that don't match are listed under **Your hangar**.

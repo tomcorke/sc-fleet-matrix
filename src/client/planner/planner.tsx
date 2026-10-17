@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { type Pledge, loadSavedPledges } from '../hangar/hangar';
-import { fetchCredit } from './fetch-credit';
+import { useStoreOffers } from '../store/use-store-offers';
+import { type StoreCredit, fetchCredit } from './fetch-credit';
+import { type Plan, createPlan } from './plan';
+import { PlanView } from './plan-view';
 import {
   type FundingMode,
   INSURANCE_MINIMUMS,
@@ -53,7 +56,7 @@ const pledgeNotes = (pledge: Pledge) =>
     .join(', ');
 
 const useCredit = () => {
-  const [credit, setCredit] = useState<number | null>(null);
+  const [credit, setCredit] = useState<StoreCredit | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -84,8 +87,15 @@ export const Planner = ({ ships, onClose }: Props) => {
   const [plan, setPlan] = useState(loadPlannerState);
   const [search, setSearch] = useState('');
   const { credit, error } = useCredit();
+  const {
+    store,
+    loading: offersLoading,
+    error: offersError,
+  } = useStoreOffers();
+  const [result, setResult] = useState<Plan | null>(null);
 
-  const update = (change: (current: PlannerState) => PlannerState) =>
+  const update = (change: (current: PlannerState) => PlannerState) => {
+    setResult(null);
     setPlan((current) => {
       const next = change(current);
 
@@ -93,6 +103,28 @@ export const Planner = ({ ships, onClose }: Props) => {
 
       return next;
     });
+  };
+
+  const runPlan = () => {
+    if (pledges === null || credit === null || store === null) {
+      return;
+    }
+
+    setResult(
+      createPlan({
+        pledges,
+        tradeIn: plan.tradeIn,
+        want: plan.wants.map((want) => ({
+          shipId: want.shipId,
+          minInsurance: want.insurance,
+        })),
+        offers: store,
+        credit: credit.amount,
+        creditFetchedAt: credit.fetchedAt,
+        funding: plan.funding,
+      }),
+    );
+  };
 
   const shipNames = new Map(ships.map((ship) => [ship.id, ship.name]));
   const tradeIn = new Set(plan.tradeIn);
@@ -215,7 +247,7 @@ export const Planner = ({ ships, onClose }: Props) => {
         <div className={STYLES.cell}>
           <span className={STYLES.cellLabel}>Store credit</span>
           {credit !== null && (
-            <span className={STYLES.count}>{usd(credit)}</span>
+            <span className={STYLES.count}>{usd(credit.amount)}</span>
           )}
           {credit === null && !error && <span>Loading…</span>}
           {error && (
@@ -244,12 +276,30 @@ export const Planner = ({ ships, onClose }: Props) => {
           ))}
         </fieldset>
         <div className={STYLES.cell}>
-          <button type="button" className={STYLES.plan} disabled>
+          <button
+            type="button"
+            className={STYLES.plan}
+            onClick={runPlan}
+            disabled={
+              pledges === null ||
+              credit === null ||
+              store === null ||
+              plan.wants.length === 0
+            }
+          >
             Plan
           </button>
           <span className={STYLES.note}>
-            Planning arrives in a later update.
+            Melts and standalone purchases only.
           </span>
+          {offersLoading && (
+            <span className={STYLES.note}>Loading offers…</span>
+          )}
+          {offersError && (
+            <span className={STYLES.note} role="alert">
+              {offersError}
+            </span>
+          )}
         </div>
       </header>
       <main className={STYLES.groups}>
@@ -326,6 +376,14 @@ export const Planner = ({ ships, onClose }: Props) => {
           )}
         </section>
       </main>
+      {result && store && (
+        <PlanView
+          plan={result}
+          ships={ships}
+          pledges={pledges ?? []}
+          offers={store.standalone}
+        />
+      )}
     </div>
   );
 };
