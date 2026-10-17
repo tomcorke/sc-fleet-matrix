@@ -40,7 +40,23 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
   );
   const offersBySku = new Map(offers.map((offer) => [offer.skuId, offer]));
   const shipName = (id: number) => shipNames.get(id) ?? `Ship ${id}`;
-  const pledgesById = new Map(pledges.map((pledge) => [pledge.id, pledge]));
+  const pledgeInsurance = new Map(
+    pledges.map((pledge) => [pledge.id, pledge.insurance]),
+  );
+  const pledgeLabels = new Map(
+    pledges.map((pledge) => [pledge.id, `pledge ${pledge.id}`]),
+  );
+
+  for (const step of plan.steps) {
+    if (step.kind === 'buy-standalone' && step.pledgeId) {
+      pledgeInsurance.set(
+        step.pledgeId,
+        offersBySku.get(step.skuId)?.insurance ?? null,
+      );
+      pledgeLabels.set(step.pledgeId, step.pledgeId);
+    }
+  }
+
   const renderStep = (step: PlanStep) => {
     if (step.kind === 'melt') {
       return (
@@ -58,22 +74,26 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
         <>
           Buy {shipName(step.shipId)} (
           {offer?.warbond ? 'warbond' : 'standard edition'},{' '}
-          {insuranceLabel(offer?.insurance)}): pay {usd(step.credit)} store
-          credit and {usd(step.newMoney)} new money.
+          {insuranceLabel(offer?.insurance)})
+          {step.pledgeId && ` as ${step.pledgeId}`}: pay {usd(step.credit)}{' '}
+          store credit and {usd(step.newMoney)} new money.
           {step.note && <p>{step.note}</p>}
         </>
       );
     }
 
-    const insurance = insuranceLabel(pledgesById.get(step.pledgeId)?.insurance);
+    const insurance = insuranceLabel(pledgeInsurance.get(step.pledgeId));
+    const pledgeLabel =
+      pledgeLabels.get(step.pledgeId) ?? `pledge ${step.pledgeId}`;
     const edition = step.warbond ? 'warbond' : 'standard';
 
     if (step.kind === 'buy-upgrade') {
       return (
         <>
           Buy a {edition} upgrade from {shipName(step.fromShipId)} ({insurance})
-          to {shipName(step.toShipId)} (keeps {insurance}): pay{' '}
-          {usd(step.credit)} store credit and {usd(step.newMoney)} new money.
+          to {shipName(step.toShipId)} for {pledgeLabel} (keeps {insurance}):
+          pay {usd(step.credit)} store credit and {usd(step.newMoney)} new
+          money.
         </>
       );
     }
@@ -81,8 +101,8 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
     return (
       <>
         Upgrade {shipName(step.fromShipId)} ({insurance}) to{' '}
-        {shipName(step.toShipId)} with the {edition} upgrade on pledge{' '}
-        {step.pledgeId}. Keep {insurance}.
+        {shipName(step.toShipId)} with the {edition} upgrade on {pledgeLabel}.
+        Keep {insurance}.
       </>
     );
   };
@@ -95,7 +115,7 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
     >
       <h2 id="plan-title">Your plan</h2>
       <p>
-        Melts, standalone purchases and direct upgrades. This plan takes no
+        Melts, standalone purchases and upgrade chains. This plan takes no
         action on your account.
       </p>
       {plan.steps.length === 0 ? (

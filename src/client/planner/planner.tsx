@@ -343,7 +343,7 @@ export const Planner = ({ ships, onClose }: Props) => {
             Plan
           </button>
           <span className={STYLES.note}>
-            Melts, standalone purchases and direct upgrades.
+            Melts, standalone purchases and upgrade chains.
           </span>
           {offersLoading && (
             <span className={STYLES.note}>Loading offers…</span>

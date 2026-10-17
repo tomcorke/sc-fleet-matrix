@@ -25,6 +25,7 @@ export type PlanStep =
       kind: 'buy-standalone';
       skuId: string;
       shipId: number;
+      pledgeId?: string; // Local label for a newly bought upgrade base, not an RSI ID.
       credit: number;
       newMoney: number;
       note?: string;
@@ -56,17 +57,72 @@ export type Plan = {
 
 type Want = PlanInput['want'][number];
 
-type Route =
-  | (StandaloneOffer & { kind: 'standalone' })
-  | {
-      kind: 'upgrade';
-      pledgeId: string;
-      fromShipId: number;
-      toShipId: number;
-      skuId: string;
-      price: number;
-      warbond: boolean;
-    };
+type Upgrade = {
+  fromShipId: number;
+  toShipId: number;
+  skuId: string;
+  price: number;
+  warbond: boolean;
+};
+
+type Route = {
+  pledgeId?: string;
+  base?: StandaloneOffer;
+  chain: Upgrade[];
+};
+
+const purchasesForRoute = (route: Route) => [
+  ...(route.base ? [route.base] : []),
+  ...route.chain,
+];
+
+const needsNewMoney = (route: Route) =>
+  purchasesForRoute(route).some((purchase) => purchase.warbond);
+
+const upgradeChains = (
+  data: UpgradeData,
+  fromShipId: number,
+  toShipId: number,
+): Upgrade[][] => {
+  const source = data.sources.find((ship) => ship.shipId === fromShipId);
+  const target = data.targets.find((ship) => ship.shipId === toShipId);
+
+  if (
+    !source ||
+    !target ||
+    fromShipId === toShipId ||
+    source.msrp >= target.msrp
+  ) {
+    return [];
+  }
+
+  return data.targets.flatMap((next) => {
+    const final = next.shipId === toShipId;
+
+    if (next.msrp <= source.msrp || next.msrp > target.msrp) {
+      return [];
+    }
+
+    return next.skus.flatMap((sku) => {
+      const price = (sku.warbond ? sku.price : next.msrp) - source.msrp;
+
+      if (!sku.available || price <= 0 || (!final && !sku.warbond)) {
+        return [];
+      }
+
+      const step: Upgrade = {
+        fromShipId,
+        toShipId: next.shipId,
+        skuId: sku.skuId,
+        price,
+        warbond: sku.warbond,
+      };
+      const tails = final ? [[]] : upgradeChains(data, next.shipId, toShipId);
+
+      return tails.map((tail) => [step, ...tail]);
+    });
+  });
+};
 
 const meetsInsurance = (
   offer: Pick<StandaloneOffer, 'insurance'>,
@@ -77,58 +133,34 @@ const meetsInsurance = (
     compareInsuranceTiers(offer.insurance, want.minInsurance) >= 0);
 
 const routesForWant = (input: PlanInput, want: Want): Route[] => {
-  const standalone: Route[] = input.offers.standalone
-    .filter(
-      (offer) =>
-        offer.shipId === want.shipId &&
-        offer.available &&
-        meetsInsurance(offer, want),
-    )
-    .map((offer) => ({ ...offer, kind: 'standalone' }));
-  const target = input.upgrades.targets.find(
-    (ship) => ship.shipId === want.shipId,
-  );
+  const standalone: Route[] = input.offers.standalone.flatMap((offer) => {
+    if (!offer.available || !meetsInsurance(offer, want)) {
+      return [];
+    }
 
-  if (!target) {
-    return standalone;
-  }
-
+    return offer.shipId === want.shipId
+      ? [{ base: offer, chain: [] }]
+      : upgradeChains(input.upgrades, offer.shipId, want.shipId).map(
+          (chain) => ({ base: offer, chain }),
+        );
+  });
   const upgrades: Route[] = input.pledges.flatMap((pledge) => {
+    const shipId = pledge.ships[0]?.shipId;
+
     if (
       !input.tradeIn.includes(pledge.id) ||
       pledge.ships.length !== 1 ||
+      shipId === null ||
+      shipId === undefined ||
       !meetsInsurance(pledge, want)
     ) {
       return [];
     }
 
-    const source = input.upgrades.sources.find(
-      (ship) => ship.shipId === pledge.ships[0].shipId,
-    );
-
-    if (
-      !source ||
-      source.shipId === target.shipId ||
-      source.msrp >= target.msrp
-    ) {
-      return [];
-    }
-
-    return target.skus
-      .filter(
-        (sku) =>
-          sku.available &&
-          (sku.warbond ? sku.price : target.msrp) > source.msrp,
-      )
-      .map((sku) => ({
-        kind: 'upgrade',
-        pledgeId: pledge.id,
-        fromShipId: source.shipId,
-        toShipId: target.shipId,
-        skuId: sku.skuId,
-        price: (sku.warbond ? sku.price : target.msrp) - source.msrp,
-        warbond: sku.warbond,
-      }));
+    return upgradeChains(input.upgrades, shipId, want.shipId).map((chain) => ({
+      pledgeId: pledge.id,
+      chain,
+    }));
   });
 
   return [...standalone, ...upgrades];
@@ -194,24 +226,21 @@ const unmetReason = (want: Want, input: PlanInput) => {
 
   if (routes.length === 0) {
     if (want.minInsurance === 'any') {
-      return 'No eligible trade-in pledge for a direct upgrade.';
+      return 'No eligible trade-in pledge or standalone base for an upgrade chain.';
     }
 
     return want.minInsurance === 'lti'
-      ? 'No standalone offer with LTI or eligible trade-in pledge with LTI.'
-      : `No standalone offer or eligible trade-in pledge with at least ${want.minInsurance} months of insurance.`;
+      ? 'No standalone offer with LTI, eligible LTI base or trade-in pledge with LTI.'
+      : `No standalone offer, upgrade base or eligible trade-in pledge with at least ${want.minInsurance} months of insurance.`;
   }
 
-  if (
-    input.funding === 'credit-only' &&
-    routes.every((route) => route.warbond)
-  ) {
+  if (input.funding === 'credit-only' && routes.every(needsNewMoney)) {
     return want.minInsurance === 'lti'
-      ? 'LTI needs new money: qualifying offers and upgrades are warbond only.'
-      : 'Qualifying offers and upgrades are warbond only and need new money.';
+      ? 'LTI needs new money: every qualifying route includes a warbond purchase.'
+      : 'Qualifying routes need new money: at least one purchase is warbond only.';
   }
 
-  return routes.some((route) => route.kind === 'standalone')
+  return routes.some((route) => route.base)
     ? 'Not enough store credit.'
     : 'Not enough store credit or no unused qualifying trade-in pledge.';
 };
@@ -252,15 +281,58 @@ const warbondNote = (
   );
 };
 
+const buyRoute = (
+  route: Route,
+  input: PlanInput,
+  index: number,
+  creditLeft: number,
+): Extract<PlanStep, { kind: 'buy-standalone' | 'buy-upgrade' }>[] => {
+  const pledgeId = route.pledgeId ?? `new pledge ${index + 1}`;
+
+  return purchasesForRoute(route).map((purchase) => {
+    const credit = purchase.warbond ? 0 : Math.min(creditLeft, purchase.price);
+    const newMoney = purchase.price - credit;
+
+    creditLeft -= credit;
+
+    if ('shipId' in purchase) {
+      const note = purchase.warbond
+        ? warbondNote(purchase, input.want[index], input.offers.standalone)
+        : undefined;
+
+      return {
+        kind: 'buy-standalone',
+        skuId: purchase.skuId,
+        shipId: purchase.shipId,
+        ...(route.chain.length ? { pledgeId } : {}),
+        credit,
+        newMoney,
+        ...(note ? { note } : {}),
+      };
+    }
+
+    return {
+      kind: 'buy-upgrade',
+      pledgeId,
+      fromShipId: purchase.fromShipId,
+      toShipId: purchase.toShipId,
+      warbond: purchase.warbond,
+      skuId: purchase.skuId,
+      credit,
+      newMoney,
+    };
+  });
+};
+
 const purchasePlan = (input: PlanInput, selected: (Route | null)[]): Plan => {
-  const creditNeeded = selected.reduce(
-    (sum, offer) => sum + (offer === null || offer.warbond ? 0 : offer.price),
-    -input.credit,
-  );
+  const creditNeeded = selected
+    .flatMap((route) => (route ? purchasesForRoute(route) : []))
+    .reduce(
+      (sum, purchase) => sum + (purchase.warbond ? 0 : purchase.price),
+      -input.credit,
+    );
   const upgraded = new Set(
-    selected.flatMap((route) =>
-      route?.kind === 'upgrade' ? [route.pledgeId] : [],
-    ),
+    selected.flatMap((route) => (route?.pledgeId ? [route.pledgeId] : [])),
   );
   const melts = meltTradeIns(input, creditNeeded, upgraded);
   const steps: PlanStep[] = [...melts.steps];
@@ -271,51 +343,33 @@ const purchasePlan = (input: PlanInput, selected: (Route | null)[]): Plan => {
   let creditUsed = 0;
   let newMoney = 0;
 
-  for (const [index, offer] of selected.entries()) {
-    if (offer === null) {
+  for (const [index, route] of selected.entries()) {
+    if (route === null) {
       const want = input.want[index];
 
       unmet.push({ shipId: want.shipId, reason: unmetReason(want, input) });
       continue;
     }
 
-    const credit = offer.warbond ? 0 : Math.min(creditLeft, offer.price);
-    const cash = offer.price - credit;
+    for (const step of buyRoute(route, input, index, creditLeft)) {
+      steps.push(step);
 
-    if (offer.kind === 'standalone') {
-      const note = offer.warbond
-        ? warbondNote(offer, input.want[index], input.offers.standalone)
-        : undefined;
+      if (step.kind === 'buy-upgrade') {
+        const { pledgeId, fromShipId, toShipId, warbond } = step;
 
-      steps.push({
-        kind: 'buy-standalone',
-        skuId: offer.skuId,
-        shipId: offer.shipId,
-        credit,
-        newMoney: cash,
-        ...(note ? { note } : {}),
-      });
-    } else {
-      const upgrade = {
-        pledgeId: offer.pledgeId,
-        fromShipId: offer.fromShipId,
-        toShipId: offer.toShipId,
-        warbond: offer.warbond,
-      };
+        applies.push({
+          kind: 'apply-upgrade',
+          pledgeId,
+          fromShipId,
+          toShipId,
+          warbond,
+        });
+      }
 
-      steps.push({
-        kind: 'buy-upgrade',
-        ...upgrade,
-        skuId: offer.skuId,
-        credit,
-        newMoney: cash,
-      });
-      applies.push({ kind: 'apply-upgrade', ...upgrade });
+      creditLeft -= step.credit;
+      creditUsed += step.credit;
+      newMoney += step.newMoney;
     }
-
-    creditLeft -= credit;
-    creditUsed += credit;
-    newMoney += cash;
   }
 
   return {
@@ -353,17 +407,17 @@ const comparePlans = (left: Plan, right: Plan, funding: FundingMode) => {
 export const createPlan = (input: PlanInput): Plan => {
   const choices = input.want.map((want) => {
     const routes = routesForWant(input, want).filter(
-      (route) => input.funding !== 'credit-only' || !route.warbond,
+      (route) => input.funding !== 'credit-only' || !needsNewMoney(route),
     );
 
     return input.funding === 'credit-only' ||
-      routes.every((route) => route.kind === 'upgrade')
+      routes.every((route) => !route.base)
       ? [...routes, null]
       : routes;
   });
   let best: Plan | null = null;
 
-  // shortcut: route assignments grow exponentially, prune the search if larger fleets make planning slow.
+  // shortcut: chain and route choices grow exponentially, prune the search if larger fleets make planning slow.
   const search = (selected: (Route | null)[]) => {
     if (selected.length === choices.length) {
       const candidate = purchasePlan(input, selected);
@@ -381,11 +435,8 @@ export const createPlan = (input: PlanInput): Plan => {
 
     for (const route of choices[selected.length]) {
       if (
-        route?.kind === 'upgrade' &&
-        selected.some(
-          (used) =>
-            used?.kind === 'upgrade' && used.pledgeId === route.pledgeId,
-        )
+        route?.pledgeId &&
+        selected.some((used) => used?.pledgeId === route.pledgeId)
       ) {
         continue;
       }

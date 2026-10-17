@@ -60,9 +60,9 @@ The header shows when offers were fetched. Choose **Refresh offers** after a sto
 
 Choose **Plan fleet changes** from the matrix. Load your hangar first, move pledges you're willing to melt or upgrade into **Trade in**, and add ships to **Want** with their minimum insurance. Choose a funding mode and press **Plan**.
 
-The planner uses live standalone and upgrade offers and your store credit balance. It compares buying a wanted ship with upgrading an eligible single-ship trade-in pledge, keeping that pledge's insurance. It lists melts before purchases and applies upgrades last, shows the credit and new-money split, and reports wants it cannot meet. It never melts your last game package or a pledge that cannot be reclaimed. Changing your choices clears the result; press **Plan** again to recalculate.
+The planner uses live standalone and upgrade offers and your store credit balance. It compares buying a wanted ship with upgrading an eligible single-ship trade-in pledge or buying an insured standalone base and upgrading it. Upgrade chains can use intermediate warbond discounts and keep the original pledge's insurance. It lists melts before purchases and applies upgrades last, shows the credit and new-money split, and reports wants it cannot meet. It never melts your last game package or a pledge that cannot be reclaimed. Changing your choices clears the result; press **Plan** again to recalculate.
 
-This version plans melts, standalone purchases and direct upgrades, not upgrade chains or newly bought upgrade bases. Multi-ship pledges stay melt-only. Warbond upgrades need new money. It takes no action on your RSI account. Figures are in USD before tax; offers can change or sell out.
+Each upgrade purchase has its own credit and new-money split. New bases get local pledge labels so you can follow each chain, including multiple copies of the same ship. Multi-ship pledges stay melt-only. Warbond bases and upgrades need new money and are excluded in credit-only mode. It takes no action on your RSI account. Figures are in USD before tax; offers can change or sell out.
 
 ## Known limitations
 
