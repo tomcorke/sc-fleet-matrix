@@ -6,7 +6,7 @@ There are two parts:
 
 - **Data generator** (`src/server`). Downloads ship stats from the RSI ship-matrix API and each ship's USD MSRP from the RSI store GraphQL API, and writes the results to `src/data/`.
 - **Viewer** (`src/client`). A React app that shows the generated data in a table you can sort and filter by any column.
-- **Hangar extension** (`extension/`). A small Chrome extension that lets the viewer read the ships in your RSI hangar.
+- **Browser extension** (`extension/`). A small Chrome extension that lets the viewer read your RSI hangar and live standalone ship offers.
 
 ## Prerequisites
 
@@ -48,7 +48,13 @@ RSI only shows your hangar to a signed-in browser, so the viewer reads it throug
 2. Sign in at robertsspaceindustries.com.
 3. Run `pnpm dev`, then choose **Load from RSI** in the **Your hangar** box.
 
-The viewer lists the ships it finds and filters the table to them. The list is saved in your browser, so you only reload it after your hangar changes. The extension only runs on `localhost` pages and only reads your pledges page.
+The viewer lists the ships it finds and filters the table to them. The list is saved in your browser, so you only reload it after your hangar changes. The extension only runs on `localhost` pages. It reads your pledges page and the store's standalone ship browse through fixed, read-only requests.
+
+## Live store offers
+
+With the extension loaded, the viewer fetches standalone ship offers when it opens. The **Store offers (USD)** column lists standard and warbond editions, prices before tax and insurance. Warbonds need new money, not store credit. Use **Warbond on sale** to show only ships with an available warbond offer.
+
+The header shows when offers were fetched. Choose **Refresh offers** after a store change. If you installed or updated the extension, reload it in Chrome and reload the viewer. Without it, the matrix still works and the store column shows an installation hint.
 
 ## Known limitations
 

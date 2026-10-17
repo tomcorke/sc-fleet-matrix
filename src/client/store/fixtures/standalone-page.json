@@ -1,0 +1,609 @@
+[
+  {
+    "data": {
+      "store": {
+        "search": {
+          "totalCount": 60,
+          "resources": [
+            {
+              "id": "616",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 3000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "65"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Mustang Alpha",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "617",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 4000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "66"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Mustang Beta",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "618",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 5500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "67"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Mustang Gamma",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "13940",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 8000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "216"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Nomad",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "9221",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 15500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "109"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Prospector",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Aeroview Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "10898",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 1500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "215"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "PTV",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                }
+              ]
+            },
+            {
+              "id": "17063",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 3000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "271"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Pulse",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "17064",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 3000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "272"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Pulse LX",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "13399",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 6500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "90"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Reliant Kore - Mini Hauler",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "13621",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 5500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "214"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "ROC",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "14182",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 7500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "219"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "ROC DS",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "19623",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 18500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "328"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Sabre Raven EX",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "VFG Industrial Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "19624",
+              "isWarbond": true,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 16500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "328"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Sabre Raven EX",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "Lifetime Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "VFG Industrial Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "18519",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 6000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "307"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Salvation",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "15431",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 4000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "240"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "STV",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "16427",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 7000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "265"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Syulen",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "7868",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 5000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "139"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Ursa Rover",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "19138",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 4000
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "314"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "UTV",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "15469",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 17500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "165"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Vulture",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Aeroview Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            },
+            {
+              "id": "16643",
+              "isWarbond": false,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 4500
+              },
+              "stock": {
+                "available": true
+              },
+              "ships": [
+                {
+                  "id": "143"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "X1",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "6 Month Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "Self-Land Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

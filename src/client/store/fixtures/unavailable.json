@@ -1,0 +1,43 @@
+[
+  {
+    "data": {
+      "store": {
+        "search": {
+          "totalCount": 1,
+          "resources": [
+            {
+              "id": "19624",
+              "isWarbond": true,
+              "isPackage": false,
+              "nativePrice": {
+                "amount": 16500
+              },
+              "stock": {
+                "available": false
+              },
+              "ships": [
+                {
+                  "id": "328"
+                }
+              ],
+              "gameItems": [
+                {
+                  "name": "Sabre Raven EX",
+                  "kind": "SHIP"
+                },
+                {
+                  "name": "Lifetime Insurance",
+                  "kind": "INSURANCE"
+                },
+                {
+                  "name": "VFG Industrial Hangar",
+                  "kind": "HANGARPASS"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+]

@@ -4,6 +4,8 @@ import { ColumnFilter } from '../column-filter/column-filter';
 import { loadSavedShips } from '../hangar/hangar';
 import { HangarCell } from '../hangar/hangar-cell';
 import { ShipRow } from '../ship-row/ship-row';
+import { hasAvailableWarbond } from '../store/store-offers';
+import { useStoreOffers } from '../store/use-store-offers';
 import {
   COLUMNS,
   type Column,
@@ -36,6 +38,8 @@ export const ShipMatrix = ({ ships }: Props) => {
   const [sort, setSort] = useState(DEFAULT_SORT);
   const [owned, setOwned] = useState(loadSavedShips);
   const [onlyOwned, setOnlyOwned] = useState(owned.length > 0);
+  const [onlyWarbond, setOnlyWarbond] = useState(false);
+  const { store, loading, error, refresh } = useStoreOffers();
 
   const ownedKeys = useMemo(() => new Set(owned.map(nameKey)), [owned]);
 
@@ -53,11 +57,15 @@ export const ShipMatrix = ({ ships }: Props) => {
           : ships,
         filters,
         sort,
+      ).filter(
+        (ship) =>
+          !onlyWarbond || hasAvailableWarbond(store?.standalone ?? [], ship.id),
       ),
-    [ships, onlyOwned, ownedKeys, filters, sort],
+    [ships, onlyOwned, ownedKeys, filters, sort, onlyWarbond, store],
   );
 
-  const isFiltered = Object.values(filters).some((v) => v.trim() !== '');
+  const isFiltered =
+    onlyWarbond || Object.values(filters).some((v) => v.trim() !== '');
 
   const setFilter = (key: string, value: string) =>
     setFilters((current) => ({ ...current, [key]: value }));
@@ -71,7 +79,10 @@ export const ShipMatrix = ({ ships }: Props) => {
           : 'asc',
     }));
 
-  const resetFilters = () => setFilters({});
+  const resetFilters = () => {
+    setFilters({});
+    setOnlyWarbond(false);
+  };
 
   return (
     <div className={STYLES.layout}>
@@ -97,11 +108,32 @@ export const ShipMatrix = ({ ships }: Props) => {
           </button>
         </div>
         <div className={STYLES.cell}>
-          <span className={STYLES.cellLabel}>Source</span>
-          <span>RSI ship matrix and pledge store</span>
+          <span className={STYLES.cellLabel}>Store offers</span>
           <span className={STYLES.cellNote}>
-            Prices are standard-edition MSRP
+            RSI pledge store, USD before tax. Ship prices are standard-edition
+            MSRP.
           </span>
+          {store && (
+            <span aria-live="polite">
+              Fetched{' '}
+              <time dateTime={store.fetchedAt}>
+                {new Date(store.fetchedAt).toLocaleString()}
+              </time>
+            </span>
+          )}
+          <button
+            type="button"
+            className={STYLES.reset}
+            onClick={refresh}
+            disabled={loading}
+          >
+            {loading ? 'Loading offers…' : 'Refresh offers'}
+          </button>
+          {error && (
+            <span className={STYLES.cellNote} role="alert">
+              {error}
+            </span>
+          )}
         </div>
         <div className={STYLES.cell}>
           <span className={STYLES.cellLabel}>Your hangar</span>
@@ -138,6 +170,9 @@ export const ShipMatrix = ({ ships }: Props) => {
                   </button>
                 </th>
               ))}
+              <th scope="col" className={STYLES.text}>
+                Store offers (USD)
+              </th>
             </tr>
             <tr className={STYLES.filterRow}>
               {COLUMNS.map((column) => (
@@ -150,15 +185,31 @@ export const ShipMatrix = ({ ships }: Props) => {
                   />
                 </td>
               ))}
+              <td>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={onlyWarbond}
+                    disabled={!store}
+                    onChange={(event) => setOnlyWarbond(event.target.checked)}
+                  />{' '}
+                  Warbond on sale
+                </label>
+              </td>
             </tr>
           </thead>
           <tbody>
             {visibleShips.map((ship) => (
-              <ShipRow key={ship.id} ship={ship} />
+              <ShipRow
+                key={ship.id}
+                ship={ship}
+                offers={store?.standalone}
+                storeHint={error ?? 'Loading store offers…'}
+              />
             ))}
             {visibleShips.length === 0 && (
               <tr>
-                <td colSpan={COLUMNS.length} className={STYLES.empty}>
+                <td colSpan={COLUMNS.length + 1} className={STYLES.empty}>
                   No ships match these filters.{' '}
                   <button
                     type="button"
