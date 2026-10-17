@@ -46,6 +46,26 @@ test('returns an error for unknown kinds and page-provided request bodies', asyn
   );
 });
 
+test('rejects account action kinds without making a network request', async (t) => {
+  const fetchMock = t.mock.method(globalThis, 'fetch', async () => {
+    throw new Error('Account actions must never reach the network.');
+  });
+
+  for (const kind of [
+    'melt',
+    'buy-standalone',
+    'buy-upgrade',
+    'apply-upgrade',
+    'purchase',
+    'addToCart',
+    'reclaimPledge',
+  ]) {
+    assert.deepEqual(await request(kind), { error: 'Unknown request kind.' });
+  }
+
+  assert.equal(fetchMock.mock.callCount(), 0);
+});
+
 test('pages through standalone ship browse with a fixed query and fetch time', async (t) => {
   const responses = [
     page(3, [{ id: '1' }, { id: '2' }]),
@@ -102,6 +122,70 @@ test('accepts an empty store and still stamps the fetch time', async (t) => {
 
   assert.equal(result.pages.length, 1);
   assert.ok(result.fetchedAt);
+});
+
+test('fetches upgrades only after both fixed token requests and stamps the result', async (t) => {
+  const data = [{ data: { from: { ships: [] }, to: { ships: [] } } }];
+  const responses = [
+    Response.json({ success: 1 }),
+    Response.json({ success: 1 }),
+    Response.json(data),
+  ];
+  const fetchMock = t.mock.method(globalThis, 'fetch', async () =>
+    responses.shift(),
+  );
+  const result = await request('upgrade-data');
+  const calls = fetchMock.mock.calls.map((call) => call.arguments);
+
+  assert.deepEqual(result.response, data);
+  assert.ok(Number.isFinite(Date.parse(result.fetchedAt)));
+  assert.deepEqual(
+    calls.map(([url]) => url),
+    [
+      'https://robertsspaceindustries.com/api/account/v2/setAuthToken',
+      'https://robertsspaceindustries.com/api/ship-upgrades/setContextToken',
+      'https://robertsspaceindustries.com/pledge-store/api/upgrade/v2/graphql',
+    ],
+  );
+  assert.equal(calls[0][1].body, 'null');
+  assert.equal(calls[1][1].body, '{}');
+  const body = JSON.parse(calls[2][1].body);
+
+  assert.equal(body[0].operationName, 'filterShips');
+  assert.match(body[0].query, /from \{ ships \{ id msrp \} \}/);
+  assert.match(body[0].query, /skus \{ id title price available \}/);
+
+  for (const [, options] of calls) {
+    assert.equal(options.method, 'POST');
+    assert.equal(options.credentials, 'include');
+  }
+});
+
+test('stops on failed upgrade handshakes and rejects HTTP or GraphQL failures', async (t) => {
+  const fetchMock = t.mock.method(globalThis, 'fetch', async () =>
+    Response.json({ success: 0 }),
+  );
+
+  assert.match((await request('upgrade-data')).error, /handshake failed/);
+  assert.equal(fetchMock.mock.callCount(), 1);
+
+  for (const failure of [
+    new Response('', { status: 503 }),
+    Response.json([{ errors: [{ message: 'Failed' }] }]),
+    Response.json([{ data: {} }]),
+  ]) {
+    const responses = [
+      Response.json({ success: 1 }),
+      Response.json({ success: 1 }),
+      failure,
+    ];
+
+    fetchMock.mock.mockImplementation(async () => responses.shift());
+    assert.match(
+      (await request('upgrade-data')).error,
+      /503|invalid upgrade response/,
+    );
+  }
 });
 
 const credit = (isAnonymous, amount) =>

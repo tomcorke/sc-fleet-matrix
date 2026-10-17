@@ -136,10 +136,65 @@ const fetchCredit = async () => {
   return { amount, fetchedAt: new Date().toISOString() };
 };
 
+const UPGRADE_QUERY = `query filterShips {
+  from { ships { id msrp } }
+  to { ships { id msrp skus { id title price available } } }
+}`;
+
+const fetchUpgradeData = async () => {
+  // Establish the upgrade context before querying; this also works signed out.
+  for (const [path, body] of [
+    ['api/account/v2/setAuthToken', 'null'],
+    ['api/ship-upgrades/setContextToken', '{}'],
+  ]) {
+    const response = await fetch(`https://robertsspaceindustries.com/${path}`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    });
+
+    if (!response.ok || (await response.json())?.success !== 1) {
+      throw new Error(
+        `Upgrade token handshake failed: ${path} (${response.status}).`,
+      );
+    }
+  }
+
+  const response = await fetch(
+    'https://robertsspaceindustries.com/pledge-store/api/upgrade/v2/graphql',
+    {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify([
+        { operationName: 'filterShips', query: UPGRADE_QUERY },
+      ]),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(`Upgrade data request failed: ${response.status}`);
+  }
+
+  const result = await response.json();
+
+  if (
+    result?.[0]?.errors?.length ||
+    !Array.isArray(result?.[0]?.data?.from?.ships) ||
+    !Array.isArray(result?.[0]?.data?.to?.ships)
+  ) {
+    throw new Error('The RSI store returned an invalid upgrade response.');
+  }
+
+  return { response: result, fetchedAt: new Date().toISOString() };
+};
+
 const REQUEST_HANDLERS = new Map([
   ['credit', fetchCredit],
   ['hangar', fetchHangar],
   ['store-offers', fetchStoreOffers],
+  ['upgrade-data', fetchUpgradeData],
 ]);
 
 chrome.runtime.onMessage.addListener((kind, _sender, sendResponse) => {

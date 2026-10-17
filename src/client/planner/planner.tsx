@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { type Pledge, loadSavedPledges } from '../hangar/hangar';
+import { fetchUpgradeData } from '../store/fetch-upgrade-data';
+import type { UpgradeData } from '../store/upgrade-data';
 import { useStoreOffers } from '../store/use-store-offers';
 import { type StoreCredit, fetchCredit } from './fetch-credit';
 import { type Plan, createPlan } from './plan';
@@ -74,17 +76,19 @@ const pledgeNotes = (pledge: Pledge) =>
     .filter((note) => note !== false)
     .join(', ');
 
-const useCredit = () => {
+const usePlannerData = () => {
   const [credit, setCredit] = useState<StoreCredit | null>(null);
+  const [upgrades, setUpgrades] = useState<UpgradeData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
 
-    fetchCredit()
-      .then((amount) => {
+    Promise.all([fetchCredit(), fetchUpgradeData()])
+      .then(([amount, data]) => {
         if (active) {
           setCredit(amount);
+          setUpgrades(data);
         }
       })
       .catch((caught: unknown) => {
@@ -98,14 +102,14 @@ const useCredit = () => {
     };
   }, []);
 
-  return { credit, error };
+  return { credit, upgrades, error };
 };
 
 export const Planner = ({ ships, onClose }: Props) => {
   const [pledges] = useState(loadSavedPledges);
   const [plan, setPlan] = useState(loadPlannerState);
   const [search, setSearch] = useState('');
-  const { credit, error } = useCredit();
+  const { credit, upgrades, error } = usePlannerData();
   const {
     store,
     loading: offersLoading,
@@ -130,7 +134,12 @@ export const Planner = ({ ships, onClose }: Props) => {
   };
 
   const runPlan = () => {
-    if (pledges === null || credit === null || store === null) {
+    if (
+      pledges === null ||
+      credit === null ||
+      store === null ||
+      upgrades === null
+    ) {
       return;
     }
 
@@ -143,6 +152,7 @@ export const Planner = ({ ships, onClose }: Props) => {
           minInsurance: want.insurance,
         })),
         offers: store,
+        upgrades,
         credit: credit.amount,
         creditFetchedAt: credit.fetchedAt,
         funding: plan.funding,
@@ -326,13 +336,14 @@ export const Planner = ({ ships, onClose }: Props) => {
               pledges === null ||
               credit === null ||
               store === null ||
+              upgrades === null ||
               plan.wants.length === 0
             }
           >
             Plan
           </button>
           <span className={STYLES.note}>
-            Melts and standalone purchases only.
+            Melts, standalone purchases and direct upgrades.
           </span>
           {offersLoading && (
             <span className={STYLES.note}>Loading offers…</span>

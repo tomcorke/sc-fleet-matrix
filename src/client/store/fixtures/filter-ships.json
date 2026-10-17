@@ -1,0 +1,74 @@
+[
+  {
+    "data": {
+      "from": {
+        "ships": [
+          {
+            "id": 165,
+            "msrp": 17500
+          },
+          {
+            "id": 312,
+            "msrp": 4500
+          },
+          {
+            "id": 328,
+            "msrp": 18500
+          }
+        ]
+      },
+      "to": {
+        "ships": [
+          {
+            "id": 312,
+            "msrp": 4500,
+            "skus": [
+              {
+                "id": 18980,
+                "title": "Standard Edition",
+                "price": 4500,
+                "available": true
+              }
+            ]
+          },
+          {
+            "id": 325,
+            "msrp": 30000,
+            "skus": [
+              {
+                "id": 19671,
+                "title": "Warbond Edition",
+                "price": 27500,
+                "available": true
+              },
+              {
+                "id": 19639,
+                "title": "Standard Edition",
+                "price": 30000,
+                "available": true
+              }
+            ]
+          },
+          {
+            "id": 328,
+            "msrp": 18500,
+            "skus": [
+              {
+                "id": 19626,
+                "title": "Warbond Edition",
+                "price": 16500,
+                "available": true
+              },
+              {
+                "id": 19627,
+                "title": "Standard Edition",
+                "price": 18500,
+                "available": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]

@@ -3,6 +3,7 @@ import { test } from 'node:test';
 
 import type { Pledge } from '../hangar/hangar.ts';
 import type { StandaloneOffer } from '../store/store-offers.ts';
+import type { UpgradeData } from '../store/upgrade-data.ts';
 import { type PlanInput, createPlan } from './plan.ts';
 
 const pledge = (changes: Partial<Pledge> = {}): Pledge => ({
@@ -29,11 +30,27 @@ const offer = (changes: Partial<StandaloneOffer> = {}): StandaloneOffer => ({
   ...changes,
 });
 
+const upgrades = (changes: Partial<UpgradeData> = {}): UpgradeData => ({
+  sources: [{ shipId: 1, msrp: 5000 }],
+  targets: [
+    {
+      shipId: 2,
+      msrp: 10000,
+      skus: [
+        { skuId: 'upgrade', price: 10000, warbond: false, available: true },
+      ],
+    },
+  ],
+  fetchedAt: '2026-10-17T10:02:00Z',
+  ...changes,
+});
+
 const input = (changes: Partial<PlanInput> = {}): PlanInput => ({
   pledges: [],
   tradeIn: [],
   want: [{ shipId: 2, minInsurance: 'any' }],
   offers: { standalone: [offer()], fetchedAt: '2026-10-17T10:00:00Z' },
+  upgrades: upgrades({ sources: [], targets: [] }),
   credit: 0,
   creditFetchedAt: '2026-10-17T10:01:00Z',
   funding: 'least-new-money',
@@ -552,6 +569,7 @@ test('includes standing warnings and the exact fetch times without mutating inpu
     'cannot be gifted',
     options.offers.fetchedAt,
     options.creditFetchedAt,
+    options.upgrades.fetchedAt,
     'change or sell out',
   ]) {
     assert.ok(warnings.includes(text), text);
@@ -563,4 +581,327 @@ test('includes standing warnings and the exact fetch times without mutating inpu
     creditUsed: 0,
     creditLeft: 0,
   });
+});
+
+test('reuses an LTI trade-in with an exact-source standard upgrade instead of melting it', () => {
+  const options = input({
+    pledges: [
+      pledge({
+        insurance: 'lti',
+        containsGamePackage: true,
+        hasAppliedUpgrades: true,
+        name: 'Original starter',
+      }),
+    ],
+    tradeIn: ['pledge'],
+    want: [{ shipId: 2, minInsurance: 'lti' }],
+    upgrades: upgrades(),
+    credit: 2000,
+  });
+  const original = structuredClone(options);
+  const plan = createPlan(options);
+
+  assert.deepEqual(plan.steps, [
+    {
+      kind: 'buy-upgrade',
+      pledgeId: 'pledge',
+      skuId: 'upgrade',
+      fromShipId: 1,
+      toShipId: 2,
+      warbond: false,
+      credit: 2000,
+      newMoney: 3000,
+    },
+    {
+      kind: 'apply-upgrade',
+      pledgeId: 'pledge',
+      fromShipId: 1,
+      toShipId: 2,
+      warbond: false,
+    },
+  ]);
+  assert.deepEqual(plan.unmet, []);
+  assert.deepEqual(plan.totals, {
+    newMoney: 3000,
+    creditUsed: 2000,
+    creditLeft: 0,
+  });
+  assert.deepEqual(options, original);
+});
+
+test('compares upgrades with melt-and-buy in both directions', () => {
+  const options = input({
+    pledges: [pledge({ meltValue: 1000 })],
+    tradeIn: ['pledge'],
+    upgrades: upgrades(),
+  });
+  const upgrade = createPlan(options);
+  const buy = createPlan({
+    ...options,
+    pledges: [pledge({ meltValue: 9000 })],
+  });
+
+  assert.deepEqual(
+    upgrade.steps.map((step) => step.kind),
+    ['buy-upgrade', 'apply-upgrade'],
+  );
+  assert.equal(upgrade.totals.newMoney, 5000);
+  assert.deepEqual(
+    buy.steps.map((step) => step.kind),
+    ['melt', 'buy-standalone'],
+  );
+  assert.equal(buy.totals.newMoney, 1000);
+});
+
+test('prefers the cheaper upgrade when both routes need no new money', () => {
+  for (const funding of [
+    'least-new-money',
+    'lowest-total',
+    'credit-only',
+  ] as const) {
+    const plan = createPlan(
+      input({
+        pledges: [pledge()],
+        tradeIn: ['pledge'],
+        upgrades: upgrades(),
+        credit: 10000,
+        funding,
+      }),
+    );
+
+    assert.deepEqual(
+      plan.steps.map((step) => step.kind),
+      ['buy-upgrade', 'apply-upgrade'],
+    );
+    assert.deepEqual(plan.totals, {
+      newMoney: 0,
+      creditUsed: 5000,
+      creditLeft: 5000,
+    });
+  }
+});
+
+test('refuses equal-value ships, downgrades, unknown sources, variants and Keep pledges', () => {
+  for (const changes of [
+    { upgrades: upgrades({ sources: [{ shipId: 1, msrp: 10000 }] }) },
+    { upgrades: upgrades({ sources: [{ shipId: 1, msrp: 11000 }] }) },
+    { upgrades: upgrades({ sources: [] }) },
+    { pledges: [pledge({ ships: [{ name: 'Aurora variant', shipId: 3 }] })] },
+    { pledges: [pledge({ ships: [{ name: 'Aurora', shipId: null }] })] },
+    { tradeIn: [] },
+  ]) {
+    const plan = createPlan(
+      input({
+        pledges: [pledge()],
+        tradeIn: ['pledge'],
+        offers: { standalone: [], fetchedAt: '2026-10-17T10:00:00Z' },
+        upgrades: upgrades(),
+        ...changes,
+      }),
+    );
+
+    assert.deepEqual(plan.steps, []);
+    assert.equal(plan.unmet.length, 1);
+  }
+});
+
+test('refuses an upgrade target or SKU that is not on sale', () => {
+  for (const targets of [
+    [],
+    [
+      {
+        shipId: 2,
+        msrp: 10000,
+        skus: [
+          { skuId: 'sold-out', price: 10000, warbond: false, available: false },
+        ],
+      },
+    ],
+  ]) {
+    const plan = createPlan(
+      input({
+        pledges: [pledge()],
+        tradeIn: ['pledge'],
+        offers: { standalone: [], fetchedAt: '2026-10-17T10:00:00Z' },
+        upgrades: upgrades({ targets }),
+      }),
+    );
+
+    assert.deepEqual(plan.steps, []);
+    assert.match(plan.unmet[0].reason, /Not on sale/);
+  }
+});
+
+test('multi-ship pledges stay melt-only even when their ships are valid upgrade sources', () => {
+  const plan = createPlan(
+    input({
+      pledges: [
+        pledge({
+          ships: [
+            { name: 'Aurora', shipId: 1 },
+            { name: 'Other', shipId: 3 },
+          ],
+        }),
+      ],
+      tradeIn: ['pledge'],
+      upgrades: upgrades(),
+    }),
+  );
+
+  assert.deepEqual(
+    plan.steps.map((step) => step.kind),
+    ['melt', 'buy-standalone'],
+  );
+});
+
+test('warbond upgrades need new money, not credit, and are excluded in credit-only mode', () => {
+  const options = input({
+    pledges: [pledge({ insurance: 'lti' })],
+    tradeIn: ['pledge'],
+    credit: 20000,
+    want: [{ shipId: 2, minInsurance: 'lti' }],
+    upgrades: upgrades({
+      targets: [
+        {
+          shipId: 2,
+          msrp: 10000,
+          skus: [
+            {
+              skuId: 'wb-upgrade',
+              price: 8000,
+              warbond: true,
+              available: true,
+            },
+          ],
+        },
+      ],
+    }),
+  });
+  const plan = createPlan(options);
+  const creditOnly = createPlan({ ...options, funding: 'credit-only' });
+
+  assert.equal(plan.steps[0].kind, 'buy-upgrade');
+  assert.deepEqual(plan.totals, {
+    newMoney: 3000,
+    creditUsed: 0,
+    creditLeft: 20000,
+  });
+  assert.deepEqual(creditOnly.steps, []);
+  assert.match(creditOnly.unmet[0].reason, /LTI needs new money/);
+});
+
+test('uses MSRP for standard upgrades and refuses zero or negative warbond differences', () => {
+  const options = input({
+    pledges: [pledge()],
+    tradeIn: ['pledge'],
+    upgrades: upgrades({
+      targets: [
+        {
+          shipId: 2,
+          msrp: 10000,
+          skus: [
+            { skuId: 'upgrade', price: 8000, warbond: false, available: true },
+          ],
+        },
+      ],
+    }),
+  });
+
+  assert.equal(createPlan(options).totals.newMoney, 5000);
+
+  for (const price of [4000, 5000]) {
+    const plan = createPlan({
+      ...options,
+      offers: { ...options.offers, standalone: [] },
+      upgrades: upgrades({
+        targets: [
+          {
+            shipId: 2,
+            msrp: 10000,
+            skus: [
+              { skuId: 'wb-upgrade', price, warbond: true, available: true },
+            ],
+          },
+        ],
+      }),
+    });
+
+    assert.deepEqual(plan.steps, []);
+    assert.equal(plan.unmet.length, 1);
+  }
+});
+
+test('cannot meet an insurance minimum by upgrading an underinsured pledge', () => {
+  for (const insurance of [null, 6, 120]) {
+    const plan = createPlan(
+      input({
+        pledges: [pledge({ insurance })],
+        tradeIn: ['pledge'],
+        upgrades: upgrades(),
+        want: [{ shipId: 2, minInsurance: 'lti' }],
+      }),
+    );
+
+    assert.deepEqual(plan.steps, []);
+    assert.match(plan.unmet[0].reason, /LTI/);
+  }
+});
+
+test('uses each trade-in once and orders melts, purchases, then applies', () => {
+  const options = input({
+    pledges: [
+      pledge({ insurance: 'lti' }),
+      pledge({ id: 'funding', ships: [] }),
+    ],
+    tradeIn: ['pledge', 'funding'],
+    want: [
+      { shipId: 2, minInsurance: 'lti' },
+      { shipId: 2, minInsurance: 'lti' },
+    ],
+    upgrades: upgrades(),
+  });
+  const plan = createPlan(options);
+
+  assert.deepEqual(
+    plan.steps.map((step) => step.kind),
+    ['melt', 'buy-upgrade', 'apply-upgrade'],
+  );
+  assert.deepEqual(plan.steps[0], {
+    kind: 'melt',
+    pledgeId: 'funding',
+    credit: 5000,
+  });
+  assert.equal(plan.unmet.length, 1);
+  assert.deepEqual(plan.totals, {
+    newMoney: 0,
+    creditUsed: 5000,
+    creditLeft: 0,
+  });
+});
+
+test('assigns scarce LTI pledges globally rather than consuming them for any-insurance wants', () => {
+  const plan = createPlan(
+    input({
+      pledges: [pledge({ insurance: 'lti' }), pledge({ id: 'six-month' })],
+      tradeIn: ['pledge', 'six-month'],
+      want: [
+        { shipId: 2, minInsurance: 'any' },
+        { shipId: 2, minInsurance: 'lti' },
+      ],
+      upgrades: upgrades(),
+    }),
+  );
+
+  assert.deepEqual(plan.unmet, []);
+  assert.deepEqual(
+    plan.steps
+      .filter((step) => step.kind === 'apply-upgrade')
+      .map((step) => step.pledgeId),
+    ['six-month', 'pledge'],
+  );
+  assert.equal(
+    plan.steps.some((step) => step.kind === 'melt'),
+    false,
+  );
+  assert.equal(plan.totals.newMoney, 10000);
 });
