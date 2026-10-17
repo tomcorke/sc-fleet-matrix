@@ -1,9 +1,8 @@
-import { useEffect, useRef } from 'react';
-
 import type { Pledge } from '../hangar/hangar';
 import type { StandaloneOffer } from '../store/store-offers';
 import type { Plan } from './plan';
 import STYLES from './plan-view.module.scss';
+import { pledgeTitle } from './pledge-list';
 
 type Props = {
   plan: Plan;
@@ -26,26 +25,24 @@ const insuranceLabel = (
 };
 
 export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
-  const result = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    result.current?.focus();
-  }, [plan]);
-
   const shipNames = new Map(ships.map((ship) => [ship.id, ship.name]));
   const pledgeDescriptions = new Map(
-    pledges.map((pledge) => [
-      pledge.id,
-      `${pledge.name}: ${pledge.ships.map((ship) => ship.name).join(', ') || 'No ships'} (${insuranceLabel(pledge.insurance)})`,
-    ]),
+    pledges.map((pledge) => {
+      const contents = pledge.hasAppliedUpgrades
+        ? ''
+        : `: ${pledge.ships.map((ship) => ship.name).join(', ') || 'No ships'}`;
+
+      return [
+        pledge.id,
+        `${pledgeTitle(pledge)}${contents} (${insuranceLabel(pledge.insurance)})`,
+      ];
+    }),
   );
   const offersBySku = new Map(offers.map((offer) => [offer.skuId, offer]));
   const shipName = (id: number) => shipNames.get(id) ?? `Ship ${id}`;
 
   return (
     <section
-      ref={result}
-      tabIndex={-1}
       className={STYLES.result}
       aria-labelledby="plan-title"
       aria-live="polite"
