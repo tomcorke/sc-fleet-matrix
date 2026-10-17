@@ -8,7 +8,7 @@
 
 ## Hangar
 
-The user's owned ships need their RSI sign-in, so the viewer gets them at runtime, never through the generator or `src/data/`. The unpacked Chrome extension in `extension/` fetches `/account/pledges` with the browser's RSI cookies and relays the HTML to the localhost page over `window.postMessage`; `src/client/hangar/hangar.ts` parses it. RSI repeats the last page for out-of-range page numbers, so the page count comes from the pager links.
+The user's owned ships need their RSI sign-in, so the viewer gets them at runtime, never through the generator or `src/data/`. The page sends a named request kind to the unpacked Chrome extension in `extension/`; its fixed allowlist contains only `hangar` for now. The content script forwards only the kind, never a page-provided URL or request body. The background worker fetches `/account/pledges` with the browser's RSI cookies and relays the HTML to the localhost page over `window.postMessage`; `src/client/hangar/hangar.ts` parses it. RSI repeats the last page for out-of-range page numbers, so the page count comes from the pager links.
 
 ## Shared schema
 

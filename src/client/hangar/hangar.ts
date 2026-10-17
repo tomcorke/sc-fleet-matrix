@@ -9,7 +9,9 @@ const isResult = (data: unknown): data is HangarResult =>
   typeof data === 'object' &&
   data !== null &&
   'type' in data &&
-  data.type === 'sc-fleet:hangar-result';
+  data.type === 'sc-fleet:response' &&
+  'kind' in data &&
+  data.kind === 'hangar';
 
 // Each owned ship appears once per copy, as a pledge item of kind "Ship".
 export const parseOwnedShips = (pages: string[]) =>
@@ -58,7 +60,10 @@ export const fetchOwnedShips = () =>
     );
 
     window.addEventListener('message', onMessage);
-    window.postMessage({ type: 'sc-fleet:hangar' }, window.location.origin);
+    window.postMessage(
+      { type: 'sc-fleet:request', kind: 'hangar' },
+      window.location.origin,
+    );
   });
 
 export const loadSavedShips = (): string[] => {

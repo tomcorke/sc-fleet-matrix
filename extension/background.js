@@ -30,12 +30,20 @@ const fetchHangar = async () => {
   return { pages: [first, ...rest] };
 };
 
-chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
-  if (message === 'hangar') {
-    fetchHangar()
-      .then(sendResponse)
-      .catch((error) => sendResponse({ error: String(error) }));
+const REQUEST_HANDLERS = new Map([['hangar', fetchHangar]]);
 
-    return true;
+chrome.runtime.onMessage.addListener((kind, _sender, sendResponse) => {
+  const request = REQUEST_HANDLERS.get(kind);
+
+  if (!request) {
+    sendResponse({ error: 'Unknown request kind.' });
+
+    return;
   }
+
+  request()
+    .then(sendResponse)
+    .catch((error) => sendResponse({ error: String(error) }));
+
+  return true;
 });
