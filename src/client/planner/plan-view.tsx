@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import type { Pledge } from '../hangar/hangar';
 import type { StandaloneOffer } from '../store/store-offers';
 import type { Plan } from './plan';
@@ -14,6 +16,12 @@ const usd = (cents: number) =>
   (cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
 export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
+  const result = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    result.current?.focus();
+  }, [plan]);
+
   const shipNames = new Map(ships.map((ship) => [ship.id, ship.name]));
   const pledgeNames = new Map(
     pledges.map((pledge) => [pledge.id, pledge.name]),
@@ -22,6 +30,8 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
 
   return (
     <section
+      ref={result}
+      tabIndex={-1}
       className={STYLES.result}
       aria-labelledby="plan-title"
       aria-live="polite"
