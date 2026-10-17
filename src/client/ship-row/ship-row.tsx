@@ -7,9 +7,10 @@ type Props = {
   ship: Ship;
   offers: StandaloneOffer[] | undefined;
   storeHint: string;
+  ownedInsurance?: string;
 };
 
-export const ShipRow = ({ ship, offers, storeHint }: Props) => {
+export const ShipRow = ({ ship, offers, storeHint, ownedInsurance }: Props) => {
   const [nameColumn, ...otherColumns] = COLUMNS;
 
   return (
@@ -25,6 +26,7 @@ export const ShipRow = ({ ship, offers, storeHint }: Props) => {
       <td>
         <StoreOffersCell shipId={ship.id} offers={offers} hint={storeHint} />
       </td>
+      {ownedInsurance !== undefined && <td>{ownedInsurance || '–'}</td>}
     </tr>
   );
 };

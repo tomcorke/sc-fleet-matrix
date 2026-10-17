@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import { ColumnFilter } from '../column-filter/column-filter';
-import { loadSavedShips } from '../hangar/hangar';
+import { insuranceForShip, loadSavedPledges } from '../hangar/hangar';
 import { HangarCell } from '../hangar/hangar-cell';
 import { ShipRow } from '../ship-row/ship-row';
 import { hasAvailableWarbond } from '../store/store-offers';
@@ -22,9 +22,6 @@ type Props = {
 
 const DEFAULT_SORT: Sort = { columnId: 'size', direction: 'asc' };
 
-// Hangar names match ship-matrix names, give or take case and spacing.
-const nameKey = (name: string) => name.trim().toLowerCase();
-
 const ariaSort = (column: Column, sort: Sort) => {
   if (column.id !== sort.columnId) {
     return 'none';
@@ -36,32 +33,36 @@ const ariaSort = (column: Column, sort: Sort) => {
 export const ShipMatrix = ({ ships }: Props) => {
   const [filters, setFilters] = useState<Filters>({});
   const [sort, setSort] = useState(DEFAULT_SORT);
-  const [owned, setOwned] = useState(loadSavedShips);
-  const [onlyOwned, setOnlyOwned] = useState(owned.length > 0);
+  const [pledges, setPledges] = useState(loadSavedPledges);
+  const [onlyOwned, setOnlyOwned] = useState(
+    pledges?.some((pledge) => pledge.ships.length > 0) ?? false,
+  );
   const [onlyWarbond, setOnlyWarbond] = useState(false);
   const { store, loading, error, refresh } = useStoreOffers();
 
-  const ownedKeys = useMemo(() => new Set(owned.map(nameKey)), [owned]);
-
-  const unmatched = useMemo(() => {
-    const shipKeys = new Set(ships.map((ship) => nameKey(ship.name)));
-
-    return owned.filter((name) => !shipKeys.has(nameKey(name)));
-  }, [ships, owned]);
+  const owned = useMemo(
+    () => pledges?.flatMap((pledge) => pledge.ships) ?? [],
+    [pledges],
+  );
+  const ownedIds = useMemo(
+    () => new Set(owned.map((ship) => ship.shipId)),
+    [owned],
+  );
+  const unmatched = owned
+    .filter((ship) => ship.shipId === null)
+    .map((ship) => ship.name);
 
   const visibleShips = useMemo(
     () =>
       applyView(
-        onlyOwned
-          ? ships.filter((ship) => ownedKeys.has(nameKey(ship.name)))
-          : ships,
+        onlyOwned ? ships.filter((ship) => ownedIds.has(ship.id)) : ships,
         filters,
         sort,
       ).filter(
         (ship) =>
           !onlyWarbond || hasAvailableWarbond(store?.standalone ?? [], ship.id),
       ),
-    [ships, onlyOwned, ownedKeys, filters, sort, onlyWarbond, store],
+    [ships, onlyOwned, ownedIds, filters, sort, onlyWarbond, store],
   );
 
   const isFiltered =
@@ -138,10 +139,11 @@ export const ShipMatrix = ({ ships }: Props) => {
         <div className={STYLES.cell}>
           <span className={STYLES.cellLabel}>Your hangar</span>
           <HangarCell
-            owned={owned}
+            pledges={pledges}
+            ships={ships}
             unmatched={unmatched}
             onlyOwned={onlyOwned}
-            onOwnedChange={setOwned}
+            onPledgesChange={setPledges}
             onOnlyOwnedChange={setOnlyOwned}
           />
         </div>
@@ -173,6 +175,11 @@ export const ShipMatrix = ({ ships }: Props) => {
               <th scope="col" className={STYLES.text}>
                 Store offers (USD)
               </th>
+              {pledges !== null && (
+                <th scope="col" className={STYLES.text}>
+                  Owned insurance
+                </th>
+              )}
             </tr>
             <tr className={STYLES.filterRow}>
               {COLUMNS.map((column) => (
@@ -196,6 +203,7 @@ export const ShipMatrix = ({ ships }: Props) => {
                   Warbond on sale
                 </label>
               </td>
+              {pledges !== null && <td />}
             </tr>
           </thead>
           <tbody>
@@ -205,11 +213,19 @@ export const ShipMatrix = ({ ships }: Props) => {
                 ship={ship}
                 offers={store?.standalone}
                 storeHint={error ?? 'Loading store offers…'}
+                ownedInsurance={
+                  pledges === null
+                    ? undefined
+                    : insuranceForShip(pledges, ship.id)
+                }
               />
             ))}
             {visibleShips.length === 0 && (
               <tr>
-                <td colSpan={COLUMNS.length + 1} className={STYLES.empty}>
+                <td
+                  colSpan={COLUMNS.length + 1 + Number(pledges !== null)}
+                  className={STYLES.empty}
+                >
                   No ships match these filters.{' '}
                   <button
                     type="button"

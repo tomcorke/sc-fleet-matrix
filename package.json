@@ -52,6 +52,7 @@
     "@vitejs/plugin-react": "^6.1.2",
     "eslint-plugin-sonarjs": "^4.2.2",
     "husky": "^9.1.7",
+    "linkedom": "^0.18.13",
     "lint-staged": "^17.6.0",
     "oxlint": "^1.88.0",
     "prettier": "^3.9.10",
