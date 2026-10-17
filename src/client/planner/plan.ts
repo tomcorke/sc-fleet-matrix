@@ -25,6 +25,7 @@ export type PlanStep =
       shipId: number;
       credit: number;
       newMoney: number;
+      note?: string;
     };
 
 export type Plan = {
@@ -41,15 +42,20 @@ const meetsInsurance = (offer: StandaloneOffer, want: Want) =>
   (offer.insurance !== null &&
     compareInsuranceTiers(offer.insurance, want.minInsurance) >= 0);
 
-const meltTradeIns = ({ pledges, tradeIn }: PlanInput) => {
+const meltTradeIns = (
+  { pledges, tradeIn }: PlanInput,
+  creditNeeded: number,
+) => {
   const steps: PlanStep[] = [];
   const warnings: string[] = [];
   const selected = new Set(tradeIn);
+  let credit = 0;
   let gamePackages = pledges.filter(
     (pledge) => pledge.containsGamePackage,
   ).length;
 
-  for (const pledge of pledges) {
+  // Larger melts fund the purchases with the fewest pledges.
+  for (const pledge of pledges.toSorted((a, b) => b.meltValue - a.meltValue)) {
     if (!selected.has(pledge.id)) {
       continue;
     }
@@ -62,12 +68,13 @@ const meltTradeIns = ({ pledges, tradeIn }: PlanInput) => {
       warnings.push(
         `Cannot melt ${pledge.name}: this pledge cannot be reclaimed.`,
       );
-    } else {
+    } else if (credit < creditNeeded && pledge.meltValue > 0) {
       steps.push({
         kind: 'melt',
         pledgeId: pledge.id,
         credit: pledge.meltValue,
       });
+      credit += pledge.meltValue;
       gamePackages -= Number(pledge.containsGamePackage);
     }
   }
@@ -101,11 +108,51 @@ const unmetReason = (want: Want, { offers, funding }: PlanInput) => {
   return 'Not enough store credit.';
 };
 
+const warbondNote = (
+  offer: StandaloneOffer,
+  want: Want,
+  offers: StandaloneOffer[],
+) => {
+  const standard = offers
+    .filter(
+      (alternative) =>
+        alternative.shipId === offer.shipId &&
+        alternative.available &&
+        !alternative.warbond,
+    )
+    .sort(
+      (a, b) =>
+        Number(meetsInsurance(b, want)) - Number(meetsInsurance(a, want)) ||
+        a.price - b.price,
+    )[0];
+
+  if (!standard) {
+    return undefined;
+  }
+
+  const usd = (cents: number) =>
+    (cents / 100).toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+
+  return (
+    `Chose the ${usd(offer.price)} warbond over the ${usd(standard.price)} standard edition, which accepts store credit.` +
+    (meetsInsurance(standard, want)
+      ? ''
+      : ' The standard edition does not meet your insurance minimum.')
+  );
+};
+
 const purchasePlan = (
   input: PlanInput,
   selected: (StandaloneOffer | null)[],
-  melts: ReturnType<typeof meltTradeIns>,
 ): Plan => {
+  const creditNeeded = selected.reduce(
+    (sum, offer) => sum + (offer === null || offer.warbond ? 0 : offer.price),
+    -input.credit,
+  );
+  const melts = meltTradeIns(input, creditNeeded);
   const steps = [...melts.steps];
   const unmet: Plan['unmet'] = [];
   let creditLeft =
@@ -123,6 +170,9 @@ const purchasePlan = (
 
     const credit = offer.warbond ? 0 : Math.min(creditLeft, offer.price);
     const cash = offer.price - credit;
+    const note = offer.warbond
+      ? warbondNote(offer, input.want[index], input.offers.standalone)
+      : undefined;
 
     steps.push({
       kind: 'buy-standalone',
@@ -130,6 +180,7 @@ const purchasePlan = (
       shipId: offer.shipId,
       credit,
       newMoney: cash,
+      ...(note ? { note } : {}),
     });
     creditLeft -= credit;
     creditUsed += credit;
@@ -166,7 +217,6 @@ const comparePlans = (left: Plan, right: Plan, funding: FundingMode) => {
 };
 
 export const createPlan = (input: PlanInput): Plan => {
-  const melts = meltTradeIns(input);
   const choices = input.want.map((want) => {
     const routes = input.offers.standalone.filter(
       (offer) =>
@@ -185,7 +235,7 @@ export const createPlan = (input: PlanInput): Plan => {
   // ponytail: exhaustive search grows with offers per want; replace it if fleets or upgrade routes make planning slow.
   const search = (selected: (StandaloneOffer | null)[]) => {
     if (selected.length === choices.length) {
-      const candidate = purchasePlan(input, selected, melts);
+      const candidate = purchasePlan(input, selected);
 
       if (input.funding === 'credit-only' && candidate.totals.newMoney > 0) {
         return;

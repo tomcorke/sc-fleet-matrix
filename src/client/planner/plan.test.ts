@@ -162,6 +162,7 @@ test('funding modes choose differently when credit is short', () => {
       shipId: 2,
       credit: 0,
       newMoney: 7000,
+      note: 'Chose the $70.00 warbond over the $100.00 standard edition, which accepts store credit.',
     },
   ]);
   assert.equal(lowestTotal.totals.creditLeft, 8000);
@@ -195,13 +196,13 @@ test('keeps game access even when all game packages are in Trade in', () => {
         pledge({ id: 'second', containsGamePackage: true }),
       ],
       tradeIn: ['pledge', 'second'],
-      want: [],
     }),
   );
 
-  assert.deepEqual(plan.steps, [
-    { kind: 'melt', pledgeId: 'pledge', credit: 5000 },
-  ]);
+  assert.deepEqual(
+    plan.steps.filter((step) => step.kind === 'melt'),
+    [{ kind: 'melt', pledgeId: 'pledge', credit: 5000 }],
+  );
   assert.match(plan.warnings.join('\n'), /only game package/);
 });
 
@@ -313,6 +314,228 @@ test('credit-only fulfills as many wants as the balance allows and reports the r
     creditUsed: 10000,
     creditLeft: 0,
   });
+});
+
+test('does not melt the $170 and $290 trade-ins for a $275 warbond-only purchase', () => {
+  const plan = createPlan(
+    input({
+      pledges: [
+        pledge({ id: 'mtc-170', meltValue: 17000 }),
+        pledge({ id: 'mtc-290', meltValue: 29000 }),
+      ],
+      tradeIn: ['mtc-170', 'mtc-290'],
+      offers: {
+        fetchedAt: '2026-10-17T10:00:00Z',
+        standalone: [
+          offer({ skuId: 'centaurus-wb', price: 27500, warbond: true }),
+        ],
+      },
+    }),
+  );
+
+  assert.deepEqual(plan.steps, [
+    {
+      kind: 'buy-standalone',
+      skuId: 'centaurus-wb',
+      shipId: 2,
+      credit: 0,
+      newMoney: 27500,
+    },
+  ]);
+  assert.deepEqual(plan.totals, {
+    newMoney: 27500,
+    creditUsed: 0,
+    creditLeft: 0,
+  });
+});
+
+test('funding modes compare a credit-payable offer with warbond before melting', () => {
+  const options = input({
+    pledges: [
+      pledge({ id: 'mtc-170', meltValue: 17000 }),
+      pledge({ id: 'mtc-290', meltValue: 29000 }),
+    ],
+    tradeIn: ['mtc-170', 'mtc-290'],
+    offers: {
+      fetchedAt: '2026-10-17T10:00:00Z',
+      standalone: [
+        offer({ price: 30000 }),
+        offer({ skuId: 'centaurus-wb', price: 27500, warbond: true }),
+      ],
+    },
+  });
+
+  for (const funding of ['credit-only', 'least-new-money'] as const) {
+    const plan = createPlan({ ...options, funding });
+
+    assert.deepEqual(
+      plan.steps.slice(0, 2).map((step) => step.kind),
+      ['melt', 'melt'],
+    );
+    assert.deepEqual(plan.steps[2], {
+      kind: 'buy-standalone',
+      skuId: 'standard',
+      shipId: 2,
+      credit: 30000,
+      newMoney: 0,
+    });
+    assert.deepEqual(plan.totals, {
+      newMoney: 0,
+      creditUsed: 30000,
+      creditLeft: 16000,
+    });
+    assert.deepEqual(plan.unmet, []);
+  }
+
+  const lowestTotal = createPlan({ ...options, funding: 'lowest-total' });
+
+  assert.equal(lowestTotal.steps.length, 1);
+  assert.ok(lowestTotal.steps[0].kind === 'buy-standalone');
+  assert.deepEqual(lowestTotal.totals, {
+    newMoney: 27500,
+    creditUsed: 0,
+    creditLeft: 0,
+  });
+  assert.match(
+    lowestTotal.steps[0].note ?? '',
+    /\$275\.00.*warbond.*\$300\.00.*standard.*store credit/i,
+  );
+});
+
+test('warbond notes compare the cheapest qualifying standard offer, or explain its insurance shortfall', () => {
+  for (const minInsurance of [120, 'lti'] as const) {
+    const plan = createPlan(
+      input({
+        funding: 'lowest-total',
+        want: [{ shipId: 2, minInsurance }],
+        offers: {
+          fetchedAt: '2026-10-17T10:00:00Z',
+          standalone: [
+            offer({ skuId: 'short', price: 29000 }),
+            offer({ skuId: '120-months', price: 30000, insurance: 120 }),
+            offer({ skuId: 'higher-price', price: 32000, insurance: 120 }),
+            offer({ skuId: 'sold-out', price: 1000, available: false }),
+            offer({ skuId: 'other-ship', shipId: 3, price: 1000 }),
+            offer({
+              skuId: 'wb',
+              price: 27500,
+              warbond: true,
+              insurance: 'lti',
+            }),
+          ],
+        },
+      }),
+    );
+    const step = plan.steps[0];
+
+    assert.ok(step.kind === 'buy-standalone');
+    assert.equal(step.skuId, 'wb');
+    assert.match(step.note ?? '', /\$275\.00/);
+
+    if (minInsurance === 'lti') {
+      assert.match(step.note ?? '', /\$290\.00/);
+      assert.match(step.note ?? '', /does not meet your insurance minimum/);
+    } else {
+      assert.match(step.note ?? '', /\$300\.00/);
+      assert.doesNotMatch(step.note ?? '', /does not meet/);
+    }
+  }
+});
+
+test('mixed purchases melt only for the standard offer, not the warbond price', () => {
+  const plan = createPlan(
+    input({
+      pledges: [pledge(), pledge({ id: 'unused' })],
+      tradeIn: ['pledge', 'unused'],
+      credit: 2000,
+      want: [
+        { shipId: 2, minInsurance: 'any' },
+        { shipId: 3, minInsurance: 'any' },
+      ],
+      offers: {
+        fetchedAt: '2026-10-17T10:00:00Z',
+        standalone: [
+          offer({ skuId: 'wb', warbond: true }),
+          offer({ skuId: 'standard', shipId: 3, price: 6000 }),
+        ],
+      },
+    }),
+  );
+
+  assert.deepEqual(plan.steps, [
+    { kind: 'melt', pledgeId: 'pledge', credit: 5000 },
+    {
+      kind: 'buy-standalone',
+      skuId: 'wb',
+      shipId: 2,
+      credit: 0,
+      newMoney: 10000,
+    },
+    {
+      kind: 'buy-standalone',
+      skuId: 'standard',
+      shipId: 3,
+      credit: 6000,
+      newMoney: 0,
+    },
+  ]);
+  assert.deepEqual(plan.totals, {
+    newMoney: 10000,
+    creditUsed: 6000,
+    creditLeft: 1000,
+  });
+});
+
+test('melts only enough pledges to fund the selected standard purchases', () => {
+  const plan = createPlan(
+    input({
+      pledges: [
+        pledge({ id: 'smaller', meltValue: 17000 }),
+        pledge({ id: 'larger', meltValue: 29000 }),
+      ],
+      tradeIn: ['smaller', 'larger'],
+      credit: 1000,
+      offers: {
+        fetchedAt: '2026-10-17T10:00:00Z',
+        standalone: [offer({ price: 25000 })],
+      },
+    }),
+  );
+
+  assert.deepEqual(plan.steps, [
+    { kind: 'melt', pledgeId: 'larger', credit: 29000 },
+    {
+      kind: 'buy-standalone',
+      skuId: 'standard',
+      shipId: 2,
+      credit: 25000,
+      newMoney: 0,
+    },
+  ]);
+  assert.deepEqual(plan.totals, {
+    newMoney: 0,
+    creditUsed: 25000,
+    creditLeft: 5000,
+  });
+});
+
+test('does not melt when existing credit suffices, no wants exist, or no wants can be met', () => {
+  for (const changes of [
+    { credit: 10000 },
+    { want: [] },
+    { offers: { standalone: [], fetchedAt: '2026-10-17T10:00:00Z' } },
+    { funding: 'credit-only' as const },
+  ]) {
+    const plan = createPlan(
+      input({ pledges: [pledge()], tradeIn: ['pledge'], ...changes }),
+    );
+
+    assert.equal(
+      plan.steps.some((step) => step.kind === 'melt'),
+      false,
+    );
+    assert.equal(plan.totals.creditLeft, 0);
+  }
 });
 
 test('includes standing warnings and the exact fetch times without mutating inputs', () => {

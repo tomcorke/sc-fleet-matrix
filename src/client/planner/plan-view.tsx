@@ -15,6 +15,16 @@ type Props = {
 const usd = (cents: number) =>
   (cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 
+const insuranceLabel = (
+  insurance: StandaloneOffer['insurance'] | undefined,
+) => {
+  if (insurance === null || insurance === undefined) {
+    return 'Insurance unknown';
+  }
+
+  return insurance === 'lti' ? 'LTI' : `${insurance} months insurance`;
+};
+
 export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
   const result = useRef<HTMLElement>(null);
 
@@ -23,9 +33,13 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
   }, [plan]);
 
   const shipNames = new Map(ships.map((ship) => [ship.id, ship.name]));
-  const pledgeNames = new Map(
-    pledges.map((pledge) => [pledge.id, pledge.name]),
+  const pledgeDescriptions = new Map(
+    pledges.map((pledge) => [
+      pledge.id,
+      `${pledge.name}: ${pledge.ships.map((ship) => ship.name).join(', ') || 'No ships'} (${insuranceLabel(pledge.insurance)})`,
+    ]),
   );
+  const offersBySku = new Map(offers.map((offer) => [offer.skuId, offer]));
   const shipName = (id: number) => shipNames.get(id) ?? `Ship ${id}`;
 
   return (
@@ -49,17 +63,19 @@ export const PlanView = ({ plan, ships, pledges, offers }: Props) => {
             <li key={index}>
               {step.kind === 'melt' ? (
                 <>
-                  Melt {pledgeNames.get(step.pledgeId) ?? step.pledgeId} for{' '}
-                  {usd(step.credit)} in store credit.
+                  Melt {pledgeDescriptions.get(step.pledgeId) ?? step.pledgeId}{' '}
+                  for {usd(step.credit)} in store credit.
                 </>
               ) : (
                 <>
                   Buy {shipName(step.shipId)} (
-                  {offers.find((offer) => offer.skuId === step.skuId)?.warbond
+                  {offersBySku.get(step.skuId)?.warbond
                     ? 'warbond'
                     : 'standard edition'}
+                  , {insuranceLabel(offersBySku.get(step.skuId)?.insurance)}
                   ): pay {usd(step.credit)} store credit and{' '}
                   {usd(step.newMoney)} new money.
+                  {step.note && <p>{step.note}</p>}
                 </>
               )}
             </li>
