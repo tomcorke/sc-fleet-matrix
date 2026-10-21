@@ -6,20 +6,45 @@ const VEHICLES_URL = 'https://api.star-citizen.wiki/api/v2/vehicles';
 
 const number = z.number().nullable().optional();
 
+// The API sends an empty array where an object has no fields.
+const record = <T extends z.ZodRawShape>(shape: T) =>
+  z.preprocess(
+    (value) => (Array.isArray(value) && value.length === 0 ? null : value),
+    z.object(shape).nullable().optional(),
+  );
+
 export const VehiclePageSchema = z.object({
   meta: z.object({ last_page: z.number() }),
   data: z.array(
     z.object({
       uuid: z.string(),
-      quantum: z
+      quantum: record({
+        quantum_speed: number,
+        quantum_spool_time: number,
+        quantum_fuel_capacity: number,
+        quantum_range: number,
+      }),
+      health: number,
+      shield: record({ hp: number, regeneration: number }),
+      armor: record({
+        health: number,
+        damage_physical: number,
+        damage_energy: number,
+      }),
+      weaponry: z
         .object({
-          quantum_speed: number,
-          quantum_spool_time: number,
-          quantum_fuel_capacity: number,
-          quantum_range: number,
+          pilot_dps: number,
+          pilot_sustained_dps: number,
+          pilot_alpha: number,
+          missiles: record({ count: number }),
+          total_missile_damage: number,
         })
         .nullable()
         .optional(),
+      turrets: record({
+        manned: z.array(z.unknown()),
+        remote: z.array(z.unknown()),
+      }),
     }),
   ),
 });

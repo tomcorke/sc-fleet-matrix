@@ -62,6 +62,9 @@ const vehiclePages = [
           quantum_fuel_capacity: 0.6,
           quantum_range: 61224489796,
         },
+        armor: [],
+        weaponry: { pilot_dps: 1944.5 },
+        turrets: { manned: [], remote: [{}] },
       },
     ],
   },
@@ -87,6 +90,11 @@ test('normalises every source into stat values', () => {
   assert.equal(values.max_medical_tier, 'T2');
   assert.equal(values.quantum_speed, 189309);
   assert.equal(values.quantum_range, 61.2);
+  assert.equal('armour_hp' in values, false, 'empty array means no armour');
+  assert.equal(values.pilot_dps, 1945);
+  assert.equal(values.missiles, 0, 'weapons without missiles is zero');
+  assert.equal(values.manned_turrets, 0);
+  assert.equal(values.remote_turrets, 1);
   assert.equal(
     data.stats.some((stat) => stat.id === 'seating:jump_seats'),
     false,

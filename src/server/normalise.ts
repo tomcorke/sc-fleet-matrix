@@ -195,6 +195,74 @@ const GAME_STATS: StatSource<Vehicle>[] = [
     label: 'Quantum range (Gm)',
     read: (v: Vehicle) => rounded((v.quantum?.quantum_range ?? 0) / 1e9, 1),
   },
+  {
+    id: 'hull_hp',
+    label: 'Hull HP',
+    read: (v: Vehicle) => rounded(v.health, 0),
+  },
+  {
+    id: 'shield_hp',
+    label: 'Shield HP',
+    read: (v: Vehicle) => rounded(v.shield?.hp, 0),
+  },
+  {
+    id: 'shield_regen',
+    label: 'Shield regen (HP/s)',
+    read: (v: Vehicle) => rounded(v.shield?.regeneration, 0),
+  },
+  {
+    id: 'armour_hp',
+    label: 'Armour HP',
+    read: (v: Vehicle) => rounded(v.armor?.health, 0),
+  },
+  // Multipliers on incoming damage: below 1 means the armour reduces it.
+  {
+    id: 'armour_physical',
+    label: 'Armour physical damage ×',
+    read: (v: Vehicle) => rounded(v.armor?.damage_physical, 2),
+  },
+  {
+    id: 'armour_energy',
+    label: 'Armour energy damage ×',
+    read: (v: Vehicle) => rounded(v.armor?.damage_energy, 2),
+  },
+  {
+    id: 'pilot_dps',
+    label: 'Pilot DPS',
+    read: (v: Vehicle) => rounded(v.weaponry?.pilot_dps, 0),
+  },
+  {
+    id: 'pilot_sustained_dps',
+    label: 'Pilot sustained DPS',
+    read: (v: Vehicle) => rounded(v.weaponry?.pilot_sustained_dps, 0),
+  },
+  {
+    id: 'pilot_alpha',
+    label: 'Pilot alpha',
+    read: (v: Vehicle) => rounded(v.weaponry?.pilot_alpha, 0),
+  },
+  // Counts keep zero: no missiles is a real stock loadout.
+  {
+    id: 'missiles',
+    label: 'Missiles',
+    read: (v: Vehicle) =>
+      v.weaponry?.missiles?.count ?? (v.weaponry ? 0 : null),
+  },
+  {
+    id: 'missile_damage',
+    label: 'Missile damage',
+    read: (v: Vehicle) => rounded(v.weaponry?.total_missile_damage, 0),
+  },
+  {
+    id: 'manned_turrets',
+    label: 'Manned turrets',
+    read: (v: Vehicle) => v.turrets?.manned.length,
+  },
+  {
+    id: 'remote_turrets',
+    label: 'Remote turrets',
+    read: (v: Vehicle) => v.turrets?.remote.length,
+  },
 ].map((stat) => ({ ...stat, kind: 'number' as const, source: GAME_SOURCE }));
 
 const featureLabel = (key: string) =>
