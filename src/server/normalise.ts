@@ -20,10 +20,13 @@ const FeatureStateSchema = z.object({
 
 export const ShipFeaturesSchema = z.object({
   feature_keys: z.array(z.string()),
+  // Schema v2 adds a separately checked wiki observation per ship.
+  wiki_feature_keys: z.array(z.string()).optional(),
   ships: z.array(
     z.object({
       matrix_id: z.number(),
       features: z.record(z.string(), FeatureStateSchema),
+      wiki_features: z.record(z.string(), FeatureStateSchema).optional(),
       reported: z
         .object({
           // Medical beds arrive as counts per tier, e.g. { T3: 2 }.
@@ -146,6 +149,21 @@ const FEATURE_VALUES: Record<string, string | null> = {
   unresolved: null,
 };
 
+// Sources combine by the strongest state, per the knowledge base's policy:
+// explicit evidence beats an omission, and any check beats none.
+const STATE_STRENGTH = [
+  'present',
+  'explicitly-absent',
+  'not-mentioned',
+  'unresolved',
+] as const;
+
+const combinedState = (
+  states: (z.infer<typeof FeatureStateSchema> | undefined)[],
+) =>
+  STATE_STRENGTH.find((state) => states.some((s) => s?.state === state)) ??
+  'unresolved';
+
 const featureLabel = (key: string) =>
   capitalise(key.replaceAll('_', ' ')) ?? key;
 
@@ -160,16 +178,24 @@ export const normalise = ({ matrix, storePages, features }: Sources) => {
 
   const featureStats: StatSource<number>[] = featureData
     ? [
-        ...featureData.feature_keys.map((key) => ({
+        ...[
+          ...new Set([
+            ...featureData.feature_keys,
+            ...(featureData.wiki_feature_keys ?? []),
+          ]),
+        ].map((key) => ({
           id: `feature:${key}`,
           label: featureLabel(key),
           kind: 'choice' as const,
           source: FEATURE_SOURCE,
           order: ['Yes', 'No'],
-          read: (id: number) =>
-            FEATURE_VALUES[
-              featureShips.get(id)?.features[key]?.state ?? 'unresolved'
-            ],
+          read: (id: number) => {
+            const ship = featureShips.get(id);
+
+            return FEATURE_VALUES[
+              combinedState([ship?.features[key], ship?.wiki_features?.[key]])
+            ];
+          },
         })),
         ...Object.entries(SEATING_LABELS).map(([key, label]) => ({
           id: `seating:${key}`,

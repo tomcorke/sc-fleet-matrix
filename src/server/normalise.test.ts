@@ -26,6 +26,7 @@ const storePages = [
 
 const features = {
   feature_keys: ['toilet', 'shower', 'emp'],
+  wiki_feature_keys: ['shower', 'emp', 'bathroom'],
   ships: [
     {
       matrix_id: 1,
@@ -33,6 +34,11 @@ const features = {
         toilet: { state: 'present' },
         shower: { state: 'not-mentioned' },
         emp: { state: 'unresolved' },
+      },
+      wiki_features: {
+        shower: { state: 'present' },
+        emp: { state: 'not-mentioned' },
+        bathroom: { state: 'unresolved' },
       },
       reported: {
         seating: { beds: 2, medical_beds: { T3: 1, T2: 1 }, jump_seats: null },
@@ -54,8 +60,9 @@ test('normalises every source into stat values', () => {
   assert.equal(values.price, 20);
   assert.equal('scm' in values, false, 'RSI zero speed means unknown');
   assert.equal(values['feature:toilet'], 'Yes');
-  assert.equal(values['feature:shower'], 'No');
-  assert.equal('feature:emp' in values, false, 'unresolved is unknown');
+  assert.equal(values['feature:shower'], 'Yes', 'wiki evidence wins');
+  assert.equal(values['feature:emp'], 'No', 'a check beats none');
+  assert.equal('feature:bathroom' in values, false, 'unresolved is unknown');
   assert.equal(values['seating:medical_beds'], 2);
   assert.equal(values.max_medical_tier, 'T2');
   assert.equal(
