@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { fetchShipMsrps } from './store-prices.ts';
+import { fetchStorePages, msrpsFromPages } from './store-prices.ts';
 
 const page = (totalCount: number, resources: unknown[]) =>
   Response.json([{ data: { store: { search: { totalCount, resources } } } }]);
@@ -19,7 +19,7 @@ test('pages through every ship and converts cents to dollars', async (t) => {
   );
 
   assert.deepEqual(
-    await fetchShipMsrps(),
+    msrpsFromPages(await fetchStorePages()),
     new Map([
       [1, 20],
       [37, null],

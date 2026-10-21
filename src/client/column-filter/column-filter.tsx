@@ -4,7 +4,6 @@ import {
   type Column,
   type Filters,
   type Ship,
-  choiceLabel,
   choicesFor,
 } from '../ship-matrix/columns';
 import STYLES from './column-filter.module.scss';
@@ -69,7 +68,7 @@ export const ColumnFilter = ({ column, ships, filters, onChange }: Props) => {
         <option value="">All</option>
         {choices.map((choice) => (
           <option key={choice} value={choice}>
-            {choiceLabel(choice)}
+            {choice}
           </option>
         ))}
       </select>

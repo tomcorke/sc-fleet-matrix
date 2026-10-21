@@ -1,17 +1,24 @@
-import { COLUMNS, type Ship, formatCell } from '../ship-matrix/columns';
+import { type Column, type Ship, formatCell } from '../ship-matrix/columns';
 import type { StandaloneOffer } from '../store/store-offers';
 import { StoreOffersCell } from '../store/store-offers-cell';
 import STYLES from './ship-row.module.scss';
 
 type Props = {
   ship: Ship;
+  columns: Column[];
   offers: StandaloneOffer[] | undefined;
   storeHint: string;
   ownedInsurance?: string;
 };
 
-export const ShipRow = ({ ship, offers, storeHint, ownedInsurance }: Props) => {
-  const [nameColumn, ...otherColumns] = COLUMNS;
+export const ShipRow = ({
+  ship,
+  columns,
+  offers,
+  storeHint,
+  ownedInsurance,
+}: Props) => {
+  const [nameColumn, ...otherColumns] = columns;
 
   return (
     <tr className={STYLES.row}>

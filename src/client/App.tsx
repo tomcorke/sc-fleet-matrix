@@ -4,7 +4,7 @@ import { loadData } from '../data';
 import { Planner } from './planner/planner';
 import { ShipMatrix } from './ship-matrix/ship-matrix';
 
-const ships = loadData();
+const { stats, ships } = loadData();
 
 export const App = () => {
   const [planning, setPlanning] = useState(false);
@@ -12,6 +12,10 @@ export const App = () => {
   return planning ? (
     <Planner ships={ships} onClose={() => setPlanning(false)} />
   ) : (
-    <ShipMatrix ships={ships} onOpenPlanner={() => setPlanning(true)} />
+    <ShipMatrix
+      stats={stats}
+      ships={ships}
+      onOpenPlanner={() => setPlanning(true)}
+    />
   );
 };

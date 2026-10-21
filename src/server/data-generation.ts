@@ -1,98 +1,91 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { z } from 'zod';
 
-import {
-  MatrixRawDataSchema,
-  ProcessedMatrixDataSchema,
-  ShipRawDataSchema,
-  TopLevelResponseSchema,
-} from '../data/schema.ts';
-import { fetchShipMsrps } from './store-prices.ts';
+import { ProcessedDataSchema } from '../data/schema.ts';
+import { normalise } from './normalise.ts';
+import { fetchStorePages } from './store-prices.ts';
 
-const __dirname = import.meta.dirname;
+const DATA_DIR = path.join(import.meta.dirname, '../data');
+const SOURCES_DIR = path.join(DATA_DIR, 'sources');
 
 const MATRIX_DATA_INDEX_URL =
   'https://robertsspaceindustries.com/ship-matrix/index';
 
-export const fetchData = async () => {
-  const response = await fetch(MATRIX_DATA_INDEX_URL);
-  const rawData = await response.json();
+// The knowledge base keeps dated snapshots; the newest one wins.
+const SNAPSHOTS_DIR =
+  'E:/working/star-citizen-knowledge-base/evidence/snapshots';
 
-  const cacheDir = path.join(__dirname, '../data');
+const SOURCE_FILES = {
+  matrix: 'rsi-ship-matrix.json',
+  storePages: 'rsi-store-msrp.json',
+  features: 'ship-features.json',
+};
 
-  fs.mkdirSync(cacheDir, { recursive: true });
-  const rawDataFilePath = path.join(cacheDir, 'rawdata.json');
+const sourcePath = (file: string) => path.join(SOURCES_DIR, file);
 
-  fs.writeFileSync(rawDataFilePath, JSON.stringify(rawData, null, 2));
+const writeSource = (file: string, data: unknown) =>
+  fs.writeFileSync(sourcePath(file), JSON.stringify(data, null, 2));
 
-  const roughParsedData = TopLevelResponseSchema.parse(rawData);
-  const roughData = roughParsedData.data;
+const readSource = (file: string): unknown =>
+  fs.existsSync(sourcePath(file))
+    ? JSON.parse(fs.readFileSync(sourcePath(file), 'utf8'))
+    : null;
 
-  for (const item of roughData) {
-    ShipRawDataSchema.parse(item);
+const latestFeatureSnapshot = () => {
+  if (!fs.existsSync(SNAPSHOTS_DIR)) {
+    return null;
   }
 
-  const parsedData = MatrixRawDataSchema.parse(rawData);
-  const data = parsedData.data;
+  const file = fs
+    .readdirSync(SNAPSHOTS_DIR)
+    .sort()
+    .reverse()
+    .map((dir) => path.join(SNAPSHOTS_DIR, dir, 'ship-features.json'))
+    .find((candidate) => fs.existsSync(candidate));
 
-  return data;
+  return file ?? null;
+};
+
+// Stores each source exactly as received; normalising happens afterwards.
+const fetchSources = async () => {
+  fs.mkdirSync(SOURCES_DIR, { recursive: true });
+
+  const matrixResponse = await fetch(MATRIX_DATA_INDEX_URL);
+
+  if (!matrixResponse.ok) {
+    throw new Error(`Ship matrix failed: ${matrixResponse.status}`);
+  }
+
+  writeSource(SOURCE_FILES.matrix, await matrixResponse.json());
+  writeSource(SOURCE_FILES.storePages, await fetchStorePages());
+
+  const features = latestFeatureSnapshot();
+
+  if (features) {
+    fs.copyFileSync(features, sourcePath(SOURCE_FILES.features));
+  } else {
+    console.log('No ship-feature snapshot found; keeping the stored copy.');
+  }
 };
 
 const main = async () => {
-  const data = await fetchData();
+  if (!process.argv.includes('--offline')) {
+    await fetchSources();
+  }
 
-  const shipsBySize = Object.groupBy(data, (ship) => String(ship.size));
-
-  fs.writeFileSync(
-    path.join(__dirname, '../data/ships-by-size.json'),
-    JSON.stringify(shipsBySize, null, 2),
-  );
-
-  const msrps = await fetchShipMsrps();
-
-  const fullMappedData: z.infer<typeof ProcessedMatrixDataSchema> = data.map(
-    (ship) => {
-      const price = msrps.get(ship.id);
-
-      if (price == null) {
-        console.log(`No price for "${ship.name}"`);
-
-        return ship;
-      }
-
-      const formattedPrice = price.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD',
-      });
-
-      return { ...ship, price, formattedPrice };
-    },
-  );
-
-  fs.writeFileSync(
-    path.join(__dirname, '../data/processed-data.json'),
-    JSON.stringify(ProcessedMatrixDataSchema.parse(fullMappedData), null, 2),
-  );
-
-  const mappedData = fullMappedData.map((s) => {
-    return [
-      s.name,
-      s.manufacturer.name,
-      s.type,
-      s.focus,
-      s.size,
-      s.cargocapacity,
-      s.scm_speed,
-      s.price,
-    ];
+  const data = normalise({
+    matrix: readSource(SOURCE_FILES.matrix),
+    storePages: (readSource(SOURCE_FILES.storePages) as unknown[] | null) ?? [],
+    features: readSource(SOURCE_FILES.features),
   });
 
+  for (const ship of data.ships.filter((s) => !('price' in s.values))) {
+    console.log(`No price for "${ship.name}"`);
+  }
+
   fs.writeFileSync(
-    path.join(__dirname, '../data/ships.csv'),
-    mappedData
-      .map((row) => row.map((item) => `"${item}"`).join(','))
-      .join('\n'),
+    path.join(DATA_DIR, 'processed-data.json'),
+    JSON.stringify(ProcessedDataSchema.parse(data), null, 2),
   );
 };
 

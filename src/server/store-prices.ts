@@ -16,7 +16,7 @@ const QUERY = `query ($query: SearchQuery!) {
   }
 }`;
 
-const ResponseSchema = z.tuple([
+export const StorePageSchema = z.tuple([
   z.object({
     data: z.object({
       store: z.object({
@@ -31,7 +31,7 @@ const ResponseSchema = z.tuple([
   }),
 ]);
 
-const fetchPage = async (page: number) => {
+const fetchPage = async (page: number): Promise<unknown> => {
   const response = await fetch(STORE_GRAPHQL_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -55,22 +55,34 @@ const fetchPage = async (page: number) => {
     throw new Error(`Store GraphQL page ${page} failed: ${response.status}`);
   }
 
-  return ResponseSchema.parse(await response.json())[0].data.store.search;
+  return response.json();
 };
 
-// Maps each ship-matrix ship ID to its MSRP in US dollars, or null.
-export const fetchShipMsrps = async () => {
-  const msrps = new Map<number, number | null>();
+// Returns every response page as received, for storing unmodified.
+export const fetchStorePages = async () => {
+  const pages: unknown[] = [];
+  const ids = new Set<number>();
 
   for (let page = 1; ; page++) {
-    const { totalCount, resources } = await fetchPage(page);
+    const raw = await fetchPage(page);
+    const { totalCount, resources } =
+      StorePageSchema.parse(raw)[0].data.store.search;
 
-    for (const { id, msrp } of resources) {
-      msrps.set(id, msrp === null ? null : msrp / 100);
-    }
+    pages.push(raw);
+    resources.forEach(({ id }) => ids.add(id));
 
-    if (resources.length === 0 || msrps.size >= totalCount) {
-      return msrps;
+    if (resources.length === 0 || ids.size >= totalCount) {
+      return pages;
     }
   }
 };
+
+// Maps each ship-matrix ship ID to its MSRP in US dollars, or null.
+export const msrpsFromPages = (pages: unknown[]) =>
+  new Map(
+    pages.flatMap((page) =>
+      StorePageSchema.parse(page)[0].data.store.search.resources.map(
+        ({ id, msrp }) => [id, msrp === null ? null : msrp / 100] as const,
+      ),
+    ),
+  );

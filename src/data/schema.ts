@@ -69,13 +69,7 @@ export const ShipRawDataSchema = z.object({
   compiled: ShipComponentsSchema,
 });
 
-const ShipPriceDataSchema = z.object({
-  price: z.number().optional(),
-  formattedPrice: z.string().optional(),
-});
-
 export type ShipRawData = z.infer<typeof ShipRawDataSchema>;
-export type ShipPriceData = z.infer<typeof ShipPriceDataSchema>;
 
 export const TopLevelResponseSchema = z.object({
   success: z.literal(1),
@@ -93,6 +87,30 @@ export const MatrixRawDataSchema = z
   })
   .strict();
 
-export const ProcessedMatrixDataSchema = z.array(
-  ShipRawDataSchema.merge(ShipPriceDataSchema),
-);
+// Normalised output: every source becomes stat values keyed by stat ID. A
+// missing key means the sources have no data for that ship.
+export const StatSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  kind: z.enum(['text', 'choice', 'number']),
+  source: z.string(),
+  // Number formatting: 'usd' renders whole dollars as currency.
+  unit: z.enum(['usd']).optional(),
+  // Choice order, replacing alphabetical order.
+  order: z.array(z.string()).optional(),
+});
+
+export const ShipSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  values: z.record(z.string(), z.union([z.string(), z.number()])),
+});
+
+export const ProcessedDataSchema = z.object({
+  stats: z.array(StatSchema),
+  ships: z.array(ShipSchema),
+});
+
+export type Stat = z.infer<typeof StatSchema>;
+export type Ship = z.infer<typeof ShipSchema>;
+export type ProcessedData = z.infer<typeof ProcessedDataSchema>;

@@ -1,13 +1,17 @@
 import { useMemo, useState } from 'react';
 
 import { ColumnFilter } from '../column-filter/column-filter';
+import { ColumnPicker } from '../column-picker/column-picker';
+import {
+  loadVisibleColumnIds,
+  saveVisibleColumnIds,
+} from '../column-picker/visible-columns';
 import { insuranceForShip, loadSavedPledges } from '../hangar/hangar';
 import { HangarCell } from '../hangar/hangar-cell';
 import { ShipRow } from '../ship-row/ship-row';
 import { hasAvailableWarbond } from '../store/store-offers';
 import { useStoreOffers } from '../store/use-store-offers';
 import {
-  COLUMNS,
   type Column,
   type Filters,
   type Ship,
@@ -17,6 +21,7 @@ import {
 import STYLES from './ship-matrix.module.scss';
 
 type Props = {
+  stats: Column[];
   ships: Ship[];
   onOpenPlanner: () => void;
 };
@@ -31,7 +36,16 @@ const ariaSort = (column: Column, sort: Sort) => {
   return sort.direction === 'asc' ? 'ascending' : 'descending';
 };
 
-export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
+export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
+  const [visibleIds, setVisibleIds] = useState(loadVisibleColumnIds);
+  // The name column is the row header, so it always shows first.
+  const columns = useMemo(
+    () =>
+      stats.filter(
+        (stat) => stat.id === 'name' || visibleIds.includes(stat.id),
+      ),
+    [stats, visibleIds],
+  );
   const [filters, setFilters] = useState<Filters>({});
   const [sort, setSort] = useState(DEFAULT_SORT);
   const [pledges, setPledges] = useState(loadSavedPledges);
@@ -57,13 +71,14 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
     () =>
       applyView(
         onlyOwned ? ships.filter((ship) => ownedIds.has(ship.id)) : ships,
+        columns,
         filters,
         sort,
       ).filter(
         (ship) =>
           !onlyWarbond || hasAvailableWarbond(store?.standalone ?? [], ship.id),
       ),
-    [ships, onlyOwned, ownedIds, filters, sort, onlyWarbond, store],
+    [ships, onlyOwned, ownedIds, columns, filters, sort, onlyWarbond, store],
   );
 
   const isFiltered =
@@ -80,6 +95,11 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
           ? 'desc'
           : 'asc',
     }));
+
+  const changeColumns = (ids: string[]) => {
+    setVisibleIds(ids);
+    saveVisibleColumnIds(ids);
+  };
 
   const resetFilters = () => {
     setFilters({});
@@ -115,6 +135,12 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
           >
             Clear filters
           </button>
+          <ColumnPicker
+            columns={stats}
+            ships={ships}
+            visibleIds={visibleIds}
+            onChange={changeColumns}
+          />
         </div>
         <div className={STYLES.cell}>
           <span className={STYLES.cellLabel}>Store offers</span>
@@ -161,7 +187,7 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
         <table className={STYLES.table}>
           <thead>
             <tr>
-              {COLUMNS.map((column) => (
+              {columns.map((column) => (
                 <th
                   key={column.id}
                   scope="col"
@@ -190,7 +216,7 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
               )}
             </tr>
             <tr className={STYLES.filterRow}>
-              {COLUMNS.map((column) => (
+              {columns.map((column) => (
                 <td key={column.id} className={STYLES[column.kind]}>
                   <ColumnFilter
                     column={column}
@@ -219,6 +245,7 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
               <ShipRow
                 key={ship.id}
                 ship={ship}
+                columns={columns}
                 offers={store?.standalone}
                 storeHint={error ?? 'Loading store offers…'}
                 ownedInsurance={
@@ -231,7 +258,7 @@ export const ShipMatrix = ({ ships, onOpenPlanner }: Props) => {
             {visibleShips.length === 0 && (
               <tr>
                 <td
-                  colSpan={COLUMNS.length + 1 + Number(pledges !== null)}
+                  colSpan={columns.length + 1 + Number(pledges !== null)}
                   className={STYLES.empty}
                 >
                   No ships match these filters.{' '}

@@ -1,38 +1,52 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { COLUMNS, type Ship, applyView, choicesFor } from './columns.ts';
+import type { Stat } from '../../data/schema.ts';
 
-const ship = (name: string, fields: Partial<Ship> = {}) =>
-  ({
-    name,
-    size: 'small',
-    type: 'combat',
-    focus: 'Light Fighter',
-    production_status: 'flight-ready',
-    manufacturer: { name: 'Aegis Dynamics' },
-    min_crew: 1,
-    max_crew: 1,
-    cargocapacity: 0,
-    scm_speed: null,
-    afterburner_speed: null,
-    price: undefined,
-    ...fields,
-  }) as Ship;
+import { type Ship, applyView, choicesFor, coverage } from './columns.ts';
+
+const COLUMNS: Stat[] = [
+  { id: 'name', label: 'Ship', kind: 'text', source: 'test' },
+  {
+    id: 'size',
+    label: 'Size',
+    kind: 'choice',
+    source: 'test',
+    order: ['Vehicle', 'Small', 'Capital'],
+  },
+  { id: 'price', label: 'Price', kind: 'number', source: 'test', unit: 'usd' },
+];
+
+const ship = (name: string, values: Ship['values'] = {}): Ship => ({
+  id: name.length,
+  name,
+  values: { name, size: 'Small', manufacturer: 'Aegis Dynamics', ...values },
+});
 
 const names = (ships: Ship[]) => ships.map((s) => s.name);
 
+const ursa = ship('Ursa');
+
+delete ursa.values.size;
+
 const fleet = [
-  ship('Idris-P', { size: 'capital', price: 1900 }),
+  ship('Idris-P', { size: 'Capital', price: 1900 }),
   ship('Gladius', { price: 90 }),
-  ship('Ursa', { size: null }),
-  ship('Arrow', { size: 'small', price: 75 }),
-  ship('Cyclone', { size: 'vehicle', price: 55 }),
+  ursa,
+  ship('Arrow', { size: 'Small', price: 75 }),
+  ship('Cyclone', { size: 'Vehicle', price: 55 }),
 ];
 
+const view = (
+  filters: Record<string, string>,
+  columnId: string,
+  direction: 'asc' | 'desc' = 'asc',
+  ships = fleet,
+) => applyView(ships, COLUMNS, filters, { columnId, direction });
+
 test('sorts sizes by scale, with missing values last both ways', () => {
-  const asc = applyView(fleet, {}, { columnId: 'size', direction: 'asc' });
-  const desc = applyView(fleet, {}, { columnId: 'size', direction: 'desc' });
+  const asc = view({}, 'size');
+  const desc = view({}, 'size', 'desc');
 
   assert.deepEqual(names(asc), [
     'Cyclone',
@@ -51,36 +65,42 @@ test('sorts sizes by scale, with missing values last both ways', () => {
 });
 
 test('filters numbers by an inclusive range and drops missing values', () => {
-  const view = applyView(
-    fleet,
-    { 'price:min': '75', 'price:max': '90' },
-    { columnId: 'price', direction: 'desc' },
+  assert.deepEqual(
+    names(view({ 'price:min': '75', 'price:max': '90' }, 'price', 'desc')),
+    ['Gladius', 'Arrow'],
   );
-
-  assert.deepEqual(names(view), ['Gladius', 'Arrow']);
 });
 
 test('matches text filters against the manufacturer too', () => {
-  const ships = [
-    ...fleet,
-    ship('Hull C', { manufacturer: { name: 'MISC' } as Ship['manufacturer'] }),
-  ];
-  const view = applyView(
-    ships,
-    { name: 'misc' },
-    { columnId: 'name', direction: 'asc' },
-  );
+  const ships = [...fleet, ship('Hull C', { manufacturer: 'MISC' })];
 
-  assert.deepEqual(names(view), ['Hull C']);
+  assert.deepEqual(names(view({ name: 'misc' }, 'name', 'asc', ships)), [
+    'Hull C',
+  ]);
 });
 
 test('lists size choices in scale order', () => {
-  const size = COLUMNS.find((c) => c.id === 'size');
-
-  assert.equal(size?.kind, 'choice');
-  assert.deepEqual(size?.kind === 'choice' ? choicesFor(size, fleet) : [], [
-    'vehicle',
-    'small',
-    'capital',
+  assert.deepEqual(choicesFor(COLUMNS[1], fleet), [
+    'Vehicle',
+    'Small',
+    'Capital',
   ]);
+});
+
+test('counts ships with data for a column', () => {
+  assert.deepEqual(coverage(COLUMNS[1], fleet), { count: 4, total: 5 });
+});
+
+test('ignores filters on hidden columns', () => {
+  const visible = COLUMNS.filter((c) => c.id !== 'price');
+
+  assert.equal(
+    applyView(
+      fleet,
+      visible,
+      { 'price:min': '1000' },
+      { columnId: 'name', direction: 'asc' },
+    ).length,
+    5,
+  );
 });

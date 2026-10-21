@@ -1,6 +1,4 @@
 import rawData from './processed-data.json';
-import { ProcessedMatrixDataSchema } from './schema';
+import { ProcessedDataSchema } from './schema';
 
-export const loadData = () => {
-  return ProcessedMatrixDataSchema.parse(rawData);
-};
+export const loadData = () => ProcessedDataSchema.parse(rawData);
