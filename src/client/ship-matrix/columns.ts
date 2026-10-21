@@ -52,9 +52,11 @@ export const formatCell = (column: Column, ship: Ship) => {
     return '–';
   }
 
-  return column.unit === 'usd' && typeof value === 'number'
-    ? usd.format(value)
-    : String(value);
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  return column.unit === 'usd' ? usd.format(value) : value.toLocaleString();
 };
 
 const rank = (column: Column, value: string | number) =>

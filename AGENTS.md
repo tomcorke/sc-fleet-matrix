@@ -10,7 +10,7 @@
 
 - `pnpm build-data` fetches each source into `src/data/sources/` exactly as received, then `src/server/normalise.ts` merges them into `src/data/processed-data.json`. Pass `--offline` to the generator to renormalise stored sources without fetching. Hand edits to generated JSON are overwritten.
 - Every source becomes stats: a definition (label, kind, source) plus per-ship values keyed by stat ID, with a missing key meaning no data. The viewer offers every stat as a selectable column and shows coverage from the missing keys, so normalise source quirks (RSI's zero-for-unknown, casing, nested counts) in the normaliser rather than the viewer.
-- The ship-feature source is copied from the newest `evidence/snapshots/*/ship-features.json` in the knowledge base.
+- The ship-feature source is copied from the newest `evidence/snapshots/*/ship-features.json` in the knowledge base. Game data from `api.star-citizen.wiki` (stock loadouts) joins ships only through that snapshot's reviewed `api_source.uuid` matches, because several game vehicles share a matrix ID.
 - Source data from RSI's APIs: ship stats from the ship-matrix JSON, prices from the store GraphQL (`src/server/store-prices.ts`). Both work without signing in. Probe new GraphQL fields with real requests; introspection is disabled, but validation errors name the invalid input fields.
 
 ## Hangar and live store

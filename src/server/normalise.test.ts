@@ -30,6 +30,8 @@ const features = {
   ships: [
     {
       matrix_id: 1,
+      api_status: 'matched',
+      api_source: { uuid: 'aurora-uuid' },
       features: {
         toilet: { state: 'present' },
         shower: { state: 'not-mentioned' },
@@ -48,11 +50,29 @@ const features = {
   ],
 };
 
+const vehiclePages = [
+  {
+    meta: { last_page: 1 },
+    data: [
+      {
+        uuid: 'aurora-uuid',
+        quantum: {
+          quantum_speed: 189309100,
+          quantum_spool_time: 4.6,
+          quantum_fuel_capacity: 0.6,
+          quantum_range: 61224489796,
+        },
+      },
+    ],
+  },
+];
+
 test('normalises every source into stat values', () => {
   const data = normalise({
     matrix: { ...matrix, data: [aurora] },
     storePages,
     features,
+    vehiclePages,
   });
   const { values } = data.ships[0];
 
@@ -65,6 +85,8 @@ test('normalises every source into stat values', () => {
   assert.equal('feature:bathroom' in values, false, 'unresolved is unknown');
   assert.equal(values['seating:medical_beds'], 2);
   assert.equal(values.max_medical_tier, 'T2');
+  assert.equal(values.quantum_speed, 189309);
+  assert.equal(values.quantum_range, 61.2);
   assert.equal(
     data.stats.some((stat) => stat.id === 'seating:jump_seats'),
     false,
@@ -77,6 +99,7 @@ test('works without a feature snapshot', () => {
     matrix: { ...matrix, data: [aurora] },
     storePages,
     features: null,
+    vehiclePages,
   });
 
   assert.equal(
@@ -87,4 +110,5 @@ test('works without a feature snapshot', () => {
     data.stats.some((stat) => stat.id.startsWith('feature:')),
     false,
   );
+  assert.equal('quantum_speed' in data.ships[0].values, false, 'no mapping');
 });

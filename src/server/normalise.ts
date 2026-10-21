@@ -6,6 +6,7 @@ import {
   type ShipRawData,
   type Stat,
 } from '../data/schema.ts';
+import { type Vehicle, vehiclesByUuid } from './sc-wiki-vehicles.ts';
 import { msrpsFromPages } from './store-prices.ts';
 
 // Knowledge-base ship-feature snapshot. Only the fields used are checked.
@@ -25,6 +26,9 @@ export const ShipFeaturesSchema = z.object({
   ships: z.array(
     z.object({
       matrix_id: z.number(),
+      // The knowledge base's reviewed match to a game-data vehicle.
+      api_status: z.string().optional(),
+      api_source: z.object({ uuid: z.string() }).nullable().optional(),
       features: z.record(z.string(), FeatureStateSchema),
       wiki_features: z.record(z.string(), FeatureStateSchema).optional(),
       reported: z
@@ -56,6 +60,7 @@ export type Sources = {
   matrix: unknown;
   storePages: unknown[];
   features: unknown;
+  vehiclePages: unknown[];
 };
 
 type Value = string | number | null | undefined;
@@ -164,10 +169,43 @@ const combinedState = (
   STATE_STRENGTH.find((state) => states.some((s) => s?.state === state)) ??
   'unresolved';
 
+const GAME_SOURCE = 'Game data, stock loadout (star-citizen.wiki)';
+
+const rounded = (value: number | null | undefined, places: number) =>
+  value == null || value <= 0 ? null : Number(value.toFixed(places));
+
+const GAME_STATS: StatSource<Vehicle>[] = [
+  {
+    id: 'quantum_speed',
+    label: 'Quantum speed (km/s)',
+    read: (v: Vehicle) => rounded((v.quantum?.quantum_speed ?? 0) / 1000, 0),
+  },
+  {
+    id: 'quantum_spool',
+    label: 'Quantum spool (s)',
+    read: (v: Vehicle) => rounded(v.quantum?.quantum_spool_time, 1),
+  },
+  {
+    id: 'quantum_fuel',
+    label: 'Quantum fuel (SCU)',
+    read: (v: Vehicle) => rounded(v.quantum?.quantum_fuel_capacity, 2),
+  },
+  {
+    id: 'quantum_range',
+    label: 'Quantum range (Gm)',
+    read: (v: Vehicle) => rounded((v.quantum?.quantum_range ?? 0) / 1e9, 1),
+  },
+].map((stat) => ({ ...stat, kind: 'number' as const, source: GAME_SOURCE }));
+
 const featureLabel = (key: string) =>
   capitalise(key.replaceAll('_', ' ')) ?? key;
 
-export const normalise = ({ matrix, storePages, features }: Sources) => {
+export const normalise = ({
+  matrix,
+  storePages,
+  features,
+  vehiclePages,
+}: Sources) => {
   const ships = MatrixRawDataSchema.parse(matrix).data;
   const msrps = msrpsFromPages(storePages);
   const featureData =
@@ -175,6 +213,17 @@ export const normalise = ({ matrix, storePages, features }: Sources) => {
   const featureShips = new Map(
     featureData?.ships.map((ship) => [ship.matrix_id, ship]) ?? [],
   );
+
+  // Several game vehicles can share a matrix ID, so only reviewed matches
+  // count; ambiguous and unmatched ships get no game data.
+  const vehicles = vehiclesByUuid(vehiclePages);
+  const vehicleFor = (id: number) => {
+    const ship = featureShips.get(id);
+    const uuid =
+      ship?.api_status === 'matched' ? ship.api_source?.uuid : undefined;
+
+    return uuid === undefined ? undefined : vehicles.get(uuid);
+  };
 
   const featureStats: StatSource<number>[] = featureData
     ? [
@@ -226,7 +275,7 @@ export const normalise = ({ matrix, storePages, features }: Sources) => {
 
   const data: ProcessedData = {
     // `read` is stripped when the output is parsed with ProcessedDataSchema.
-    stats: [...MATRIX_STATS, PRICE_STAT, ...featureStats],
+    stats: [...MATRIX_STATS, PRICE_STAT, ...GAME_STATS, ...featureStats],
     ships: ships.map((ship) => ({
       id: ship.id,
       name: ship.name.trim(),
@@ -236,6 +285,11 @@ export const normalise = ({ matrix, storePages, features }: Sources) => {
           stat.read(ship),
         ]),
         [PRICE_STAT.id, msrps.get(ship.id)],
+        ...GAME_STATS.map((stat): [string, Value] => {
+          const vehicle = vehicleFor(ship.id);
+
+          return [stat.id, vehicle && stat.read(vehicle)];
+        }),
         ...featureStats.map((stat): [string, Value] => [
           stat.id,
           stat.read(ship.id),

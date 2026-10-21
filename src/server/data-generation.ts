@@ -3,6 +3,7 @@ import path from 'node:path';
 
 import { ProcessedDataSchema } from '../data/schema.ts';
 import { normalise } from './normalise.ts';
+import { fetchVehiclePages } from './sc-wiki-vehicles.ts';
 import { fetchStorePages } from './store-prices.ts';
 
 const DATA_DIR = path.join(import.meta.dirname, '../data');
@@ -19,6 +20,7 @@ const SOURCE_FILES = {
   matrix: 'rsi-ship-matrix.json',
   storePages: 'rsi-store-msrp.json',
   features: 'ship-features.json',
+  vehiclePages: 'sc-wiki-vehicles.json',
 };
 
 const sourcePath = (file: string) => path.join(SOURCES_DIR, file);
@@ -58,6 +60,7 @@ const fetchSources = async () => {
 
   writeSource(SOURCE_FILES.matrix, await matrixResponse.json());
   writeSource(SOURCE_FILES.storePages, await fetchStorePages());
+  writeSource(SOURCE_FILES.vehiclePages, await fetchVehiclePages());
 
   const features = latestFeatureSnapshot();
 
@@ -77,6 +80,8 @@ const main = async () => {
     matrix: readSource(SOURCE_FILES.matrix),
     storePages: (readSource(SOURCE_FILES.storePages) as unknown[] | null) ?? [],
     features: readSource(SOURCE_FILES.features),
+    vehiclePages:
+      (readSource(SOURCE_FILES.vehiclePages) as unknown[] | null) ?? [],
   });
 
   for (const ship of data.ships.filter((s) => !('price' in s.values))) {
