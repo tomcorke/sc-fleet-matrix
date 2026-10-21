@@ -1,5 +1,11 @@
 # sc-fleet-matrix
 
+## Knowledge base
+
+- Before looking up Star Citizen information, pricing, insurance, upgrades, marketplace offers or research processes, read `E:/working/star-citizen-knowledge-base/AGENTS.md` and search that repository first. Use `qmd --index star-citizen-knowledge-base search "specific terms" -c knowledge -n 5`, then read the full matching notes and their sources. Follow its `docs/search.md` for archive searches, index maintenance or direct Markdown fallback.
+- Before completing a task that discovers new research, information or reusable research processes, persist them in the knowledge base's relevant topics or process documentation. Update sources, actual check dates, uncertainty and dependent calculations together; keep unverified reports attributed rather than treating them as facts. Follow that repository's branch, validation, merge and QMD-refresh workflow.
+- Keep maintained Star Citizen knowledge in that repository, not sandbox research notes or this application's generated data. Ad hoc downloads and scratch artifacts may remain in `E:/working/agent-sandbox/research/<topic>/`; application code and project-specific implementation instructions remain here. Never persist account data, cookies or tokens in the knowledge base.
+
 ## Generated data
 
 - `pnpm build-data` writes every JSON file in `src/data/`. Change the generator in `src/server/data-generation.ts` and regenerate; hand edits are overwritten on the next run.
