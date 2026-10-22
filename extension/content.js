@@ -1,5 +1,6 @@
 // Relays named requests to the background worker and posts results to the page.
-document.documentElement.dataset.scFleetHangar = '1';
+document.documentElement.dataset.scFleetHangar =
+  chrome.runtime.getManifest().version;
 
 window.addEventListener('message', async (event) => {
   if (event.source !== window || event.data?.type !== 'sc-fleet:request') {

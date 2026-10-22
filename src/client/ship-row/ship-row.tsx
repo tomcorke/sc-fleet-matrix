@@ -1,3 +1,4 @@
+import { hasExtension } from '../extension';
 import { type Column, type Ship, formatCell } from '../ship-matrix/columns';
 import type { StandaloneOffer } from '../store/store-offers';
 import { StoreOffersCell } from '../store/store-offers-cell';
@@ -30,9 +31,11 @@ export const ShipRow = ({
           {formatCell(column, ship)}
         </td>
       ))}
-      <td>
-        <StoreOffersCell shipId={ship.id} offers={offers} hint={storeHint} />
-      </td>
+      {hasExtension && (
+        <td>
+          <StoreOffersCell shipId={ship.id} offers={offers} hint={storeHint} />
+        </td>
+      )}
       {ownedInsurance !== undefined && <td>{ownedInsurance || '–'}</td>}
     </tr>
   );

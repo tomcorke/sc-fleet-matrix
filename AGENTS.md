@@ -38,3 +38,19 @@ Oxlint runs every code lint rule, loading SonarJS and `@stylistic` as JS plugins
 ## Styles
 
 Colours and font families come from custom properties in `src/client/styles/tokens.scss`, the only file Stylelint allows to contain raw values. Global stylesheets are imported once, from `src/client/main.tsx`; components import only their own `.module.scss`.
+
+## Extension detection
+
+The content script stamps its manifest version on `<html data-sc-fleet-hangar>` at `document_start`. `src/client/extension.ts` compares it with the version Vite reads from `extension/manifest.json`; on a mismatch the viewer hides the hangar, store offers and planner. Bump the manifest version with every extension change so stale installs drop to the matrix-only view.
+
+## Publishing
+
+`publish` is the GitHub Pages branch, holding the built site at its root and served at `https://sc-fleet-matrix.corke.dev/`. `public/CNAME` sets the domain; `public/.nojekyll` disables Jekyll. The header shows the short SHA of the built `main` commit.
+
+For each release, in one shell so recorded values stay fixed:
+
+1. From a clean, up-to-date `main` (`git pull --ff-only origin main`; `git status --porcelain` empty), record `main_commit=$(git rev-parse HEAD)` and `main_short=$(git rev-parse --short HEAD)`.
+2. Run `pnpm install --frozen-lockfile`, `pnpm test`, `pnpm lint`, `pnpm typecheck` and `pnpm build`. Confirm `main` still points to `main_commit` and the worktree is clean.
+3. Fetch `origin/publish` and check it out in a temporary worktree under `E:\working\worktrees`. Replace its contents with `dist/` (use `git clean -fdx` only there), keeping `CNAME` and `.nojekyll` at the root.
+4. Commit with subject `Publish main@<main_short>` and body `Source-main-commit: <main_commit>`, then push to `origin/publish`.
+5. Remove the temporary worktree after the push succeeds, and confirm the site serves the new SHA. If the push fails, keep the worktree while investigating.

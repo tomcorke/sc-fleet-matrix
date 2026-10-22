@@ -48,7 +48,7 @@ RSI only shows your hangar to a signed-in browser, so the viewer reads it throug
 2. Sign in at robertsspaceindustries.com.
 3. Run `pnpm dev`, then choose **Load from RSI** in the **Your hangar** box.
 
-The viewer lists the ships it finds and filters the table to them. **Owned insurance** shows the best insurance of each copy you own. Pledges are saved in your browser, so you only reload after your hangar changes. Old saved ship lists are discarded; choose **Load from RSI** to load pledges and insurance. The extension only runs on `localhost` pages. It reads your pledges page and the store's standalone ship browse through fixed, read-only requests.
+The viewer lists the ships it finds and filters the table to them. **Owned insurance** shows the best insurance of each copy you own. Pledges are saved in your browser, so you only reload after your hangar changes. Old saved ship lists are discarded; choose **Load from RSI** to load pledges and insurance. The extension only runs on `localhost` and `sc-fleet-matrix.corke.dev`. Without the matching extension version, the viewer hides the hangar, store offers and planner. It reads your pledges page and the store's standalone ship browse through fixed, read-only requests.
 
 ## Live store offers
 

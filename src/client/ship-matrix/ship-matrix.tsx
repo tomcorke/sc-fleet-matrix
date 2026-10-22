@@ -6,6 +6,7 @@ import {
   loadVisibleColumnIds,
   saveVisibleColumnIds,
 } from '../column-picker/visible-columns';
+import { hasExtension } from '../extension';
 import { insuranceForShip, loadSavedPledges } from '../hangar/hangar';
 import { HangarCell } from '../hangar/hangar-cell';
 import { ShipRow } from '../ship-row/ship-row';
@@ -48,7 +49,9 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
   );
   const [filters, setFilters] = useState<Filters>({});
   const [sort, setSort] = useState(DEFAULT_SORT);
-  const [pledges, setPledges] = useState(loadSavedPledges);
+  const [pledges, setPledges] = useState(() =>
+    hasExtension ? loadSavedPledges() : null,
+  );
   const [onlyOwned, setOnlyOwned] = useState(
     pledges?.some((pledge) => pledge.ships.length > 0) ?? false,
   );
@@ -110,17 +113,22 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
     <div className={STYLES.layout}>
       <header className={STYLES.titleBlock}>
         <div className={STYLES.titleCell}>
-          <h1 className={STYLES.title}>Fleet matrix</h1>
+          <h1 className={STYLES.title}>
+            Fleet matrix{' '}
+            <small className={STYLES.buildSha}>{__BUILD_SHA__}</small>
+          </h1>
           <p className={STYLES.subtitle}>
             Every Star Citizen ship, side by side
           </p>
-          <button
-            type="button"
-            className={STYLES.reset}
-            onClick={onOpenPlanner}
-          >
-            Plan fleet changes
-          </button>
+          {hasExtension && (
+            <button
+              type="button"
+              className={STYLES.reset}
+              onClick={onOpenPlanner}
+            >
+              Plan fleet changes
+            </button>
+          )}
         </div>
         <div className={STYLES.cell}>
           <span className={STYLES.cellLabel}>Ships shown</span>
@@ -142,45 +150,49 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
             onChange={changeColumns}
           />
         </div>
-        <div className={STYLES.cell}>
-          <span className={STYLES.cellLabel}>Store offers</span>
-          <span className={STYLES.cellNote}>
-            RSI pledge store, USD before tax. Ship prices are standard-edition
-            MSRP.
-          </span>
-          {store && (
-            <span aria-live="polite">
-              Fetched{' '}
-              <time dateTime={store.fetchedAt}>
-                {new Date(store.fetchedAt).toLocaleString()}
-              </time>
-            </span>
-          )}
-          <button
-            type="button"
-            className={STYLES.reset}
-            onClick={refresh}
-            disabled={loading}
-          >
-            {loading ? 'Loading offers…' : 'Refresh offers'}
-          </button>
-          {error && (
-            <span className={STYLES.cellNote} role="alert">
-              {error}
-            </span>
-          )}
-        </div>
-        <div className={STYLES.cell}>
-          <span className={STYLES.cellLabel}>Your hangar</span>
-          <HangarCell
-            pledges={pledges}
-            ships={ships}
-            unmatched={unmatched}
-            onlyOwned={onlyOwned}
-            onPledgesChange={setPledges}
-            onOnlyOwnedChange={setOnlyOwned}
-          />
-        </div>
+        {hasExtension && (
+          <>
+            <div className={STYLES.cell}>
+              <span className={STYLES.cellLabel}>Store offers</span>
+              <span className={STYLES.cellNote}>
+                RSI pledge store, USD before tax. Ship prices are
+                standard-edition MSRP.
+              </span>
+              {store && (
+                <span aria-live="polite">
+                  Fetched{' '}
+                  <time dateTime={store.fetchedAt}>
+                    {new Date(store.fetchedAt).toLocaleString()}
+                  </time>
+                </span>
+              )}
+              <button
+                type="button"
+                className={STYLES.reset}
+                onClick={refresh}
+                disabled={loading}
+              >
+                {loading ? 'Loading offers…' : 'Refresh offers'}
+              </button>
+              {error && (
+                <span className={STYLES.cellNote} role="alert">
+                  {error}
+                </span>
+              )}
+            </div>
+            <div className={STYLES.cell}>
+              <span className={STYLES.cellLabel}>Your hangar</span>
+              <HangarCell
+                pledges={pledges}
+                ships={ships}
+                unmatched={unmatched}
+                onlyOwned={onlyOwned}
+                onPledgesChange={setPledges}
+                onOnlyOwnedChange={setOnlyOwned}
+              />
+            </div>
+          </>
+        )}
       </header>
 
       <div className={STYLES.scroller}>
@@ -206,9 +218,11 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
                   </button>
                 </th>
               ))}
-              <th scope="col" className={STYLES.text}>
-                Store offers (USD)
-              </th>
+              {hasExtension && (
+                <th scope="col" className={STYLES.text}>
+                  Store offers (USD)
+                </th>
+              )}
               {pledges !== null && (
                 <th scope="col" className={STYLES.text}>
                   Owned insurance
@@ -226,17 +240,19 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
                   />
                 </td>
               ))}
-              <td>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={onlyWarbond}
-                    disabled={!store}
-                    onChange={(event) => setOnlyWarbond(event.target.checked)}
-                  />{' '}
-                  Warbond on sale
-                </label>
-              </td>
+              {hasExtension && (
+                <td>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={onlyWarbond}
+                      disabled={!store}
+                      onChange={(event) => setOnlyWarbond(event.target.checked)}
+                    />{' '}
+                    Warbond on sale
+                  </label>
+                </td>
+              )}
               {pledges !== null && <td />}
             </tr>
           </thead>
