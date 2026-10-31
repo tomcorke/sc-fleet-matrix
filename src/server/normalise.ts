@@ -263,7 +263,102 @@ const GAME_STATS: StatSource<Vehicle>[] = [
     label: 'Remote turrets',
     read: (v: Vehicle) => v.turrets?.remote.length,
   },
+  {
+    id: 'insurance_claim',
+    label: 'Insurance claim (min)',
+    read: (v: Vehicle) => rounded(v.insurance?.claim_time, 1),
+  },
+  {
+    id: 'insurance_expedite',
+    label: 'Expedited claim (min)',
+    read: (v: Vehicle) => rounded(v.insurance?.expedite_time, 1),
+  },
+  {
+    id: 'insurance_expedite_cost',
+    label: 'Expedite cost (aUEC)',
+    read: (v: Vehicle) => rounded(v.insurance?.expedite_cost, 0),
+  },
 ].map((stat) => ({ ...stat, kind: 'number' as const, source: GAME_SOURCE }));
+
+const SHOP_SOURCE = 'In-game shops, player reports (UEX via star-citizen.wiki)';
+
+type ShopListing = NonNullable<Vehicle['uex_prices']>['purchase'][number];
+
+const lowest = (prices: (number | null | undefined)[]) => {
+  const known = prices.filter(
+    (price): price is number => price != null && price > 0,
+  );
+
+  return known.length > 0 ? Math.min(...known) : null;
+};
+
+const locations = (listings: ShopListing[] | undefined) =>
+  [
+    ...new Set(
+      listings?.map((l) => l.starmap_location?.name ?? l.terminal_name),
+    ),
+  ]
+    .sort()
+    .join(', ') || null;
+
+// An empty listing only means nobody has reported a shop, so this says
+// "Not listed" rather than claiming the ship can't be bought.
+const availability = ({ uex_prices: prices }: Vehicle) => {
+  if (!prices) {
+    return null;
+  }
+
+  const buy = prices.purchase.length > 0;
+  const rent = prices.rental.length > 0;
+
+  if (buy && rent) {
+    return 'Buy and rent';
+  }
+
+  if (buy) {
+    return 'Buy listed';
+  }
+
+  return rent ? 'Rent listed' : 'Not listed';
+};
+
+const SHOP_STATS: StatSource<Vehicle>[] = [
+  {
+    id: 'ingame_availability',
+    label: 'In-game availability',
+    kind: 'choice' as const,
+    order: ['Buy and rent', 'Buy listed', 'Rent listed', 'Not listed'],
+    read: availability,
+  },
+  {
+    id: 'ingame_buy_price',
+    label: 'In-game price (aUEC)',
+    kind: 'number' as const,
+    read: (v: Vehicle) =>
+      lowest(v.uex_prices?.purchase.map((l) => l.price_buy) ?? []),
+  },
+  {
+    id: 'ingame_rent_price',
+    label: 'Rental price (aUEC, term unconfirmed)',
+    kind: 'number' as const,
+    read: (v: Vehicle) =>
+      lowest(v.uex_prices?.rental.map((l) => l.price_rent) ?? []),
+  },
+  {
+    id: 'ingame_buy_locations',
+    label: 'Sold at',
+    kind: 'text' as const,
+    read: (v: Vehicle) => locations(v.uex_prices?.purchase),
+  },
+  {
+    id: 'ingame_rent_locations',
+    label: 'Rented at',
+    kind: 'text' as const,
+    read: (v: Vehicle) => locations(v.uex_prices?.rental),
+  },
+].map((stat) => ({ ...stat, source: SHOP_SOURCE }));
+
+const VEHICLE_STATS = [...GAME_STATS, ...SHOP_STATS];
 
 const featureLabel = (key: string) =>
   capitalise(key.replaceAll('_', ' ')) ?? key;
@@ -343,7 +438,7 @@ export const normalise = ({
 
   const data: ProcessedData = {
     // `read` is stripped when the output is parsed with ProcessedDataSchema.
-    stats: [...MATRIX_STATS, PRICE_STAT, ...GAME_STATS, ...featureStats],
+    stats: [...MATRIX_STATS, PRICE_STAT, ...VEHICLE_STATS, ...featureStats],
     ships: ships.map((ship) => ({
       id: ship.id,
       name: ship.name.trim(),
@@ -353,7 +448,7 @@ export const normalise = ({
           stat.read(ship),
         ]),
         [PRICE_STAT.id, msrps.get(ship.id)],
-        ...GAME_STATS.map((stat): [string, Value] => {
+        ...VEHICLE_STATS.map((stat): [string, Value] => {
           const vehicle = vehicleFor(ship.id);
 
           return [stat.id, vehicle && stat.read(vehicle)];

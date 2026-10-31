@@ -13,6 +13,13 @@ const record = <T extends z.ZodRawShape>(shape: T) =>
     z.object(shape).nullable().optional(),
   );
 
+const shopListing = z.object({
+  price_buy: number,
+  price_rent: number,
+  terminal_name: z.string(),
+  starmap_location: record({ name: z.string() }),
+});
+
 export const VehiclePageSchema = z.object({
   meta: z.object({ last_page: z.number() }),
   data: z.array(
@@ -44,6 +51,16 @@ export const VehiclePageSchema = z.object({
       turrets: record({
         manned: z.array(z.unknown()),
         remote: z.array(z.unknown()),
+      }),
+      insurance: record({
+        claim_time: number,
+        expedite_time: number,
+        expedite_cost: number,
+      }),
+      // Player-reported in-game shop listings, relayed from UEX.
+      uex_prices: record({
+        purchase: z.array(shopListing),
+        rental: z.array(shopListing),
       }),
     }),
   ),
