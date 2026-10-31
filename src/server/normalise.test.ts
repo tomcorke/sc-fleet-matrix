@@ -65,6 +65,27 @@ const vehiclePages = [
         armor: [],
         weaponry: { pilot_dps: 1944.5 },
         turrets: { manned: [], remote: [{}] },
+        insurance: {
+          claim_time: 4.86,
+          expedite_time: 1.62,
+          expedite_cost: 2658,
+        },
+        uex_prices: {
+          purchase: [
+            {
+              price_buy: 2000,
+              terminal_name: 'Shop A',
+              starmap_location: { name: 'Lorville' },
+            },
+            {
+              price_buy: 1500,
+              terminal_name: 'Shop B',
+              starmap_location: { name: 'Area 18' },
+            },
+            { price_buy: 1800, terminal_name: 'Shop C', starmap_location: [] },
+          ],
+          rental: [],
+        },
       },
     ],
   },
@@ -88,6 +109,13 @@ test('normalises every source into stat values', () => {
   assert.equal('feature:bathroom' in values, false, 'unresolved is unknown');
   assert.equal(values['seating:medical_beds'], 2);
   assert.equal(values.max_medical_tier, 'T2');
+  assert.equal(values.ingame_availability, 'Buy listed');
+  assert.equal(values.ingame_buy_price, 1500, 'lowest listing wins');
+  assert.equal(values.ingame_buy_locations, 'Area 18, Lorville, Shop C');
+  assert.equal('ingame_rent_price' in values, false, 'no rental listing');
+  assert.equal('ingame_rent_locations' in values, false);
+  assert.equal(values.insurance_claim, 4.9);
+  assert.equal(values.insurance_expedite_cost, 2658);
   assert.equal(values.quantum_speed, 189309);
   assert.equal(values.quantum_range, 61.2);
   assert.equal('armour_hp' in values, false, 'empty array means no armour');
