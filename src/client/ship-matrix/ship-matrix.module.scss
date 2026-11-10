@@ -92,6 +92,8 @@
 }
 
 .table {
+  --star-column-width: 48px;
+
   width: 100%;
   border-spacing: 0;
 
@@ -102,12 +104,22 @@
     white-space: nowrap;
   }
 
-  /* Keep the ship name in view while scrolling sideways. */
-  tr > :first-child {
+  /* Keep the stars and ship names in view while scrolling sideways. */
+  tr > :is(:first-child, :nth-child(2)):not([colspan]) {
     position: sticky;
-    left: 0;
     z-index: 1;
     border-right: 1px solid var(--c-rule);
+  }
+
+  tr > :first-child:not([colspan]) {
+    left: 0;
+    width: var(--star-column-width);
+    min-width: var(--star-column-width);
+    text-align: center;
+  }
+
+  tr > :nth-child(2) {
+    left: var(--star-column-width);
   }
 
   thead :is(th, td) {
@@ -116,7 +128,7 @@
     background: var(--c-paper-deep);
   }
 
-  thead tr > :first-child {
+  thead tr > :is(:first-child, :nth-child(2)) {
     z-index: 3;
   }
 

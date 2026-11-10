@@ -40,6 +40,14 @@ pnpm dev
 
 `pnpm build-data` regenerates the files in `src/data/` from RSI's ship-matrix API and store GraphQL API. Neither needs an RSI account, and a full run makes about ten requests.
 
+## Filtering columns
+
+Text search fields also accept regular expressions wrapped in slashes, such as `/arrow|gladius/`. Both plain text and regex searches ignore case. Invalid regex patterns match no ships and mark the field as invalid; hover over it for the error. Numeric ranges and dropdown filters keep their usual behavior.
+
+## Comparing starred ships
+
+Click a ship's star in the leftmost column to mark it for comparison. Click the star column header to toggle showing only starred ships. Stars are saved in this browser across visits; **Clear filters** turns off the star filter without removing the stars. The star filter combines with the other table filters.
+
 ## Showing your own ships
 
 RSI only shows your hangar to a signed-in browser, so the viewer reads it through a Chrome extension, the same way [CCU Game](https://ccugame.app) does.

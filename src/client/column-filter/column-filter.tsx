@@ -5,6 +5,7 @@ import {
   type Filters,
   type Ship,
   choicesFor,
+  compileTextFilter,
 } from '../ship-matrix/columns';
 import STYLES from './column-filter.module.scss';
 
@@ -75,12 +76,16 @@ export const ColumnFilter = ({ column, ships, filters, onChange }: Props) => {
     );
   }
 
+  const { error } = compileTextFilter(value);
+
   return (
     <input
       type="search"
       className={className}
       placeholder="Search"
       aria-label={`Filter by ${column.label.toLowerCase()}`}
+      aria-invalid={error !== null}
+      title={error ?? 'Search text or use /pattern/ for a regular expression'}
       value={value}
       onChange={(event) => onChange(column.id, event.target.value)}
     />

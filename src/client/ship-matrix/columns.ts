@@ -79,37 +79,61 @@ export const choicesFor = (column: Column, ships: Ship[]) => {
 const parseBound = (input: string | undefined) =>
   input === undefined || input.trim() === '' ? null : Number(input);
 
-const matches = (column: Column, ship: Ship, filters: Filters) => {
+export const compileTextFilter = (input: string) => {
+  const query = input.trim();
+
+  if (query.length >= 2 && query.startsWith('/') && query.endsWith('/')) {
+    try {
+      const pattern = new RegExp(query.slice(1, -1), 'i');
+
+      return { matches: (text: string) => pattern.test(text), error: null };
+    } catch {
+      return {
+        matches: (_text: string) => false,
+        error: 'Invalid regular expression',
+      };
+    }
+  }
+
+  return {
+    matches: (text: string) => text.toLowerCase().includes(query.toLowerCase()),
+    error: null,
+  };
+};
+
+const matcherFor = (column: Column, filters: Filters) => {
   if (column.kind === 'number') {
     const min = parseBound(filters[`${column.id}:min`]);
     const max = parseBound(filters[`${column.id}:max`]);
 
     if (min === null && max === null) {
-      return true;
+      return () => true;
     }
 
-    const value = valueOf(column, ship);
+    return (ship: Ship) => {
+      const value = valueOf(column, ship);
 
-    return (
-      typeof value === 'number' &&
-      (min === null || value >= min) &&
-      (max === null || value <= max)
-    );
+      return (
+        typeof value === 'number' &&
+        (min === null || value >= min) &&
+        (max === null || value <= max)
+      );
+    };
   }
 
   const filter = filters[column.id]?.trim() ?? '';
 
   if (filter === '') {
-    return true;
+    return () => true;
   }
 
   if (column.kind === 'choice') {
-    return String(valueOf(column, ship)) === filter;
+    return (ship: Ship) => String(valueOf(column, ship)) === filter;
   }
 
-  const haystack = searchText(column, ship).toLowerCase();
+  const textFilter = compileTextFilter(filter);
 
-  return haystack.includes(filter.toLowerCase());
+  return (ship: Ship) => textFilter.matches(searchText(column, ship));
 };
 
 const compare = (column: Column, a: Ship, b: Ship) => {
@@ -137,9 +161,10 @@ export const applyView = (
   const sortColumn = columns.find((c) => c.id === sort.columnId) ?? columns[0];
   const direction = sort.direction === 'asc' ? 1 : -1;
   const byName = (a: Ship, b: Ship) => a.name.localeCompare(b.name);
+  const matchers = columns.map((column) => matcherFor(column, filters));
 
   return ships
-    .filter((ship) => columns.every((c) => matches(c, ship, filters)))
+    .filter((ship) => matchers.every((matches) => matches(ship)))
     .sort((a, b) => {
       const [hasA, hasB] = [a, b].map(
         (ship) => valueOf(sortColumn, ship) !== null,

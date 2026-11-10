@@ -3,7 +3,13 @@ import { test } from 'node:test';
 
 import type { Stat } from '../../data/schema.ts';
 
-import { type Ship, applyView, choicesFor, coverage } from './columns.ts';
+import {
+  type Ship,
+  applyView,
+  choicesFor,
+  compileTextFilter,
+  coverage,
+} from './columns.ts';
 
 const COLUMNS: Stat[] = [
   { id: 'name', label: 'Ship', kind: 'text', source: 'test' },
@@ -77,6 +83,75 @@ test('matches text filters against the manufacturer too', () => {
   assert.deepEqual(names(view({ name: 'misc' }, 'name', 'asc', ships)), [
     'Hull C',
   ]);
+});
+
+test('matches slash-delimited regexes without case sensitivity', () => {
+  assert.deepEqual(names(view({ name: ' /^(ARROW|gladius)\\b/ ' }, 'name')), [
+    'Arrow',
+    'Gladius',
+  ]);
+  assert.equal(view({ name: '/aegis\\s+dynamics$/' }, 'name').length, 5);
+});
+
+test('supports regexes in every text column and combines them with other filters', () => {
+  const columns: Stat[] = [
+    ...COLUMNS,
+    { id: 'manufacturer', label: 'Manufacturer', kind: 'text', source: 'test' },
+  ];
+  const ships = [
+    ...fleet,
+    ship('Hull C', { manufacturer: 'MISC', price: 500 }),
+  ];
+  const result = applyView(
+    ships,
+    columns,
+    { manufacturer: '/^(misc|aegis)/', 'price:min': '100' },
+    { columnId: 'name', direction: 'asc' },
+  );
+
+  assert.deepEqual(names(result), ['Hull C', 'Idris-P']);
+});
+
+test('keeps ordinary searches literal, including incomplete regex delimiters', () => {
+  const ships = [ship('A.B'), ship('AxB'), ship('A/B'), ship('A/B/C')];
+
+  assert.deepEqual(names(view({ name: 'a.b' }, 'name', 'asc', ships)), ['A.B']);
+  assert.deepEqual(names(view({ name: '/B' }, 'name', 'asc', ships)), [
+    'A/B',
+    'A/B/C',
+  ]);
+  assert.deepEqual(names(view({ name: 'B/' }, 'name', 'asc', ships)), [
+    'A/B/C',
+  ]);
+});
+
+test('invalid regexes report an error and match no ships without throwing', () => {
+  for (const pattern of ['/[/', '/(/', '/*/']) {
+    assert.equal(
+      compileTextFilter(pattern).error,
+      'Invalid regular expression',
+    );
+    assert.deepEqual(view({ name: pattern }, 'name'), []);
+  }
+
+  assert.equal(compileTextFilter('/arrow/').error, null);
+  assert.deepEqual(names(view({ name: '/arrow/' }, 'name')), ['Arrow']);
+});
+
+test('empty regexes match all ships and hidden regex filters are ignored', () => {
+  assert.equal(view({ name: '//' }, 'name').length, fleet.length);
+  assert.equal(
+    applyView(
+      fleet,
+      [COLUMNS[1]],
+      { name: '/[/' },
+      {
+        columnId: 'size',
+        direction: 'asc',
+      },
+    ).length,
+    fleet.length,
+  );
 });
 
 test('lists size choices in scale order', () => {

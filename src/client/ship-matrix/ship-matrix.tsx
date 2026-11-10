@@ -10,6 +10,7 @@ import { hasExtension } from '../extension';
 import { insuranceForShip, loadSavedPledges } from '../hangar/hangar';
 import { HangarCell } from '../hangar/hangar-cell';
 import { ShipRow } from '../ship-row/ship-row';
+import { StarButton } from '../star-button/star-button';
 import { hasAvailableWarbond } from '../store/store-offers';
 import { useStoreOffers } from '../store/use-store-offers';
 import {
@@ -20,6 +21,7 @@ import {
   applyView,
 } from './columns';
 import STYLES from './ship-matrix.module.scss';
+import { loadStarredShipIds, saveStarredShipIds } from './starred-ships';
 
 type Props = {
   stats: Column[];
@@ -39,7 +41,7 @@ const ariaSort = (column: Column, sort: Sort) => {
 
 export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
   const [visibleIds, setVisibleIds] = useState(loadVisibleColumnIds);
-  // The name column is the row header, so it always shows first.
+  // The name is the first stat column, following the star controls.
   const columns = useMemo(
     () =>
       stats.filter(
@@ -56,6 +58,8 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
     pledges?.some((pledge) => pledge.ships.length > 0) ?? false,
   );
   const [onlyWarbond, setOnlyWarbond] = useState(false);
+  const [starredIds, setStarredIds] = useState(loadStarredShipIds);
+  const [onlyStarred, setOnlyStarred] = useState(false);
   const { store, loading, error, refresh } = useStoreOffers();
 
   const owned = useMemo(
@@ -79,13 +83,28 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
         sort,
       ).filter(
         (ship) =>
-          !onlyWarbond || hasAvailableWarbond(store?.standalone ?? [], ship.id),
+          (!onlyStarred || starredIds.includes(ship.id)) &&
+          (!onlyWarbond ||
+            hasAvailableWarbond(store?.standalone ?? [], ship.id)),
       ),
-    [ships, onlyOwned, ownedIds, columns, filters, sort, onlyWarbond, store],
+    [
+      ships,
+      onlyOwned,
+      ownedIds,
+      columns,
+      filters,
+      sort,
+      onlyWarbond,
+      store,
+      onlyStarred,
+      starredIds,
+    ],
   );
 
   const isFiltered =
-    onlyWarbond || Object.values(filters).some((v) => v.trim() !== '');
+    onlyStarred ||
+    onlyWarbond ||
+    Object.values(filters).some((v) => v.trim() !== '');
 
   const setFilter = (key: string, value: string) =>
     setFilters((current) => ({ ...current, [key]: value }));
@@ -104,9 +123,19 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
     saveVisibleColumnIds(ids);
   };
 
+  const toggleStar = (shipId: number) => {
+    const ids = starredIds.includes(shipId)
+      ? starredIds.filter((id) => id !== shipId)
+      : [...starredIds, shipId];
+
+    setStarredIds(ids);
+    saveStarredShipIds(ids);
+  };
+
   const resetFilters = () => {
     setFilters({});
     setOnlyWarbond(false);
+    setOnlyStarred(false);
   };
 
   return (
@@ -199,6 +228,18 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
         <table className={STYLES.table}>
           <thead>
             <tr>
+              <th scope="col">
+                <StarButton
+                  pressed={onlyStarred}
+                  label="Only starred ships"
+                  title={
+                    onlyStarred
+                      ? 'Stop filtering by stars'
+                      : 'Show only starred ships'
+                  }
+                  onClick={() => setOnlyStarred((current) => !current)}
+                />
+              </th>
               {columns.map((column) => (
                 <th
                   key={column.id}
@@ -230,6 +271,7 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
               )}
             </tr>
             <tr className={STYLES.filterRow}>
+              <td />
               {columns.map((column) => (
                 <td key={column.id} className={STYLES[column.kind]}>
                   <ColumnFilter
@@ -262,6 +304,8 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
                 key={ship.id}
                 ship={ship}
                 columns={columns}
+                starred={starredIds.includes(ship.id)}
+                onToggleStar={() => toggleStar(ship.id)}
                 offers={store?.standalone}
                 storeHint={error ?? 'Loading store offers…'}
                 ownedInsurance={
@@ -274,7 +318,12 @@ export const ShipMatrix = ({ stats, ships, onOpenPlanner }: Props) => {
             {visibleShips.length === 0 && (
               <tr>
                 <td
-                  colSpan={columns.length + 1 + Number(pledges !== null)}
+                  colSpan={
+                    columns.length +
+                    1 +
+                    Number(hasExtension) +
+                    Number(pledges !== null)
+                  }
                   className={STYLES.empty}
                 >
                   No ships match these filters.{' '}
