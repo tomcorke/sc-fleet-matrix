@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
   "checked_on": "2026-10-21",
-  "library_count": 256,
+  "library_count": 257,
   "library_source": {
     "repository": "https://github.com/tomcorke/sc-fleet-matrix",
-    "commit": "c777ca48b30b739a748b7ee4d62c090fde9950d8",
+    "commit": "c7738de4e598be6708eaae73dfa08dd637254061",
     "file": "src/data/processed-data.json",
-    "scope": "All 256 entries, including ground vehicles, editions and concepts; no inheritance between variants."
+    "scope": "257 current library identities. The original 256 records retain their 2026-10-21 evidence; only the Marauder mapping and numeric observations were reviewed on 2026-11-17."
   },
   "extraction": {
     "provider": "openai-codex",
@@ -50984,6 +50984,404 @@
           "evidence": null
         }
       }
+    },
+    {
+      "matrix_id": 329,
+      "name": "Marauder",
+      "production_status": "flight-ready",
+      "focus": "Medium Fighter",
+      "rsi_url": "https://robertsspaceindustries.com/pledge/ships/marauder/Marauder",
+      "implementation": "current-description",
+      "api_status": "matched",
+      "mapping_note": "One matching name/class in all 311 cached vehicles; exact Drake manufacturer, dimensions 20 x 19 x 6 m, crew 1 and seven Panther guns agree with RSI ID 329. Per-vehicle GET corroborates UUID and build.",
+      "candidate_uuids": ["16099337-179f-473e-8bc9-545e38ef0a32"],
+      "api_source": {
+        "url": "https://api.star-citizen.wiki/api/vehicles/16099337-179f-473e-8bc9-545e38ef0a32",
+        "retrieval_url": "https://api.star-citizen.wiki/api/v2/vehicles/16099337-179f-473e-8bc9-545e38ef0a32",
+        "checked_on": "2026-11-17",
+        "checked_at": "2026-11-17T18:50:15.126Z",
+        "uuid": "16099337-179f-473e-8bc9-545e38ef0a32",
+        "version": "4.10.3-LIVE.13165946",
+        "name": "Marauder",
+        "class_name": "DRAK_Marauder",
+        "wiki_url": "https://starcitizen.tools/Marauder"
+      },
+      "prose": {
+        "game_description": "In a universe as treacherous as this one, pilots need a ship that flies faster and hits heavier - the Drake Marauder. Fitted with powerful main thrusters for quick hit-and-runs, and armed to the teeth with firepower, by the time your enemies spot you, it'll already be too late."
+      },
+      "features": {
+        "walkable_interior": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "sleeping_facility": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "toilet": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "shower": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "kitchenette": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "personal_storage": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "suit_locker": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "weapon_rack": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "medical_facility": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "internal_component_access": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "quantum_dampener": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "emp": {
+          "state": "unresolved",
+          "evidence": null
+        }
+      },
+      "reported": {
+        "seating": {
+          "crew_stations": 1,
+          "ejection_seats": 0,
+          "escape_pods": null,
+          "jump_seats": null,
+          "beds": 0,
+          "medical_beds": null
+        },
+        "max_medical_tier": null,
+        "vehicle_inventory_raw": 650000,
+        "inventory_containers": [
+          {
+            "uuid": "4aee4491-ad8c-46f9-a2e7-37e1709f270b",
+            "width": 1,
+            "height": 1,
+            "length": 1,
+            "volume": 1,
+            "scu": 0.65,
+            "scu_converted": null,
+            "unit": null,
+            "open": false,
+            "external": false,
+            "closed": true
+          }
+        ],
+        "weapon_storage": {
+          "lockers": 1,
+          "slots_total": 3,
+          "slots_rifle": null,
+          "slots_pistol": 3,
+          "by_locker": [
+            {
+              "name": "Weapon Rack",
+              "class_name": "weapon_rack_drak_marauder",
+              "port": "hardpoint_weaponslocker",
+              "slots_total": 3,
+              "slots_rifle": 0,
+              "slots_pistol": 3,
+              "count": 1
+            }
+          ]
+        },
+        "stock_loadout": {
+          "health": 7100,
+          "shield": {
+            "hp": 6000,
+            "regeneration": 1140,
+            "regeneration_time": 5.26,
+            "face_type": "Bubble",
+            "max_reallocation": 1,
+            "reconfiguration_cooldown": 2.5,
+            "max_electrical_charge_damage_rate": 100,
+            "resistance": {
+              "physical": {
+                "minimum": 0,
+                "maximum": 0.25
+              },
+              "energy": {
+                "minimum": 0,
+                "maximum": 0
+              },
+              "distortion": {
+                "minimum": 0.75,
+                "maximum": 0.95
+              },
+              "thermal": {
+                "minimum": 0,
+                "maximum": 0
+              },
+              "biochemical": {
+                "minimum": 0,
+                "maximum": 0
+              },
+              "stun": {
+                "minimum": 0,
+                "maximum": 0
+              }
+            },
+            "absorption": {
+              "physical": {
+                "minimum": 0,
+                "maximum": 0.45
+              },
+              "energy": {
+                "minimum": 1,
+                "maximum": 1
+              },
+              "distortion": {
+                "minimum": 1,
+                "maximum": 1
+              },
+              "thermal": {
+                "minimum": 1,
+                "maximum": 1
+              },
+              "biochemical": {
+                "minimum": 1,
+                "maximum": 1
+              },
+              "stun": {
+                "minimum": 1,
+                "maximum": 1
+              }
+            }
+          },
+          "armor": {
+            "uuid": "e42c6146-6a57-40a8-a2b2-4b0a2b49a76d",
+            "health": 4100,
+            "signal_infrared": 1,
+            "signal_electromagnetic": 1,
+            "signal_cross_section": 1,
+            "damage_physical": 0.75,
+            "damage_energy": 0.6,
+            "damage_distortion": 1,
+            "damage_thermal": 1,
+            "damage_biochemical": 1,
+            "damage_stun": 1,
+            "signal_multiplier": {
+              "cross_section": 1,
+              "cross_section_change": 0,
+              "infrared": 1,
+              "infrared_change": 0,
+              "electromagnetic": 1,
+              "electromagnetic_change": 0
+            },
+            "damage_multiplier": {
+              "physical": 0.75,
+              "physical_change": -0.25,
+              "energy": 0.6,
+              "energy_change": -0.4,
+              "distortion": 1,
+              "distortion_change": 0,
+              "thermal": 1,
+              "thermal_change": 0,
+              "biochemical": 1,
+              "biochemical_change": 0,
+              "stun": 1,
+              "stun_change": 0
+            },
+            "resistance_multiplier": {
+              "physical": 0.81,
+              "physical_change": -0.19,
+              "energy": 1.08,
+              "energy_change": 0.08,
+              "distortion": 1,
+              "distortion_change": 0,
+              "thermal": 1,
+              "thermal_change": 0,
+              "biochemical": 1,
+              "biochemical_change": 0,
+              "stun": 1,
+              "stun_change": 0
+            },
+            "penetration_resistance": {
+              "base": 1,
+              "physical": 1,
+              "energy": 1,
+              "distortion": 0,
+              "thermal": 1,
+              "biochemical": 1,
+              "stun": 1
+            },
+            "deflection": {
+              "physical": 22,
+              "energy": 12,
+              "distortion": 0,
+              "thermal": 0,
+              "biochemical": 0,
+              "stun": 0
+            },
+            "signal_multipliers": {
+              "cross_section": 1,
+              "infrared": 1,
+              "electromagnetic": 1
+            },
+            "damage_multipliers": {
+              "physical": 0.75,
+              "energy": 0.6,
+              "distortion": 1,
+              "thermal": 1,
+              "biochemical": 1,
+              "stun": 1
+            },
+            "resistance_multipliers": {
+              "physical": 0.81,
+              "energy": 1.08,
+              "distortion": 1,
+              "thermal": 1,
+              "biochemical": 1,
+              "stun": 1
+            }
+          },
+          "weaponry": {
+            "pilot_dps": 3819.2,
+            "pilot_alpha": 305.9,
+            "pilot_sustained_dps": 1952.3,
+            "fixed_weapons": {
+              "dps_total": 3819.2,
+              "sustained_dps_total": 1952.3,
+              "alpha_total": 305.9,
+              "weapons": [
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                },
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                },
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                },
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                },
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                },
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                },
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "dps": 545.6,
+                  "sustained_dps": 278.9,
+                  "alpha": 43.7
+                }
+              ]
+            },
+            "missiles": {
+              "count": 4,
+              "damage": {
+                "physical": 3000,
+                "energy": 0,
+                "distortion": 0,
+                "thermal": 0,
+                "biochemical": 0,
+                "stun": 0,
+                "total": 3000
+              }
+            },
+            "total_missile_damage": 3000
+          }
+        }
+      },
+      "wiki_check": {
+        "status": "not-attempted",
+        "url": "https://starcitizen.tools/Marauder"
+      },
+      "notes": [
+        "Identity and numeric game-data review only; feature fields remain unresolved. API bed counts and equipment do not establish usable amenities."
+      ],
+      "wiki_features": {
+        "walkable_interior": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "sleeping_facility": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "toilet": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "shower": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "kitchenette": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "personal_storage": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "suit_locker": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "weapon_rack": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "medical_facility": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "internal_component_access": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "quantum_dampener": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "emp": {
+          "state": "unresolved",
+          "evidence": null
+        },
+        "bathroom": {
+          "state": "unresolved",
+          "evidence": null
+        }
+      }
     }
   ],
   "wiki_feature_keys": [
@@ -51007,6 +51405,16 @@
       "status": "unavailable",
       "checked_at": "2026-10-21T13:53Z",
       "reason": "Announced PHP security maintenance; HTTP 503. Historical failed checks are not feature absence."
+    }
+  ],
+  "updated_on": "2026-11-17",
+  "base_snapshot": "../2026-10-21/ship-features.json",
+  "updates": [
+    {
+      "checked_at": "2026-11-17T18:50:15.126Z",
+      "matrix_ids": [329],
+      "scope": "Exact standard vehicle identity and numeric stock-loadout data only. No feature-prose or wiki-amenity assessment.",
+      "review": "One matching name/class in all 311 cached vehicles; exact Drake manufacturer, dimensions 20 x 19 x 6 m, crew 1 and seven Panther guns agree with RSI ID 329. Per-vehicle GET corroborates UUID and build."
     }
   ]
 }

@@ -14967,7 +14967,31 @@
         "pitch": 52,
         "yaw": 40,
         "roll": 160,
-        "price": 150
+        "price": 150,
+        "quantum_speed": 209236,
+        "quantum_spool": 4.9,
+        "quantum_fuel": 0.9,
+        "quantum_range": 84.3,
+        "hull_hp": 7100,
+        "shield_hp": 6000,
+        "shield_regen": 1140,
+        "armour_hp": 4100,
+        "armour_physical": 0.75,
+        "armour_energy": 0.6,
+        "pilot_dps": 3819,
+        "pilot_sustained_dps": 1952,
+        "pilot_alpha": 306,
+        "missiles": 4,
+        "missile_damage": 3000,
+        "manned_turrets": 0,
+        "remote_turrets": 0,
+        "insurance_claim": 6.1,
+        "insurance_expedite": 2,
+        "insurance_expedite_cost": 3040,
+        "ingame_availability": "Not listed",
+        "seating:crew_stations": 1,
+        "seating:ejection_seats": 0,
+        "seating:beds": 0
       }
     }
   ]
