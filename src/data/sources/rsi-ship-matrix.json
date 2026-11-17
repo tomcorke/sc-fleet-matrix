@@ -21,7 +21,7 @@
       "roll_max": 140,
       "scm_speed": 222,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Multi-Role",
       "xaxis_acceleration": null,
       "yaw_max": 57,
@@ -827,7 +827,7 @@
       "roll_max": 135,
       "scm_speed": 222,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 53,
@@ -1676,7 +1676,7 @@
       "roll_max": 137,
       "scm_speed": 227,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 51,
@@ -2482,7 +2482,7 @@
       "roll_max": 135,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 53,
@@ -3288,7 +3288,7 @@
       "roll_max": 146,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 59,
@@ -4082,7 +4082,7 @@
       "roll_max": 146,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 59,
@@ -4876,7 +4876,7 @@
       "roll_max": 175,
       "scm_speed": 258,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 46,
@@ -5486,7 +5486,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:19:10",
+      "time_modified.unfiltered": "2026-11-16 15:58:34",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -5701,7 +5701,7 @@
       "roll_max": 175,
       "scm_speed": 258,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 46,
@@ -6311,7 +6311,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:19:09",
+      "time_modified.unfiltered": "2026-11-16 15:58:33",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -6527,7 +6527,7 @@
       "roll_max": 180,
       "scm_speed": 260,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -7137,7 +7137,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:58",
+      "time_modified.unfiltered": "2026-11-16 15:58:32",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -7364,7 +7364,7 @@
       "roll_max": 180,
       "scm_speed": 265,
       "size": "Small",
-      "time_modified": "8 months ago",
+      "time_modified": "1 day ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 56,
@@ -7974,7 +7974,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-03-11 12:49:30",
+      "time_modified.unfiltered": "2026-11-16 15:58:31",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -8189,7 +8189,7 @@
       "roll_max": 149,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 44,
@@ -9907,7 +9907,7 @@
       "roll_max": 147,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "2 years ago",
       "type": "Combat",
       "xaxis_acceleration": 0,
       "yaw_max": 42,
@@ -10689,7 +10689,7 @@
       "roll_max": 149,
       "scm_speed": 219,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 44,
@@ -11539,7 +11539,7 @@
       "roll_max": 150,
       "scm_speed": 219,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 45,
@@ -12389,7 +12389,7 @@
       "roll_max": 145,
       "scm_speed": 219,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -14133,7 +14133,7 @@
       "roll_max": 45,
       "scm_speed": 180,
       "size": "Large",
-      "time_modified": "2 weeks ago",
+      "time_modified": "2 days ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 21,
@@ -14743,7 +14743,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-09 14:47:37",
+      "time_modified.unfiltered": "2026-11-15 15:56:49",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -14971,7 +14971,7 @@
       "roll_max": 45,
       "scm_speed": 190,
       "size": "Large",
-      "time_modified": "2 weeks ago",
+      "time_modified": "2 days ago",
       "type": "Multi-Role",
       "xaxis_acceleration": null,
       "yaw_max": 21,
@@ -15581,7 +15581,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-09 14:46:59",
+      "time_modified.unfiltered": "2026-11-15 15:56:51",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -15809,7 +15809,7 @@
       "roll_max": 45,
       "scm_speed": 180,
       "size": "Large",
-      "time_modified": "2 weeks ago",
+      "time_modified": "2 days ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 21,
@@ -16419,7 +16419,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-09 14:47:17",
+      "time_modified.unfiltered": "2026-11-15 15:56:50",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -16653,7 +16653,7 @@
       "roll_max": 45,
       "scm_speed": 185,
       "size": "Large",
-      "time_modified": "2 weeks ago",
+      "time_modified": "2 days ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 21,
@@ -17294,7 +17294,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-09 17:04:05",
+      "time_modified.unfiltered": "2026-11-15 15:56:48",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -17528,7 +17528,7 @@
       "roll_max": 103,
       "scm_speed": 197,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 32,
@@ -19235,7 +19235,7 @@
       "roll_max": 95,
       "scm_speed": 195,
       "size": "Medium",
-      "time_modified": "2 months ago",
+      "time_modified": "3 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -20073,7 +20073,7 @@
       "roll_max": 107,
       "scm_speed": 204,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 31,
@@ -20948,7 +20948,7 @@
       "roll_max": 110,
       "scm_speed": 217,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Multi-Role",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -21558,7 +21558,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:47",
+      "time_modified.unfiltered": "2026-11-17 15:28:07",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -21823,7 +21823,7 @@
       "roll_max": 107,
       "scm_speed": 212,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 32,
@@ -22464,7 +22464,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-22 15:02:23",
+      "time_modified.unfiltered": "2026-11-17 15:28:06",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -22679,7 +22679,7 @@
       "roll_max": 110,
       "scm_speed": 220,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 34,
@@ -23320,7 +23320,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-22 15:03:44",
+      "time_modified.unfiltered": "2026-11-17 15:28:04",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -23567,7 +23567,7 @@
       "roll_max": 100,
       "scm_speed": 200,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": 0,
       "yaw_max": 30,
@@ -24204,11 +24204,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/mhuiu912ca4d1/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/mhuiu912ca4d1/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 626874,
+          "membership.id": 641260,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:30",
+      "time_modified.unfiltered": "2026-11-17 15:27:56",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -24484,7 +24484,7 @@
       "roll_max": 190,
       "scm_speed": 262,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -25321,7 +25321,7 @@
       "roll_max": 190,
       "scm_speed": 262,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -26177,7 +26177,7 @@
       "roll_max": 190,
       "scm_speed": 262,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -27058,7 +27058,7 @@
       "roll_max": 190,
       "scm_speed": 262,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -27883,7 +27883,7 @@
       "roll_max": 130,
       "scm_speed": 210,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 40,
@@ -28524,7 +28524,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-29 19:15:30",
+      "time_modified.unfiltered": "2026-11-17 15:54:11",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -28764,7 +28764,7 @@
       "roll_max": 200,
       "scm_speed": 280,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 55,
@@ -29405,7 +29405,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:22:40",
+      "time_modified.unfiltered": "2026-11-16 15:58:29",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -29602,7 +29602,7 @@
       "roll_max": 45,
       "scm_speed": 106,
       "size": "Large",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 23,
@@ -30457,7 +30457,7 @@
       "roll_max": 45,
       "scm_speed": 106,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 23,
@@ -31350,7 +31350,7 @@
       "roll_max": 25,
       "scm_speed": 130,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 16,
@@ -31991,7 +31991,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:57",
+      "time_modified.unfiltered": "2026-11-17 15:28:09",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -32194,7 +32194,7 @@
       "roll_max": 55,
       "scm_speed": 205,
       "size": "Large",
-      "time_modified": "1 month ago",
+      "time_modified": "2 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 23,
@@ -33018,7 +33018,7 @@
       "roll_max": 147,
       "scm_speed": 222,
       "size": "Medium",
-      "time_modified": "1 year ago",
+      "time_modified": "2 years ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -34815,7 +34815,7 @@
       "roll_max": 11,
       "scm_speed": 110,
       "size": "Capital",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 6,
@@ -38868,7 +38868,7 @@
       "roll_max": 202,
       "scm_speed": 226,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -39723,7 +39723,7 @@
       "roll_max": 235,
       "scm_speed": 244,
       "size": "Small",
-      "time_modified": "3 months ago",
+      "time_modified": "4 months ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 65,
@@ -41385,7 +41385,7 @@
       "roll_max": 115,
       "scm_speed": 203,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -42260,7 +42260,7 @@
       "roll_max": 200,
       "scm_speed": 226,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -43097,7 +43097,7 @@
       "roll_max": 200,
       "scm_speed": 226,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -44832,7 +44832,7 @@
       "roll_max": 210,
       "scm_speed": 224,
       "size": "Medium",
-      "time_modified": "1 year ago",
+      "time_modified": "2 weeks ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 67,
@@ -44840,7 +44840,7 @@
       "zaxis_acceleration": null,
       "description": "The Xi'an Aopoa corporation manufactures an export model of the Qhire Khartu, the Khartu-al, for sale to Human civilians. The export model features the same Xi'an maneuvering rig, but control surfaces modified for Human use and a more limited armament.",
       "focus": "Light Fighter",
-      "name": "Khartu-Al",
+      "name": "Khartu-al",
       "url": "/pledge/ships/khartu/Khartu-Al",
       "manufacturer": {
         "id": 81,
@@ -45572,11 +45572,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/zd5doe8h0xemz/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/zd5doe8h0xemz/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 609377,
+          "membership.id": 640422,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:41:00",
+      "time_modified.unfiltered": "2026-11-03 18:39:47",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -46791,7 +46791,7 @@
       "roll_max": 15,
       "scm_speed": 110,
       "size": "Capital",
-      "time_modified": "8 months ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 10,
@@ -47432,7 +47432,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-03-25 23:00:31",
+      "time_modified.unfiltered": "2026-11-16 15:58:28",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -47672,7 +47672,7 @@
       "id": 62,
       "afterburner_speed": 1050,
       "beam": 74,
-      "cargocapacity": 456,
+      "cargocapacity": 457,
       "chassis_id": 22,
       "height": 30,
       "length": 126,
@@ -47686,7 +47686,7 @@
       "roll_max": 30,
       "scm_speed": 140,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 16,
@@ -48327,16 +48327,16 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:39",
+      "time_modified.unfiltered": "2026-11-17 15:54:10",
       "compiled": {
         "RSIAvionic": {
           "radar": [
             {
               "type": "radar",
-              "name": "Surveyor",
+              "name": "Surveyor-Max",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
@@ -50302,7 +50302,7 @@
       "id": 206,
       "afterburner_speed": 1050,
       "beam": 74,
-      "cargocapacity": 456,
+      "cargocapacity": 457,
       "chassis_id": 22,
       "height": 30,
       "length": 126,
@@ -50316,7 +50316,7 @@
       "roll_max": 30,
       "scm_speed": 140,
       "size": "Large",
-      "time_modified": "1 year ago",
+      "time_modified": "2 days ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 16,
@@ -50957,16 +50957,16 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:42:19",
+      "time_modified.unfiltered": "2026-11-15 15:41:02",
       "compiled": {
         "RSIAvionic": {
           "radar": [
             {
               "type": "radar",
-              "name": "Surveyor",
+              "name": "Surveyor-Max",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
@@ -51160,7 +51160,7 @@
       "roll_max": 150,
       "scm_speed": 245,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 40,
@@ -51801,7 +51801,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-22 16:00:23",
+      "time_modified.unfiltered": "2026-11-17 15:28:03",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -52834,7 +52834,7 @@
       "roll_max": 100,
       "scm_speed": 185,
       "size": "Small",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -53628,7 +53628,7 @@
       "roll_max": 90,
       "scm_speed": 145,
       "size": "Large",
-      "time_modified": "2 months ago",
+      "time_modified": "3 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 33,
@@ -54472,7 +54472,7 @@
       "roll_max": null,
       "scm_speed": 0,
       "size": "capital",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "transport",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -55366,7 +55366,7 @@
       "roll_max": null,
       "scm_speed": 0,
       "size": "capital",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "transport",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -57091,7 +57091,7 @@
       "roll_max": 14,
       "scm_speed": 110,
       "size": "Capital",
-      "time_modified": "2 months ago",
+      "time_modified": "3 months ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 11,
@@ -57941,7 +57941,7 @@
       "roll_max": 15,
       "scm_speed": 50,
       "size": "Capital",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "Destroyer",
       "xaxis_acceleration": null,
       "yaw_max": 8,
@@ -58833,7 +58833,7 @@
       "roll_max": 124,
       "scm_speed": 210,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 38,
@@ -59627,15 +59627,15 @@
               "name": "Manned Turret",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
               "component_class": "RSIWeapon",
               "loadout": [
                 {
-                  "name": "SW16BR2 “Sawbuck” Repeater",
-                  "size": 2,
+                  "name": "SW16BR3 “Shredder” Repeater",
+                  "size": 3,
                   "count": 2
                 }
               ]
@@ -59701,7 +59701,7 @@
       "roll_max": 120,
       "scm_speed": 212,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -60612,7 +60612,7 @@
       "roll_max": 126,
       "scm_speed": 217,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 39,
@@ -61437,15 +61437,15 @@
               "name": "Manned Turret",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
               "component_class": "RSIWeapon",
               "loadout": [
                 {
-                  "name": "Suckerpunch-L Cannon",
-                  "size": 2,
+                  "name": "Suckerpunch-XL Cannon",
+                  "size": 3,
                   "count": 2
                 }
               ]
@@ -61524,7 +61524,7 @@
       "roll_max": 105,
       "scm_speed": 209,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -62318,15 +62318,15 @@
               "name": "Manned Turret",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
               "component_class": "RSIWeapon",
               "loadout": [
                 {
-                  "name": "SW16BR2 “Sawbuck” Repeater",
-                  "size": 2,
+                  "name": "SW16BR3 “Shredder” Repeater",
+                  "size": 3,
                   "count": 2
                 }
               ]
@@ -64984,7 +64984,7 @@
       "roll_max": 155,
       "scm_speed": 222,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 45,
@@ -68633,7 +68633,7 @@
       "roll_max": 160,
       "scm_speed": 223,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -69483,7 +69483,7 @@
       "roll_max": 160,
       "scm_speed": 223,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -70351,7 +70351,7 @@
       "roll_max": 160,
       "scm_speed": 240,
       "size": "Small",
-      "time_modified": "3 months ago",
+      "time_modified": "4 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 43,
@@ -71170,7 +71170,7 @@
       "roll_max": 160,
       "scm_speed": 240,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 41,
@@ -71989,7 +71989,7 @@
       "roll_max": 187,
       "scm_speed": 267,
       "size": "Small",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 51,
@@ -72776,7 +72776,7 @@
       "roll_max": 160,
       "scm_speed": 233,
       "size": "Small",
-      "time_modified": "1 month ago",
+      "time_modified": "2 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 45,
@@ -73614,7 +73614,7 @@
       "roll_max": null,
       "scm_speed": 0,
       "size": "large",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "support",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -75299,7 +75299,7 @@
       "roll_max": 190,
       "scm_speed": 270,
       "size": "Small",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 57,
@@ -77814,7 +77814,7 @@
       "roll_max": 155,
       "scm_speed": 240,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -78455,7 +78455,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-22 15:53:40",
+      "time_modified.unfiltered": "2026-11-17 15:28:02",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -78700,7 +78700,7 @@
       "roll_max": 130,
       "scm_speed": 190,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 70,
@@ -79429,7 +79429,7 @@
       "roll_max": 130,
       "scm_speed": 190,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 70,
@@ -80039,7 +80039,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:22",
+      "time_modified.unfiltered": "2026-11-17 15:28:00",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -80158,7 +80158,7 @@
       "roll_max": 85,
       "scm_speed": 170,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -81027,7 +81027,7 @@
       "roll_max": 85,
       "scm_speed": 170,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -81902,7 +81902,7 @@
       "roll_max": 85,
       "scm_speed": 175,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -82772,7 +82772,7 @@
       "roll_max": 120,
       "scm_speed": 200,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -83382,7 +83382,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:18",
+      "time_modified.unfiltered": "2026-11-17 15:54:08",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -83578,7 +83578,7 @@
       "roll_max": 120,
       "scm_speed": 200,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -84188,7 +84188,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:50",
+      "time_modified.unfiltered": "2026-11-17 15:54:09",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -84372,7 +84372,7 @@
       "roll_max": 14,
       "scm_speed": 145,
       "size": "Capital",
-      "time_modified": "4 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 8,
@@ -84982,7 +84982,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-25 17:03:13",
+      "time_modified.unfiltered": "2026-11-15 15:56:47",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -85095,7 +85095,7 @@
           "shield_generators": [
             {
               "type": "shield_generators",
-              "name": "Glacis",
+              "name": "Deterrent",
               "mounts": 1,
               "component_size": "",
               "size": "4",
@@ -85315,7 +85315,7 @@
       "roll_max": 110,
       "scm_speed": 212,
       "size": "Medium",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 32,
@@ -87188,7 +87188,7 @@
       "roll_max": 220,
       "scm_speed": 235,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 60,
@@ -87829,7 +87829,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:22:38",
+      "time_modified.unfiltered": "2026-11-16 15:58:27",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -88031,7 +88031,7 @@
       "roll_max": 205,
       "scm_speed": 265,
       "size": "Small",
-      "time_modified": "1 month ago",
+      "time_modified": "2 months ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -88971,7 +88971,7 @@
       "roll_max": 205,
       "scm_speed": 265,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -90852,7 +90852,7 @@
       "roll_max": 130,
       "scm_speed": 214,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 37,
@@ -91462,7 +91462,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:11",
+      "time_modified.unfiltered": "2026-11-17 15:54:07",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -92625,7 +92625,7 @@
       "roll_max": 115,
       "scm_speed": 210,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 31,
@@ -93468,7 +93468,7 @@
       "roll_max": 138,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 89,
@@ -95171,7 +95171,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 83,
-      "mass": 28164,
+      "mass": 11764,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -95180,7 +95180,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -95859,7 +95859,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:20:16",
+      "time_modified.unfiltered": "2026-11-16 15:59:13",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -95950,7 +95950,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 83,
-      "mass": 28164,
+      "mass": 11764,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -95959,7 +95959,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -96638,7 +96638,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:08",
+      "time_modified.unfiltered": "2026-11-16 15:59:12",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -96748,7 +96748,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 83,
-      "mass": 28164,
+      "mass": 11764,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -96757,7 +96757,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -97436,7 +97436,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:21:14",
+      "time_modified.unfiltered": "2026-11-16 15:59:11",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -97527,7 +97527,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 83,
-      "mass": 28164,
+      "mass": 11764,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -97536,7 +97536,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -98215,7 +98215,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:07",
+      "time_modified.unfiltered": "2026-11-16 15:59:10",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -98306,7 +98306,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 83,
-      "mass": 28164,
+      "mass": 11764,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -98315,7 +98315,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -98994,7 +98994,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:05",
+      "time_modified.unfiltered": "2026-11-16 15:59:09",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -99098,7 +99098,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 83,
-      "mass": 28164,
+      "mass": 11764,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -99107,7 +99107,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -99786,7 +99786,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:34",
+      "time_modified.unfiltered": "2026-11-16 15:59:06",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -99896,7 +99896,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 1,
-      "mass": 50356.62999999998,
+      "mass": 25200.249999999985,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -99905,7 +99905,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -100515,7 +100515,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:04",
+      "time_modified.unfiltered": "2026-11-15 15:56:46",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -100638,7 +100638,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 1,
-      "mass": 50356.62999999998,
+      "mass": 25200.249999999985,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -100647,7 +100647,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "8 months ago",
+      "time_modified": "9 months ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -101420,7 +101420,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -102060,7 +102060,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:14",
+      "time_modified.unfiltered": "2026-11-15 15:56:38",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -102183,7 +102183,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 1,
-      "mass": 50356.62999999998,
+      "mass": 25200.249999999985,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -102192,7 +102192,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -102802,7 +102802,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:58",
+      "time_modified.unfiltered": "2026-11-15 15:56:36",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -102934,7 +102934,7 @@
       "roll_max": 30,
       "scm_speed": 165,
       "size": "Large",
-      "time_modified": "8 months ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 19,
@@ -103570,11 +103570,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/68f2og2gz2mdq/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/68f2og2gz2mdq/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 624545,
+          "membership.id": 640194,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-03-25 23:00:34",
+      "time_modified.unfiltered": "2026-11-16 15:58:26",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -103789,7 +103789,7 @@
       "roll_max": 30,
       "scm_speed": 165,
       "size": "Large",
-      "time_modified": "8 months ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 19,
@@ -104430,7 +104430,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-03-25 23:00:33",
+      "time_modified.unfiltered": "2026-11-16 15:58:25",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -104645,7 +104645,7 @@
       "roll_max": 135,
       "scm_speed": 207,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 80,
@@ -105285,7 +105285,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:19:06",
+      "time_modified.unfiltered": "2026-11-16 15:58:24",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -105404,7 +105404,7 @@
       "roll_max": 140,
       "scm_speed": 222,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "1 day ago",
       "type": "Competition",
       "xaxis_acceleration": null,
       "yaw_max": 93,
@@ -106044,7 +106044,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-22 15:47:02",
+      "time_modified.unfiltered": "2026-11-16 15:58:23",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -106144,7 +106144,7 @@
       "roll_max": 135,
       "scm_speed": 207,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 80,
@@ -106784,7 +106784,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-04 17:35:55",
+      "time_modified.unfiltered": "2026-11-16 15:58:22",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -107810,7 +107810,7 @@
       "roll_max": 190,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -108451,7 +108451,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:03",
+      "time_modified.unfiltered": "2026-11-17 15:54:06",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -108666,7 +108666,7 @@
       "roll_max": 30,
       "scm_speed": 160,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 20,
@@ -109485,7 +109485,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -110195,7 +110195,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:02:00",
+      "time_modified.unfiltered": "2026-11-16 15:59:07",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -110345,7 +110345,7 @@
       "roll_max": null,
       "scm_speed": 210,
       "size": "medium",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "multi",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -111228,7 +111228,7 @@
       "roll_max": 155,
       "scm_speed": 223,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -111838,7 +111838,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:19:05",
+      "time_modified.unfiltered": "2026-11-16 15:58:20",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -112035,7 +112035,7 @@
       "roll_max": 150,
       "scm_speed": 230,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -112645,7 +112645,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:58",
+      "time_modified.unfiltered": "2026-11-16 15:58:19",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -112854,7 +112854,7 @@
       "roll_max": 150,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -113464,7 +113464,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:19:02",
+      "time_modified.unfiltered": "2026-11-16 15:58:18",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -113661,7 +113661,7 @@
       "roll_max": 30,
       "scm_speed": 160,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 18,
@@ -114397,11 +114397,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/y9nxh2pyic772/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/y9nxh2pyic772/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 627730,
+          "membership.id": 640336,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:56",
+      "time_modified.unfiltered": "2026-11-16 15:59:56",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -114621,7 +114621,7 @@
       "roll_max": 30,
       "scm_speed": 160,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 18,
@@ -115361,7 +115361,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:55",
+      "time_modified.unfiltered": "2026-11-16 15:59:55",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -115581,7 +115581,7 @@
       "roll_max": 30,
       "scm_speed": 160,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 18,
@@ -116321,7 +116321,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:54",
+      "time_modified.unfiltered": "2026-11-16 15:59:54",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -116607,7 +116607,7 @@
       "roll_max": 125,
       "scm_speed": 200,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 55,
@@ -117217,7 +117217,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:52",
+      "time_modified.unfiltered": "2026-11-17 15:27:59",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -117414,7 +117414,7 @@
       "roll_max": 65,
       "scm_speed": 170,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 24,
@@ -118024,7 +118024,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:51",
+      "time_modified.unfiltered": "2026-11-15 15:56:45",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -118239,7 +118239,7 @@
       "roll_max": 65,
       "scm_speed": 175,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 20,
@@ -118849,7 +118849,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:50",
+      "time_modified.unfiltered": "2026-11-15 15:56:44",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -119064,7 +119064,7 @@
       "roll_max": 53,
       "scm_speed": 217,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 23,
@@ -119799,7 +119799,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:49",
+      "time_modified.unfiltered": "2026-11-16 15:59:52",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -120027,7 +120027,7 @@
       "roll_max": 98,
       "scm_speed": 207,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 29,
@@ -120637,7 +120637,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:47",
+      "time_modified.unfiltered": "2026-11-17 15:54:05",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -120870,7 +120870,7 @@
       "roll_max": 98,
       "scm_speed": 207,
       "size": "Large",
-      "time_modified": "6 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 29,
@@ -121480,7 +121480,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-19 21:42:47",
+      "time_modified.unfiltered": "2026-11-15 15:40:39",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -121713,7 +121713,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "capital",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "industrial",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -122611,7 +122611,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "capital",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "industrial",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -123504,7 +123504,7 @@
       "roll_max": 205,
       "scm_speed": 229,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 57,
@@ -124114,7 +124114,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:46",
+      "time_modified.unfiltered": "2026-11-17 15:54:04",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -124365,7 +124365,7 @@
       "roll_max": 160,
       "scm_speed": 227,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 58,
@@ -125305,7 +125305,7 @@
       "roll_max": 60,
       "scm_speed": 200,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -126196,7 +126196,7 @@
       "roll_max": 44,
       "scm_speed": 190,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 20,
@@ -126806,7 +126806,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:43",
+      "time_modified.unfiltered": "2026-11-17 15:27:58",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -129512,7 +129512,7 @@
       "height": 5.5,
       "length": 17,
       "manufacturer_id": 3,
-      "mass": 133816,
+      "mass": 96816,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -129521,7 +129521,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -130131,7 +130131,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:42",
+      "time_modified.unfiltered": "2026-11-17 15:54:03",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -130275,7 +130275,7 @@
       "roll_max": null,
       "scm_speed": 33,
       "size": "vehicle",
-      "time_modified": "6 months ago",
+      "time_modified": "2 days ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -130885,7 +130885,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-19 21:42:04",
+      "time_modified.unfiltered": "2026-11-15 15:40:38",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -131039,7 +131039,7 @@
       "roll_max": null,
       "scm_speed": 33,
       "size": "vehicle",
-      "time_modified": "6 months ago",
+      "time_modified": "2 days ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -131649,7 +131649,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-19 21:41:31",
+      "time_modified.unfiltered": "2026-11-15 15:40:37",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -131803,7 +131803,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "large",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -133603,7 +133603,7 @@
       "roll_max": 160,
       "scm_speed": 236,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -134213,7 +134213,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:41",
+      "time_modified.unfiltered": "2026-11-15 15:56:43",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -134435,7 +134435,7 @@
       "roll_max": 150,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "2 days ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 60,
@@ -135066,7 +135066,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:42:22",
+      "time_modified.unfiltered": "2026-11-15 15:45:55",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -135263,7 +135263,7 @@
       "roll_max": 150,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 60,
@@ -135904,7 +135904,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:39",
+      "time_modified.unfiltered": "2026-11-17 15:54:01",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -136119,7 +136119,7 @@
       "roll_max": 142,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 56,
@@ -136729,7 +136729,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:18",
+      "time_modified.unfiltered": "2026-11-17 15:54:02",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -136926,7 +136926,7 @@
       "roll_max": 105,
       "scm_speed": 205,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 36,
@@ -137661,7 +137661,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:38",
+      "time_modified.unfiltered": "2026-11-16 15:59:51",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -137864,7 +137864,7 @@
       "roll_max": 105,
       "scm_speed": 205,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 36,
@@ -138599,7 +138599,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:37",
+      "time_modified.unfiltered": "2026-11-16 15:59:50",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -138802,7 +138802,7 @@
       "roll_max": 75,
       "scm_speed": 140,
       "size": "Medium",
-      "time_modified": "8 months ago",
+      "time_modified": "9 months ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -143156,7 +143156,7 @@
       "roll_max": null,
       "scm_speed": 45,
       "size": "vehicle",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "ground",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -143927,7 +143927,7 @@
       "roll_max": 195,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "3 weeks ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 54,
@@ -144667,11 +144667,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/5ldm3z0l75na6/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/5ldm3z0l75na6/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 608085,
+          "membership.id": 640325,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:38:18",
+      "time_modified.unfiltered": "2026-10-29 17:00:00",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -145817,7 +145817,7 @@
       "height": 3.5,
       "length": 6.6,
       "manufacturer_id": 17,
-      "mass": 30580,
+      "mass": 15080,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -146608,7 +146608,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 17,
-      "mass": 22470,
+      "mass": 10470,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -147417,7 +147417,7 @@
       "height": 2.2,
       "length": 3.5,
       "manufacturer_id": 17,
-      "mass": 14690,
+      "mass": 5440,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -147426,7 +147426,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -148192,7 +148192,7 @@
       "roll_max": 120,
       "scm_speed": 205,
       "size": "Small",
-      "time_modified": "10 months ago",
+      "time_modified": "11 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 45,
@@ -149049,7 +149049,7 @@
       "roll_max": 25,
       "scm_speed": 150,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 15,
@@ -149659,16 +149659,16 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-18 16:15:12",
+      "time_modified.unfiltered": "2026-11-15 15:56:42",
       "compiled": {
         "RSIAvionic": {
           "radar": [
             {
               "type": "radar",
-              "name": "Epier",
+              "name": "Resolu",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
@@ -149922,7 +149922,7 @@
       "roll_max": 145,
       "scm_speed": 230,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 34,
@@ -150568,7 +150568,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:33",
+      "time_modified.unfiltered": "2026-11-15 15:56:41",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -150783,7 +150783,7 @@
       "roll_max": 145,
       "scm_speed": 230,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 34,
@@ -151423,7 +151423,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:15",
+      "time_modified.unfiltered": "2026-11-15 15:56:40",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -151657,7 +151657,7 @@
       "roll_max": 55,
       "scm_speed": 170,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "3 weeks ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 22,
@@ -152366,11 +152366,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/3hlrf4bj6k5r7/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/3hlrf4bj6k5r7/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 631915,
+          "membership.id": 640302,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-17 16:40:59",
+      "time_modified.unfiltered": "2026-10-28 16:04:27",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -152617,7 +152617,7 @@
       "roll_max": 70,
       "scm_speed": 215,
       "size": "Large",
-      "time_modified": "1 year ago",
+      "time_modified": "1 day ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -153258,7 +153258,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-04 17:35:49",
+      "time_modified.unfiltered": "2026-11-16 15:58:17",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -153469,26 +153469,26 @@
     },
     {
       "id": 224,
-      "afterburner_speed": null,
+      "afterburner_speed": 950,
       "beam": 67,
       "cargocapacity": 400,
       "chassis_id": 91,
       "height": 25,
       "length": 119,
       "manufacturer_id": 3,
-      "mass": null,
+      "mass": 4151386,
       "max_crew": 2,
-      "min_crew": 1,
-      "pitch_max": null,
+      "min_crew": 2,
+      "pitch_max": 9,
       "production_note": null,
-      "production_status": "in-concept",
-      "roll_max": null,
+      "production_status": "flight-ready",
+      "roll_max": 16,
       "scm_speed": 115,
-      "size": "large",
-      "time_modified": "5 days ago",
-      "type": "transport",
+      "size": "Capital",
+      "time_modified": "7 minutes ago",
+      "type": "Transporter",
       "xaxis_acceleration": null,
-      "yaw_max": null,
+      "yaw_max": 9,
       "yaxis_acceleration": null,
       "zaxis_acceleration": null,
       "description": "Anvil continues its tradition of excellence with the Liberator, an open-air vehicle carrier that applies the tradition of long-range transport to a smaller scale. Designed with the same quantum drive and long-distance capabilities of military-spec carriers and pathfinders but tailored to the civilian market, the Liberator puts your fleet on the front lines of any operation.",
@@ -153764,7 +153764,7 @@
       },
       "media": [
         {
-          "id": 2524410,
+          "id": 3911955,
           "cover_data": null,
           "depot": "S3MediaProd",
           "depot_status": "R",
@@ -153787,36 +153787,6 @@
                 "height": 165,
                 "mode": "resize-crop",
                 "delete": "1--1"
-              },
-              "tavern_upload_emoji": {
-                "width": 128,
-                "height": 128,
-                "mode": "resize"
-              },
-              "tavern_upload_mini": {
-                "width": 150,
-                "height": 100,
-                "mode": "resize-crop"
-              },
-              "tavern_upload_square": {
-                "width": 250,
-                "height": 250,
-                "mode": "resize"
-              },
-              "tavern_upload_small": {
-                "width": 400,
-                "height": 224,
-                "mode": "resize"
-              },
-              "tavern_upload_medium": {
-                "width": 400,
-                "height": 400,
-                "mode": "resize"
-              },
-              "tavern_upload_large": {
-                "width": 1680,
-                "height": 1050,
-                "mode": "resize"
               },
               "post_section_header": {
                 "width": 1118,
@@ -154047,11 +154017,10 @@
                 "height": 557,
                 "mode": "resize-crop"
               },
-              "bug_council_thumbnail": {
-                "width": 224,
-                "height": 140,
-                "mode": "resize-crop",
-                "delete": "1--1"
+              "manufacturer_logo_xs": {
+                "width": 64,
+                "height": 64,
+                "mode": "resize-crop"
               }
             }
           },
@@ -154060,292 +154029,285 @@
           "publish_end": null,
           "publish_start": null,
           "purpose": "full",
-          "slug": "k2zu1md2ulfxn",
+          "slug": "lyrq3kgz50tfc",
           "source_duration": null,
-          "source_extension": "png",
-          "source_name": "Anvil-Liberator-GC03-Airfield-Min",
+          "source_extension": "jpg",
+          "source_name": "SC_ANVL_Liberator_SW_pyro3_4k",
           "status": "P",
-          "tag_string": "tag.Anvil,tag.Liberator,tag.gallery,tag.airfield,tag.2,tag.SHIP WALL CATALOG",
-          "time_modified": "2026-05-19 18:43:54",
+          "tag_string": "tag.Anvil Liberator FR Nov 2026,tag.SHIP WALL CATALOG",
+          "time_modified": "2026-11-13 18:37:35",
           "type": "I",
-          "source_url": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/source.png",
+          "source_url": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/source.jpg",
           "source_stream": {
-            "progressive": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/source.png"
+            "progressive": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/source.jpg"
           },
           "images": {
-            "heap_note": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/heap_note.png",
-            "heap_thumb": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/heap_thumb.png",
-            "heap_infobox": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/heap_infobox.png",
-            "post_section_header": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/post_section_header.png",
-            "channel_item_full": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/channel_item_full.png",
-            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/home_transmissions_item_expanded.png",
-            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/subscribers_vault_thumbnail.png",
-            "slideshow": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/slideshow.png",
-            "slideshow_pager": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/slideshow_pager.png",
-            "slideshow_wide": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/slideshow_wide.png",
-            "vault_thumb": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/vault_thumb.png",
-            "post": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/post.png",
-            "wallpaper_thumb": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/wallpaper_thumb.png",
-            "product_thumb_large": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/product_thumb_large.png",
-            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/product_thumb_medium_and_small.png",
-            "component_description": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/component_description.png",
-            "product_thumb_in_description": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/product_thumb_in_description.png",
-            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/product_thumb_shipmod.png",
-            "press_latest_post": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/press_latest_post.png",
-            "store_small": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_small.png",
-            "store_large": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_large.png",
-            "store_hub_small": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_hub_small.png",
-            "store_hub_large": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_hub_large.png",
-            "store_slideshow_small": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_slideshow_small.png",
-            "store_slideshow_large": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_slideshow_large.png",
-            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_slideshow_small_zoom.png",
-            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_slideshow_large_zoom.png",
-            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_thumb_listing_small.png",
-            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_thumb_sku_detail.png",
-            "store_upgrade_half": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/store_upgrade_half.png",
-            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/sku_widget_thumbnail.png",
-            "sku_widget_modal": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/sku_widget_modal.png",
-            "avatar": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/avatar.png",
-            "banner": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/banner.png",
-            "cover": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/cover.png",
-            "logo": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/logo.png",
-            "icon": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/icon.png",
-            "background_blur": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/background_blur.png",
-            "texture": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/texture.png",
-            "hub_large": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/hub_large.png",
-            "hub_medium": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/hub_medium.png",
-            "hub_small": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/hub_small.png",
-            "hub_tile": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/hub_tile.png",
-            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/wallpaper_3840x2160.png",
-            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/wallpaper_1920x1080.png",
-            "wallpaper_512x384": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/wallpaper_512x384.png",
-            "wsc_event_thumb": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/wsc_event_thumb.png",
-            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/k2zu1md2ulfxn/manufacturer_logo_xs.png"
+            "heap_note": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/heap_note.jpg",
+            "heap_thumb": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/heap_thumb.jpg",
+            "heap_infobox": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/heap_infobox.jpg",
+            "post_section_header": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/post_section_header.jpg",
+            "channel_item_full": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/channel_item_full.jpg",
+            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/home_transmissions_item_expanded.jpg",
+            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/subscribers_vault_thumbnail.jpg",
+            "slideshow": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/slideshow.jpg",
+            "slideshow_pager": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/slideshow_pager.jpg",
+            "slideshow_wide": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/slideshow_wide.jpg",
+            "vault_thumb": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/vault_thumb.jpg",
+            "post": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/post.jpg",
+            "wallpaper_thumb": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/wallpaper_thumb.jpg",
+            "product_thumb_large": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/product_thumb_large.jpg",
+            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/product_thumb_medium_and_small.jpg",
+            "component_description": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/component_description.jpg",
+            "product_thumb_in_description": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/product_thumb_in_description.jpg",
+            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/product_thumb_shipmod.jpg",
+            "press_latest_post": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/press_latest_post.jpg",
+            "store_small": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_small.jpg",
+            "store_large": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_large.jpg",
+            "store_hub_small": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_hub_small.jpg",
+            "store_hub_large": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_hub_large.jpg",
+            "store_slideshow_small": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_slideshow_small.jpg",
+            "store_slideshow_large": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_slideshow_large.jpg",
+            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_slideshow_small_zoom.jpg",
+            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_slideshow_large_zoom.jpg",
+            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_thumb_listing_small.jpg",
+            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_thumb_sku_detail.jpg",
+            "store_upgrade_half": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/store_upgrade_half.jpg",
+            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/sku_widget_thumbnail.jpg",
+            "sku_widget_modal": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/sku_widget_modal.jpg",
+            "avatar": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/avatar.jpg",
+            "banner": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/banner.jpg",
+            "cover": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/cover.jpg",
+            "logo": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/logo.jpg",
+            "icon": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/icon.jpg",
+            "background_blur": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/background_blur.jpg",
+            "texture": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/texture.jpg",
+            "hub_large": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/hub_large.jpg",
+            "hub_medium": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/hub_medium.jpg",
+            "hub_small": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/hub_small.jpg",
+            "hub_tile": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/hub_tile.jpg",
+            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/wallpaper_3840x2160.jpg",
+            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/wallpaper_1920x1080.jpg",
+            "wallpaper_512x384": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/wallpaper_512x384.jpg",
+            "wsc_event_thumb": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/wsc_event_thumb.jpg",
+            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/lyrq3kgz50tfc/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 640041,
+          "membership.id": 641313,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-16 21:39:21",
+      "time_modified.unfiltered": "2026-11-17 15:54:00",
       "compiled": {
         "RSIAvionic": {
           "radar": [
             {
               "type": "radar",
-              "name": "Radar",
-              "mounts": "1",
-              "component_size": "M",
-              "size": "M",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIAvionic"
+              "name": "Epier",
+              "mounts": 1,
+              "component_size": "",
+              "size": "2",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIAvionic",
+              "loadout": null
             }
           ],
-          "computers": [
-            {
-              "type": "computers",
-              "name": "Computer",
-              "mounts": "1",
-              "component_size": "M",
-              "size": "M",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIAvionic"
-            }
-          ]
+          "computers": []
         },
         "RSIPropulsion": {
           "fuel_tanks": [
             {
               "type": "fuel_tanks",
-              "name": "Fuel Tank",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
+              "name": "Internal Tank",
+              "mounts": 1,
+              "component_size": "",
+              "size": "",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIPropulsion"
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ],
           "quantum_drives": [
             {
               "type": "quantum_drives",
-              "name": "Quantum Drive",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIPropulsion"
+              "name": "Pontes",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ],
           "jump_modules": [
             {
               "type": "jump_modules",
-              "name": "Quantum Drive",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIPropulsion"
+              "name": "Exodus",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ],
           "quantum_fuel_tanks": [
             {
               "type": "quantum_fuel_tanks",
-              "name": "Quantum Fuel Tank",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
+              "name": "Internal Tank",
+              "mounts": 1,
+              "component_size": "",
+              "size": "",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIPropulsion"
-            }
-          ],
-          "fuel_intakes": [
-            {
-              "type": "fuel_intakes",
-              "name": "Fuel Intake",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIPropulsion"
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ]
         },
         "RSIThruster": {
-          "main_thrusters": [
-            {
-              "type": "main_thrusters",
-              "name": null,
-              "mounts": "1",
-              "component_size": "-",
-              "category": "",
-              "size": "TBD",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": null,
-              "component_class": "RSIThruster"
-            }
-          ],
-          "maneuvering_thrusters": [
-            {
-              "type": "maneuvering_thrusters",
-              "name": null,
-              "mounts": "1",
-              "component_size": "-",
-              "category": "",
-              "size": "TBD",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": null,
-              "component_class": "RSIThruster"
-            }
-          ]
+          "main_thrusters": [],
+          "maneuvering_thrusters": []
         },
         "RSIModular": {
           "power_plants": [
             {
               "type": "power_plants",
-              "name": "Power Plant",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIModular"
+              "name": "SuperDrive",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
             }
           ],
           "coolers": [
             {
               "type": "coolers",
-              "name": "Cooler",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIModular"
+              "name": "Mercury",
+              "mounts": 2,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
             }
           ],
           "shield_generators": [
             {
               "type": "shield_generators",
-              "name": "Shield Generator",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIModular"
+              "name": "SureStop",
+              "mounts": 2,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
+            }
+          ],
+          "life_support": [
+            {
+              "type": "life_support",
+              "name": "ComfortAir Max",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
             }
           ]
         },
         "RSIWeapon": {
-          "weapons": [],
+          "weapons": [
+            {
+              "type": "weapons",
+              "name": "Remote Turret",
+              "mounts": 2,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIWeapon",
+              "loadout": [
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "size": 3,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "type": "weapons",
+              "name": "M2C \"Swarm\"",
+              "mounts": 2,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIWeapon",
+              "loadout": [
+                {
+                  "name": "M2C \"Swarm\"",
+                  "size": 1,
+                  "count": 1
+                }
+              ]
+            }
+          ],
           "turrets": [
             {
               "type": "turrets",
-              "name": "S5 Laster Repeaters",
-              "mounts": "1",
-              "component_size": "5",
+              "name": "Manned Turret",
+              "mounts": 1,
+              "component_size": "",
               "size": "5",
-              "details": "Manned",
-              "quantity": "2",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIWeapon"
-            },
-            {
-              "type": "turrets",
-              "name": "S2 Weapon",
-              "mounts": "2",
-              "component_size": "2",
-              "size": "2",
-              "details": "",
-              "quantity": "2",
-              "manufacturer": null,
-              "component_class": "RSIWeapon"
+              "component_class": "RSIWeapon",
+              "loadout": [
+                {
+                  "name": "CF-557 Galdereen Repeater",
+                  "size": 5,
+                  "count": 2
+                }
+              ]
             }
           ],
           "missiles": [
             {
               "type": "missiles",
-              "name": "S3 Missiles",
-              "mounts": "4",
-              "component_size": "3",
+              "name": "MSD-423 Missile Rack",
+              "mounts": 4,
+              "component_size": "",
               "size": "4",
-              "details": "",
-              "quantity": "4",
-              "manufacturer": "TBD",
-              "component_class": "RSIWeapon"
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIWeapon",
+              "loadout": null
             }
           ],
-          "utility_items": [
-            {
-              "type": "utility_items",
-              "name": "Tractor Beam",
-              "mounts": "1",
-              "component_size": "2",
-              "size": "2",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": null,
-              "component_class": "RSIWeapon"
-            }
-          ]
+          "utility_items": []
         }
       }
     },
@@ -155249,7 +155211,7 @@
       "roll_max": 75,
       "scm_speed": 140,
       "size": "Medium",
-      "time_modified": "8 months ago",
+      "time_modified": "9 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -156199,7 +156161,7 @@
       "height": 5.5,
       "length": 17,
       "manufacturer_id": 3,
-      "mass": 94316,
+      "mass": 213316,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -156208,7 +156170,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -156818,7 +156780,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:31",
+      "time_modified.unfiltered": "2026-11-17 15:53:59",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -158562,7 +158524,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "small",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -159462,7 +159424,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -160072,7 +160034,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:29",
+      "time_modified.unfiltered": "2026-11-17 15:27:55",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -160150,7 +160112,7 @@
       "height": 5.5,
       "length": 17,
       "manufacturer_id": 3,
-      "mass": 134016,
+      "mass": 98016,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -160159,7 +160121,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -160769,7 +160731,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:27",
+      "time_modified.unfiltered": "2026-11-17 15:53:58",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -160943,7 +160905,7 @@
       "roll_max": 101,
       "scm_speed": 204,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -161677,7 +161639,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:26",
+      "time_modified.unfiltered": "2026-11-16 15:59:49",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -161911,7 +161873,7 @@
       "roll_max": 101,
       "scm_speed": 204,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -162645,7 +162607,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:25",
+      "time_modified.unfiltered": "2026-11-16 15:59:47",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -163842,7 +163804,7 @@
       "height": 3.5,
       "length": 6,
       "manufacturer_id": 17,
-      "mass": 22070,
+      "mass": 8070,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -164653,7 +164615,7 @@
       "roll_max": 100,
       "scm_speed": 180,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 36,
@@ -165293,7 +165255,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:16",
+      "time_modified.unfiltered": "2026-11-17 15:27:54",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -165490,7 +165452,7 @@
       "roll_max": 100,
       "scm_speed": 180,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 36,
@@ -166130,7 +166092,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:09",
+      "time_modified.unfiltered": "2026-11-17 15:27:53",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -166327,7 +166289,7 @@
       "roll_max": 100,
       "scm_speed": 180,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 36,
@@ -166967,7 +166929,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:05",
+      "time_modified.unfiltered": "2026-11-17 15:27:51",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -167172,26 +167134,26 @@
     },
     {
       "id": 244,
-      "afterburner_speed": null,
+      "afterburner_speed": 950,
       "beam": 60,
-      "cargocapacity": 64,
+      "cargocapacity": 468,
       "chassis_id": 103,
-      "height": 22,
+      "height": 25,
       "length": 110,
       "manufacturer_id": 1,
-      "mass": null,
+      "mass": 5435000,
       "max_crew": 6,
-      "min_crew": 1,
-      "pitch_max": null,
+      "min_crew": 6,
+      "pitch_max": 14,
       "production_note": null,
-      "production_status": "in-concept",
-      "roll_max": null,
-      "scm_speed": null,
-      "size": "large",
-      "time_modified": "1 year ago",
-      "type": "multi",
+      "production_status": "flight-ready",
+      "roll_max": 23,
+      "scm_speed": 145,
+      "size": "Large",
+      "time_modified": "2 days ago",
+      "type": "Multi-Role",
       "xaxis_acceleration": null,
-      "yaw_max": null,
+      "yaw_max": 14,
       "yaxis_acceleration": null,
       "zaxis_acceleration": null,
       "description": "Featuring a fully modular design and an onboard hangar capable of deploying small ships, the cutting-edge Galaxy has versatility built into its DNA with a highly configurable main deck that can be outfitted with comprehensive facilities to support cargo, medical, or refining operations. ",
@@ -167467,7 +167429,7 @@
       },
       "media": [
         {
-          "id": 2861503,
+          "id": 3911445,
           "cover_data": null,
           "depot": "S3MediaProd",
           "depot_status": "R",
@@ -167490,36 +167452,6 @@
                 "height": 165,
                 "mode": "resize-crop",
                 "delete": "1--1"
-              },
-              "tavern_upload_emoji": {
-                "width": 128,
-                "height": 128,
-                "mode": "resize"
-              },
-              "tavern_upload_mini": {
-                "width": 150,
-                "height": 100,
-                "mode": "resize-crop"
-              },
-              "tavern_upload_square": {
-                "width": 250,
-                "height": 250,
-                "mode": "resize"
-              },
-              "tavern_upload_small": {
-                "width": 400,
-                "height": 224,
-                "mode": "resize"
-              },
-              "tavern_upload_medium": {
-                "width": 400,
-                "height": 400,
-                "mode": "resize"
-              },
-              "tavern_upload_large": {
-                "width": 1680,
-                "height": 1050,
-                "mode": "resize"
               },
               "post_section_header": {
                 "width": 1118,
@@ -167762,278 +167694,245 @@
           "publish_end": null,
           "publish_start": null,
           "purpose": "full",
-          "slug": "b2bx2kl8ewqej",
+          "slug": "bb6z60h2ou5a0",
           "source_duration": null,
           "source_extension": "jpg",
-          "source_name": "RSI_Galaxy_Piece_08_16x9",
+          "source_name": "RSI_Galaxy_Fly_4k_2",
           "status": "P",
-          "tag_string": "tag.Marketing,tag.SHIP WALL CATALOG",
-          "time_modified": "2026-05-19 20:50:04",
+          "tag_string": "tag.RSI Galaxy FR Nov 2026,tag.CATALOG,tag.CATALOG RSI,tag.SHIP WALL CATALOG",
+          "time_modified": "2026-11-13 06:41:26",
           "type": "I",
-          "source_url": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/source.jpg",
+          "source_url": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/source.jpg",
           "source_stream": {
-            "progressive": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/source.jpg"
+            "progressive": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/source.jpg"
           },
           "images": {
-            "heap_note": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/heap_note.jpg",
-            "heap_thumb": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/heap_thumb.jpg",
-            "heap_infobox": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/heap_infobox.jpg",
-            "post_section_header": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/post_section_header.jpg",
-            "channel_item_full": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/channel_item_full.jpg",
-            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/home_transmissions_item_expanded.jpg",
-            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/subscribers_vault_thumbnail.jpg",
-            "slideshow": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/slideshow.jpg",
-            "slideshow_pager": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/slideshow_pager.jpg",
-            "slideshow_wide": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/slideshow_wide.jpg",
-            "vault_thumb": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/vault_thumb.jpg",
-            "post": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/post.jpg",
-            "wallpaper_thumb": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/wallpaper_thumb.jpg",
-            "product_thumb_large": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/product_thumb_large.jpg",
-            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/product_thumb_medium_and_small.jpg",
-            "component_description": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/component_description.jpg",
-            "product_thumb_in_description": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/product_thumb_in_description.jpg",
-            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/product_thumb_shipmod.jpg",
-            "press_latest_post": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/press_latest_post.jpg",
-            "store_small": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_small.jpg",
-            "store_large": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_large.jpg",
-            "store_hub_small": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_hub_small.jpg",
-            "store_hub_large": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_hub_large.jpg",
-            "store_slideshow_small": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_slideshow_small.jpg",
-            "store_slideshow_large": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_slideshow_large.jpg",
-            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_slideshow_small_zoom.jpg",
-            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_slideshow_large_zoom.jpg",
-            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_thumb_listing_small.jpg",
-            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_thumb_sku_detail.jpg",
-            "store_upgrade_half": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/store_upgrade_half.jpg",
-            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/sku_widget_thumbnail.jpg",
-            "sku_widget_modal": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/sku_widget_modal.jpg",
-            "avatar": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/avatar.jpg",
-            "banner": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/banner.jpg",
-            "cover": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/cover.jpg",
-            "logo": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/logo.jpg",
-            "icon": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/icon.jpg",
-            "background_blur": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/background_blur.jpg",
-            "texture": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/texture.jpg",
-            "hub_large": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/hub_large.jpg",
-            "hub_medium": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/hub_medium.jpg",
-            "hub_small": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/hub_small.jpg",
-            "hub_tile": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/hub_tile.jpg",
-            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/wallpaper_3840x2160.jpg",
-            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/wallpaper_1920x1080.jpg",
-            "wallpaper_512x384": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/wallpaper_512x384.jpg",
-            "wsc_event_thumb": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/wsc_event_thumb.jpg",
-            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/b2bx2kl8ewqej/manufacturer_logo_xs.jpg"
+            "heap_note": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/heap_note.jpg",
+            "heap_thumb": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/heap_thumb.jpg",
+            "heap_infobox": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/heap_infobox.jpg",
+            "post_section_header": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/post_section_header.jpg",
+            "channel_item_full": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/channel_item_full.jpg",
+            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/home_transmissions_item_expanded.jpg",
+            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/subscribers_vault_thumbnail.jpg",
+            "slideshow": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/slideshow.jpg",
+            "slideshow_pager": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/slideshow_pager.jpg",
+            "slideshow_wide": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/slideshow_wide.jpg",
+            "vault_thumb": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/vault_thumb.jpg",
+            "post": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/post.jpg",
+            "wallpaper_thumb": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/wallpaper_thumb.jpg",
+            "product_thumb_large": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/product_thumb_large.jpg",
+            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/product_thumb_medium_and_small.jpg",
+            "component_description": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/component_description.jpg",
+            "product_thumb_in_description": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/product_thumb_in_description.jpg",
+            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/product_thumb_shipmod.jpg",
+            "press_latest_post": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/press_latest_post.jpg",
+            "store_small": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_small.jpg",
+            "store_large": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_large.jpg",
+            "store_hub_small": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_hub_small.jpg",
+            "store_hub_large": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_hub_large.jpg",
+            "store_slideshow_small": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_slideshow_small.jpg",
+            "store_slideshow_large": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_slideshow_large.jpg",
+            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_slideshow_small_zoom.jpg",
+            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_slideshow_large_zoom.jpg",
+            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_thumb_listing_small.jpg",
+            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_thumb_sku_detail.jpg",
+            "store_upgrade_half": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/store_upgrade_half.jpg",
+            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/sku_widget_thumbnail.jpg",
+            "sku_widget_modal": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/sku_widget_modal.jpg",
+            "avatar": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/avatar.jpg",
+            "banner": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/banner.jpg",
+            "cover": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/cover.jpg",
+            "logo": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/logo.jpg",
+            "icon": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/icon.jpg",
+            "background_blur": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/background_blur.jpg",
+            "texture": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/texture.jpg",
+            "hub_large": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/hub_large.jpg",
+            "hub_medium": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/hub_medium.jpg",
+            "hub_small": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/hub_small.jpg",
+            "hub_tile": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/hub_tile.jpg",
+            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/wallpaper_3840x2160.jpg",
+            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/wallpaper_1920x1080.jpg",
+            "wallpaper_512x384": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/wallpaper_512x384.jpg",
+            "wsc_event_thumb": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/wsc_event_thumb.jpg",
+            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/bb6z60h2ou5a0/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 607808,
+          "membership.id": 640777,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:22:04",
+      "time_modified.unfiltered": "2026-11-15 15:56:39",
       "compiled": {
         "RSIAvionic": {
           "radar": [
             {
               "type": "radar",
-              "name": "Radar",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIAvionic"
+              "name": "Lephari",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIAvionic",
+              "loadout": null
             }
           ],
-          "computers": [
-            {
-              "type": "computers",
-              "name": "Computer",
-              "mounts": "2",
-              "component_size": "M",
-              "size": "M",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIAvionic"
-            }
-          ]
+          "computers": []
         },
         "RSIPropulsion": {
           "fuel_tanks": [
             {
               "type": "fuel_tanks",
-              "name": "Fuel Tank",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
+              "name": "Internal Tank",
+              "mounts": 1,
+              "component_size": "",
+              "size": "",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIPropulsion"
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ],
           "quantum_drives": [
             {
               "type": "quantum_drives",
-              "name": "Quantum Drive",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIPropulsion"
+              "name": "Wanderer",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ],
           "jump_modules": [
             {
               "type": "jump_modules",
-              "name": "Jump Module",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIPropulsion"
+              "name": "Exodus",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ],
           "quantum_fuel_tanks": [
             {
               "type": "quantum_fuel_tanks",
-              "name": "Quantum Fuel Tank",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
+              "name": "Internal Tank",
+              "mounts": 1,
+              "component_size": "",
+              "size": "",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIPropulsion"
-            }
-          ],
-          "fuel_intakes": [
-            {
-              "type": "fuel_intakes",
-              "name": "Fuel Intake",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIPropulsion"
+              "component_class": "RSIPropulsion",
+              "loadout": null
             }
           ]
         },
         "RSIThruster": {
-          "main_thrusters": [
-            {
-              "type": "main_thrusters",
-              "name": "Main Thruster",
-              "mounts": "4",
-              "component_size": "-",
-              "category": "M",
-              "size": "-",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": null,
-              "component_class": "RSIThruster"
-            }
-          ],
-          "maneuvering_thrusters": [
-            {
-              "type": "maneuvering_thrusters",
-              "name": "Retro Thruster",
-              "mounts": "2",
-              "component_size": "-",
-              "category": "R",
-              "size": "-",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": null,
-              "component_class": "RSIThruster"
-            },
-            {
-              "type": "maneuvering_thrusters",
-              "name": "Maneuvering Thruster",
-              "mounts": "12",
-              "component_size": "-",
-              "category": "",
-              "size": "-",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": null,
-              "component_class": "RSIThruster"
-            }
-          ]
+          "main_thrusters": [],
+          "maneuvering_thrusters": []
         },
         "RSIModular": {
           "power_plants": [
             {
               "type": "power_plants",
-              "name": "Power Plant",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIModular"
+              "name": "NewDawn",
+              "mounts": 2,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
             }
           ],
           "coolers": [
             {
               "type": "coolers",
-              "name": "Cooler",
-              "mounts": "2",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIModular"
+              "name": "Frost-Star XL",
+              "mounts": 2,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
             }
           ],
           "shield_generators": [
             {
               "type": "shield_generators",
-              "name": "Shield Generator",
-              "mounts": "1",
-              "component_size": "L",
-              "size": "L",
-              "details": "",
-              "quantity": "1",
-              "manufacturer": "TBD",
-              "component_class": "RSIModular"
+              "name": "5CA 'Akura'",
+              "mounts": 2,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
+            }
+          ],
+          "life_support": [
+            {
+              "type": "life_support",
+              "name": "ComfortAir Max",
+              "mounts": 1,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
             }
           ]
         },
         "RSIWeapon": {
-          "weapons": [],
-          "turrets": [
+          "weapons": [
             {
-              "type": "turrets",
-              "name": "S5 Weapon",
-              "mounts": "3",
-              "component_size": "5",
+              "type": "weapons",
+              "name": "Remote Turret",
+              "mounts": 3,
+              "component_size": "",
               "size": "5",
-              "details": "",
-              "quantity": "2",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIWeapon"
+              "component_class": "RSIWeapon",
+              "loadout": [
+                {
+                  "name": "CF-557 Galdereen Repeater",
+                  "size": 5,
+                  "count": 2
+                }
+              ]
             }
           ],
+          "turrets": [],
           "missiles": [
             {
               "type": "missiles",
-              "name": "S2 Missiles",
-              "mounts": "2",
-              "component_size": "2",
-              "size": "4",
-              "details": "",
-              "quantity": "4",
+              "name": "MSD-582 Missile Rack",
+              "mounts": 4,
+              "component_size": "",
+              "size": "5",
+              "details": null,
+              "quantity": 1,
               "manufacturer": null,
-              "component_class": "RSIWeapon"
+              "component_class": "RSIWeapon",
+              "loadout": null
             }
           ],
           "utility_items": []
@@ -168058,7 +167957,7 @@
       "roll_max": null,
       "scm_speed": 238,
       "size": "snub",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -168983,7 +168882,7 @@
       "roll_max": null,
       "scm_speed": 230,
       "size": "snub",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -170819,7 +170718,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -171498,7 +171397,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:10",
+      "time_modified.unfiltered": "2026-11-16 15:59:05",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -171643,7 +171542,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": null,
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -172322,7 +172221,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:06",
+      "time_modified.unfiltered": "2026-11-16 15:59:04",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -172461,7 +172360,7 @@
       "roll_max": 110,
       "scm_speed": 205,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "2 days ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 32,
@@ -173071,7 +172970,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-29 19:16:24",
+      "time_modified.unfiltered": "2026-11-15 15:56:38",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -173286,7 +173185,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "medium",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -174191,7 +174090,7 @@
       "roll_max": 105,
       "scm_speed": 200,
       "size": "Medium",
-      "time_modified": "1 year ago",
+      "time_modified": "2 days ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 32,
@@ -174801,7 +174700,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:21:59",
+      "time_modified.unfiltered": "2026-11-15 15:56:37",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -175933,7 +175832,7 @@
       "roll_max": 140,
       "scm_speed": 210,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -176573,7 +176472,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:01:08",
+      "time_modified.unfiltered": "2026-11-17 15:53:56",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -176824,7 +176723,7 @@
       "roll_max": 140,
       "scm_speed": 210,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "2 years ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -177715,7 +177614,7 @@
       "roll_max": 135,
       "scm_speed": 225,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Multi-Role",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -178655,7 +178554,7 @@
       "roll_max": 143,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "1 year ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 40,
@@ -179296,7 +179195,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2025-12-03 22:42:38",
+      "time_modified.unfiltered": "2026-11-17 15:53:51",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -179529,7 +179428,7 @@
       "roll_max": 148,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 43,
@@ -180139,7 +180038,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-23 19:23:24",
+      "time_modified.unfiltered": "2026-11-17 15:53:52",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -180336,7 +180235,7 @@
       "roll_max": 148,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 43,
@@ -180946,7 +180845,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:49",
+      "time_modified.unfiltered": "2026-11-17 15:53:53",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -181143,7 +181042,7 @@
       "roll_max": 147,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -181753,7 +181652,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:48",
+      "time_modified.unfiltered": "2026-11-17 15:53:54",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -181950,7 +181849,7 @@
       "roll_max": 140,
       "scm_speed": 215,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 40,
@@ -182560,7 +182459,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-06-23 19:23:47",
+      "time_modified.unfiltered": "2026-11-17 15:53:55",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -182800,7 +182699,7 @@
       "roll_max": 135,
       "scm_speed": 204,
       "size": "Small",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 84,
@@ -183632,7 +183531,7 @@
       "roll_max": 145,
       "scm_speed": 218,
       "size": "Small",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 97,
@@ -184445,7 +184344,7 @@
       "roll_max": 17,
       "scm_speed": 110,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 10,
@@ -185055,7 +184954,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:57",
+      "time_modified.unfiltered": "2026-11-17 15:27:50",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -185326,7 +185225,7 @@
       "roll_max": 17,
       "scm_speed": 130,
       "size": "Large",
-      "time_modified": "1 month ago",
+      "time_modified": "33 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 9,
@@ -185936,7 +185835,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-09-18 15:37:56",
+      "time_modified.unfiltered": "2026-11-17 15:27:49",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -186206,7 +186105,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Ground",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -187754,7 +187653,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "1 month ago",
+      "time_modified": "2 months ago",
       "type": "Ground",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -188541,7 +188440,7 @@
       "roll_max": null,
       "scm_speed": 115,
       "size": "medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "transport",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -189405,7 +189304,7 @@
       "roll_max": 60,
       "scm_speed": 150,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 27,
@@ -190021,10 +189920,10 @@
           "radar": [
             {
               "type": "radar",
-              "name": "Surveyor",
+              "name": "Surveyor-Max",
               "mounts": 1,
               "component_size": "",
-              "size": "2",
+              "size": "3",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
@@ -190293,7 +190192,7 @@
       "roll_max": 145,
       "scm_speed": 227,
       "size": "Small",
-      "time_modified": "6 months ago",
+      "time_modified": "1 day ago",
       "type": "Starter",
       "xaxis_acceleration": null,
       "yaw_max": 48,
@@ -190997,7 +190896,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-19 18:30:29",
+      "time_modified.unfiltered": "2026-11-16 15:59:46",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -191194,7 +191093,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "6 months ago",
+      "time_modified": "7 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -192020,7 +191919,7 @@
       "roll_max": null,
       "scm_speed": 175,
       "size": "medium",
-      "time_modified": "5 months ago",
+      "time_modified": "7 minutes ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -192630,7 +192529,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:52",
+      "time_modified.unfiltered": "2026-11-17 15:53:50",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -192894,7 +192793,7 @@
       "roll_max": 130,
       "scm_speed": 213,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "3 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 45,
@@ -193603,11 +193502,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/ihc934ai7vvyj/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/ihc934ai7vvyj/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 627239,
+          "membership.id": 641271,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:47",
+      "time_modified.unfiltered": "2026-11-15 01:28:08",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -193804,7 +193703,7 @@
       "roll_max": 125,
       "scm_speed": 210,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -194727,7 +194626,7 @@
       "roll_max": 120,
       "scm_speed": 208,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 39,
@@ -196441,11 +196340,11 @@
     {
       "id": 295,
       "afterburner_speed": 1010,
-      "beam": 15.5,
+      "beam": 7,
       "cargocapacity": 32,
       "chassis_id": 122,
       "height": 5,
-      "length": 7,
+      "length": 15.5,
       "manufacturer_id": 5,
       "mass": 69217,
       "max_crew": 1,
@@ -196456,7 +196355,7 @@
       "roll_max": 140,
       "scm_speed": 203,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 43,
@@ -197066,7 +196965,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:43",
+      "time_modified.unfiltered": "2026-11-17 15:27:47",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -197261,11 +197160,11 @@
     {
       "id": 309,
       "afterburner_speed": 1000,
-      "beam": 15.5,
+      "beam": 10,
       "cargocapacity": 64,
       "chassis_id": 122,
       "height": 5,
-      "length": 7,
+      "length": 15.5,
       "manufacturer_id": 5,
       "mass": 76217,
       "max_crew": 1,
@@ -197276,7 +197175,7 @@
       "roll_max": 135,
       "scm_speed": 200,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 40,
@@ -197886,7 +197785,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:29",
+      "time_modified.unfiltered": "2026-11-17 15:27:45",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -198093,7 +197992,7 @@
       "height": 5,
       "length": 6,
       "manufacturer_id": 17,
-      "mass": 53700,
+      "mass": 26700,
       "max_crew": 1,
       "min_crew": 1,
       "pitch_max": null,
@@ -198102,14 +198001,14 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "5 months ago",
-      "type": "Ground",
+      "time_modified": "6 months ago",
+      "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": null,
       "yaxis_acceleration": null,
       "zaxis_acceleration": null,
       "description": "Drive into the fray with Greycat’s tough and reliable MTC - perfect for carrying weapons and armor to battlefields, bunkers, outposts, expedition sites, and more.",
-      "focus": "Passenger",
+      "focus": "Pathfinder",
       "name": "MTC",
       "url": "/pledge/ships/mtc/MTC",
       "manufacturer": {
@@ -198926,7 +198825,7 @@
       "roll_max": 95,
       "scm_speed": 203,
       "size": "Large",
-      "time_modified": "1 week ago",
+      "time_modified": "7 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 27.5,
@@ -199532,11 +199431,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/hojtsnh3dom15/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/hojtsnh3dom15/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 636230,
+          "membership.id": 641285,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-13 18:56:55",
+      "time_modified.unfiltered": "2026-11-17 15:53:49",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -199782,7 +199681,7 @@
       "roll_max": 155,
       "scm_speed": 229,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 38,
@@ -200392,7 +200291,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:37",
+      "time_modified.unfiltered": "2026-11-15 15:56:35",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -200619,7 +200518,7 @@
       "roll_max": 210,
       "scm_speed": 230,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -201426,7 +201325,7 @@
       "roll_max": 210,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 54,
@@ -202233,7 +202132,7 @@
       "roll_max": 95,
       "scm_speed": 207,
       "size": "Medium",
-      "time_modified": "10 months ago",
+      "time_modified": "11 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 28,
@@ -203179,7 +203078,7 @@
       "roll_max": 137,
       "scm_speed": 219,
       "size": "Medium",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -204089,7 +203988,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "vehicle",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "ground",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -204887,7 +204786,7 @@
       "roll_max": 140,
       "scm_speed": 205,
       "size": "Small",
-      "time_modified": "8 months ago",
+      "time_modified": "2 days ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 45,
@@ -205497,7 +205396,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-03-25 23:08:08",
+      "time_modified.unfiltered": "2026-11-15 15:56:34",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -205694,7 +205593,7 @@
       "roll_max": 125,
       "scm_speed": 205,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "33 minutes ago",
       "type": "Exploration",
       "xaxis_acceleration": null,
       "yaw_max": 38,
@@ -206304,7 +206203,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:31",
+      "time_modified.unfiltered": "2026-11-17 15:27:46",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -206543,7 +206442,7 @@
       "roll_max": 60,
       "scm_speed": 180,
       "size": "Large",
-      "time_modified": "4 months ago",
+      "time_modified": "2 days ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 26,
@@ -207153,7 +207052,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-07-01 15:43:19",
+      "time_modified.unfiltered": "2026-11-15 15:56:33",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -207381,7 +207280,7 @@
       "roll_max": 75,
       "scm_speed": 140,
       "size": "Medium",
-      "time_modified": "4 months ago",
+      "time_modified": "5 months ago",
       "type": "Industrial",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -208317,7 +208216,7 @@
       "roll_max": 140,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "2 days ago",
       "type": "Multi-Role",
       "xaxis_acceleration": null,
       "yaw_max": 52,
@@ -208927,7 +208826,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:28",
+      "time_modified.unfiltered": "2026-11-15 15:56:32",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -209115,7 +209014,7 @@
       "height": 2.5,
       "length": 4,
       "manufacturer_id": 17,
-      "mass": 21070,
+      "mass": 7320,
       "max_crew": 2,
       "min_crew": 2,
       "pitch_max": null,
@@ -209124,7 +209023,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "Medium",
-      "time_modified": "7 months ago",
+      "time_modified": "8 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -209903,7 +209802,7 @@
       "roll_max": 150,
       "scm_speed": 225,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "1 day ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 30,
@@ -210513,7 +210412,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:27",
+      "time_modified.unfiltered": "2026-11-16 15:58:16",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -210740,7 +210639,7 @@
       "roll_max": 20,
       "scm_speed": 150,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "3 weeks ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 13,
@@ -211346,11 +211245,11 @@
             "wsc_event_thumb": "https://media.robertsspaceindustries.com/yqgidk6parmtz/wsc_event_thumb.jpg",
             "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/yqgidk6parmtz/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 630224,
+          "membership.id": 640209,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-05-27 20:00:26",
+      "time_modified.unfiltered": "2026-10-26 15:37:34",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -211590,7 +211489,7 @@
       "roll_max": null,
       "scm_speed": null,
       "size": "capital",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "combat",
       "xaxis_acceleration": null,
       "yaw_max": null,
@@ -212486,7 +212385,7 @@
       "roll_max": 220,
       "scm_speed": 232,
       "size": "Small",
-      "time_modified": "1 month ago",
+      "time_modified": "33 minutes ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 62,
@@ -213096,7 +212995,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-09-18 15:37:33",
+      "time_modified.unfiltered": "2026-11-17 15:27:44",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -213272,7 +213171,7 @@
       "roll_max": 80,
       "scm_speed": 150,
       "size": "Small",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Support",
       "xaxis_acceleration": null,
       "yaw_max": 35,
@@ -214097,7 +213996,7 @@
       "roll_max": 55,
       "scm_speed": 165,
       "size": "Large",
-      "time_modified": "5 months ago",
+      "time_modified": "6 months ago",
       "type": "Transporter",
       "xaxis_acceleration": null,
       "yaw_max": 22,
@@ -215075,7 +214974,7 @@
       "roll_max": 205,
       "scm_speed": 220,
       "size": "Small",
-      "time_modified": "3 months ago",
+      "time_modified": "4 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 50,
@@ -215973,7 +215872,7 @@
       "roll_max": 185,
       "scm_speed": 218,
       "size": "Small",
-      "time_modified": "2 months ago",
+      "time_modified": "3 months ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 42,
@@ -216810,7 +216709,7 @@
       "roll_max": 35,
       "scm_speed": 170,
       "size": "Large",
-      "time_modified": "1 day ago",
+      "time_modified": "2 days ago",
       "type": "Multi-Role",
       "xaxis_acceleration": null,
       "yaw_max": 18,
@@ -217420,7 +217319,7 @@
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-20 15:45:00",
+      "time_modified.unfiltered": "2026-11-15 15:56:31",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -217635,7 +217534,7 @@
       "roll_max": 212,
       "scm_speed": 227,
       "size": "Small",
-      "time_modified": "1 week ago",
+      "time_modified": "2 days ago",
       "type": "Combat",
       "xaxis_acceleration": null,
       "yaw_max": 58,
@@ -217914,7 +217813,7 @@
       },
       "media": [
         {
-          "id": 3894317,
+          "id": 3911312,
           "cover_data": null,
           "depot": "S3MediaProd",
           "depot_status": "R",
@@ -217961,13 +217860,7 @@
               "slideshow": {
                 "width": 648,
                 "height": 366,
-                "mode": "recrop",
-                "recrop_x": 185,
-                "recrop_y": 0,
-                "recrop_width": 2914,
-                "recrop_height": 1646,
-                "quality": 100,
-                "strip": true
+                "mode": "resize-crop"
               },
               "slideshow_pager": {
                 "width": 88,
@@ -218027,13 +217920,7 @@
               "store_small": {
                 "width": 351,
                 "height": 210,
-                "mode": "recrop",
-                "recrop_x": 319,
-                "recrop_y": 0,
-                "recrop_width": 2751,
-                "recrop_height": 1646,
-                "quality": 100,
-                "strip": true
+                "mode": "resize-crop"
               },
               "store_large": {
                 "width": 818,
@@ -218191,73 +218078,73 @@
           "publish_end": null,
           "publish_start": null,
           "purpose": "full",
-          "slug": "nxwjwdxucmknm",
+          "slug": "0dze8wi31xxcj",
           "source_duration": null,
           "source_extension": "jpg",
-          "source_name": "SC_RSI_Constellation_Centaurus_mk5_Skylark_4k",
+          "source_name": "SC_RSI_Skylark_SW_4k",
           "status": "P",
-          "tag_string": "tag.RSI Constellation Mk V Centaurus STF Oct 2026",
-          "time_modified": "2026-10-13 22:48:32",
+          "tag_string": "tag.RSI Skylark STF Nov 2026",
+          "time_modified": "2026-11-13 01:18:14",
           "type": "I",
-          "source_url": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/source.jpg",
+          "source_url": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/source.jpg",
           "source_stream": {
-            "progressive": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/source.jpg"
+            "progressive": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/source.jpg"
           },
           "images": {
-            "heap_note": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/heap_note.jpg",
-            "heap_thumb": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/heap_thumb.jpg",
-            "heap_infobox": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/heap_infobox.jpg",
-            "post_section_header": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/post_section_header.jpg",
-            "channel_item_full": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/channel_item_full.jpg",
-            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/home_transmissions_item_expanded.jpg",
-            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/subscribers_vault_thumbnail.jpg",
-            "slideshow": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/slideshow.jpg",
-            "slideshow_pager": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/slideshow_pager.jpg",
-            "slideshow_wide": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/slideshow_wide.jpg",
-            "vault_thumb": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/vault_thumb.jpg",
-            "post": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/post.jpg",
-            "wallpaper_thumb": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/wallpaper_thumb.jpg",
-            "product_thumb_large": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/product_thumb_large.jpg",
-            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/product_thumb_medium_and_small.jpg",
-            "component_description": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/component_description.jpg",
-            "product_thumb_in_description": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/product_thumb_in_description.jpg",
-            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/product_thumb_shipmod.jpg",
-            "press_latest_post": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/press_latest_post.jpg",
-            "store_small": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_small.jpg",
-            "store_large": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_large.jpg",
-            "store_hub_small": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_hub_small.jpg",
-            "store_hub_large": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_hub_large.jpg",
-            "store_slideshow_small": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_slideshow_small.jpg",
-            "store_slideshow_large": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_slideshow_large.jpg",
-            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_slideshow_small_zoom.jpg",
-            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_slideshow_large_zoom.jpg",
-            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_thumb_listing_small.jpg",
-            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_thumb_sku_detail.jpg",
-            "store_upgrade_half": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/store_upgrade_half.jpg",
-            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/sku_widget_thumbnail.jpg",
-            "sku_widget_modal": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/sku_widget_modal.jpg",
-            "avatar": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/avatar.jpg",
-            "banner": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/banner.jpg",
-            "cover": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/cover.jpg",
-            "logo": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/logo.jpg",
-            "icon": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/icon.jpg",
-            "background_blur": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/background_blur.jpg",
-            "texture": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/texture.jpg",
-            "hub_large": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/hub_large.jpg",
-            "hub_medium": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/hub_medium.jpg",
-            "hub_small": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/hub_small.jpg",
-            "hub_tile": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/hub_tile.jpg",
-            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/wallpaper_3840x2160.jpg",
-            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/wallpaper_1920x1080.jpg",
-            "wallpaper_512x384": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/wallpaper_512x384.jpg",
-            "wsc_event_thumb": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/wsc_event_thumb.jpg",
-            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/nxwjwdxucmknm/manufacturer_logo_xs.jpg"
+            "heap_note": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/heap_note.jpg",
+            "heap_thumb": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/heap_thumb.jpg",
+            "heap_infobox": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/heap_infobox.jpg",
+            "post_section_header": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/post_section_header.jpg",
+            "channel_item_full": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/channel_item_full.jpg",
+            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/home_transmissions_item_expanded.jpg",
+            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/subscribers_vault_thumbnail.jpg",
+            "slideshow": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/slideshow.jpg",
+            "slideshow_pager": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/slideshow_pager.jpg",
+            "slideshow_wide": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/slideshow_wide.jpg",
+            "vault_thumb": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/vault_thumb.jpg",
+            "post": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/post.jpg",
+            "wallpaper_thumb": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/wallpaper_thumb.jpg",
+            "product_thumb_large": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/product_thumb_large.jpg",
+            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/product_thumb_medium_and_small.jpg",
+            "component_description": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/component_description.jpg",
+            "product_thumb_in_description": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/product_thumb_in_description.jpg",
+            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/product_thumb_shipmod.jpg",
+            "press_latest_post": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/press_latest_post.jpg",
+            "store_small": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_small.jpg",
+            "store_large": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_large.jpg",
+            "store_hub_small": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_hub_small.jpg",
+            "store_hub_large": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_hub_large.jpg",
+            "store_slideshow_small": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_slideshow_small.jpg",
+            "store_slideshow_large": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_slideshow_large.jpg",
+            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_slideshow_small_zoom.jpg",
+            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_slideshow_large_zoom.jpg",
+            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_thumb_listing_small.jpg",
+            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_thumb_sku_detail.jpg",
+            "store_upgrade_half": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/store_upgrade_half.jpg",
+            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/sku_widget_thumbnail.jpg",
+            "sku_widget_modal": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/sku_widget_modal.jpg",
+            "avatar": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/avatar.jpg",
+            "banner": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/banner.jpg",
+            "cover": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/cover.jpg",
+            "logo": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/logo.jpg",
+            "icon": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/icon.jpg",
+            "background_blur": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/background_blur.jpg",
+            "texture": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/texture.jpg",
+            "hub_large": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/hub_large.jpg",
+            "hub_medium": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/hub_medium.jpg",
+            "hub_small": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/hub_small.jpg",
+            "hub_tile": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/hub_tile.jpg",
+            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/wallpaper_3840x2160.jpg",
+            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/wallpaper_1920x1080.jpg",
+            "wallpaper_512x384": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/wallpaper_512x384.jpg",
+            "wsc_event_thumb": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/wsc_event_thumb.jpg",
+            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/0dze8wi31xxcj/manufacturer_logo_xs.jpg"
           },
-          "membership.id": 639899,
+          "membership.id": 640900,
           "membership.slot": "thumbnail"
         }
       ],
-      "time_modified.unfiltered": "2026-10-14 16:50:20",
+      "time_modified.unfiltered": "2026-11-15 15:56:30",
       "compiled": {
         "RSIAvionic": {
           "radar": [
@@ -218386,6 +218273,813 @@
               "mounts": 2,
               "component_size": "",
               "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIWeapon",
+              "loadout": null
+            }
+          ],
+          "utility_items": []
+        }
+      }
+    },
+    {
+      "id": 329,
+      "afterburner_speed": 1220,
+      "beam": 19,
+      "cargocapacity": 0,
+      "chassis_id": 149,
+      "height": 6,
+      "length": 20,
+      "manufacturer_id": 5,
+      "mass": 75649,
+      "max_crew": 1,
+      "min_crew": 1,
+      "pitch_max": 52,
+      "production_note": null,
+      "production_status": "flight-ready",
+      "roll_max": 160,
+      "scm_speed": 223,
+      "size": "Small",
+      "time_modified": "15 minutes ago",
+      "type": "Combat",
+      "xaxis_acceleration": null,
+      "yaw_max": 40,
+      "yaxis_acceleration": null,
+      "zaxis_acceleration": null,
+      "description": "Drake hits hard with one of the most heavily gunned Medium Fighters around. With weapons to spare and a classic no-nonsense look, the Marauder sets a forbidding tone as it blasts a path through whatever stands in its way.",
+      "focus": "Medium Fighter",
+      "name": "Marauder",
+      "url": "/pledge/ships/marauder/Marauder",
+      "manufacturer": {
+        "id": 5,
+        "code": "DRAK",
+        "description": "Ostensibly a legitimate company, it’s an open secret that they manufacture cheap, well-armed craft favored by pirates, to the point that they’re named in that vein: “Cutlass,” “Buccaneer,” “Privateer,” and “Marauder,” etc.",
+        "known_for": "the Cutlass and the Caterpillar",
+        "name": "Drake Interplanetary",
+        "media": [
+          {
+            "id": 312957,
+            "cover_data": null,
+            "depot": "LOCAL_MEDIA",
+            "depot_status": "R",
+            "derived_data": {
+              "sizes": {
+                "heap_note": {
+                  "width": 24,
+                  "height": 24,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "heap_thumb": {
+                  "width": 61,
+                  "height": 61,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "heap_infobox": {
+                  "width": 165,
+                  "height": 165,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "post_section_header": {
+                  "width": 1118,
+                  "height": 351,
+                  "mode": "resize-crop"
+                },
+                "channel_item_full": {
+                  "width": 1119,
+                  "height": 600,
+                  "mode": "resize-crop"
+                },
+                "home_transmissions_item_expanded": {
+                  "width": 530,
+                  "height": 280,
+                  "mode": "resize-crop"
+                },
+                "subscribers_vault_thumbnail": {
+                  "width": 216,
+                  "height": 133,
+                  "mode": "resize-crop"
+                },
+                "slideshow": {
+                  "width": 648,
+                  "height": 366,
+                  "mode": "resize-crop"
+                },
+                "slideshow_pager": {
+                  "width": 88,
+                  "height": 50,
+                  "mode": "resize-crop"
+                },
+                "vault_thumb": {
+                  "width": 335,
+                  "height": null,
+                  "mode": "resize"
+                },
+                "post": {
+                  "width": 500,
+                  "height": null,
+                  "mode": "resize"
+                },
+                "wallpaper_thumb": {
+                  "width": 620,
+                  "height": 400,
+                  "mode": "resize-crop"
+                },
+                "product_thumb_large": {
+                  "width": 341,
+                  "height": 204,
+                  "mode": "resize-crop"
+                },
+                "product_thumb_medium_and_small": {
+                  "width": 180,
+                  "height": 150,
+                  "mode": "resize-crop"
+                },
+                "component_description": {
+                  "width": 415,
+                  "height": null,
+                  "mode": "resize"
+                },
+                "product_thumb_in_description": {
+                  "width": 350,
+                  "height": 350,
+                  "mode": "resize-crop"
+                },
+                "product_thumb_shipmod": {
+                  "width": 248,
+                  "height": 188,
+                  "mode": "resize-crop"
+                },
+                "press_latest_post": {
+                  "width": 509,
+                  "height": 211,
+                  "mode": "resize-crop"
+                },
+                "store_small": {
+                  "width": 351,
+                  "height": 210,
+                  "mode": "resize-crop"
+                },
+                "store_large": {
+                  "width": 818,
+                  "height": 288,
+                  "mode": "resize-crop"
+                },
+                "store_hub_small": {
+                  "width": 600,
+                  "height": 210,
+                  "mode": "resize-crop"
+                },
+                "store_hub_large": {
+                  "width": 1200,
+                  "height": 420,
+                  "mode": "resize-crop"
+                },
+                "store_slideshow_small": {
+                  "width": 800,
+                  "height": 300,
+                  "mode": "resize-crop"
+                },
+                "store_slideshow_large": {
+                  "width": 1140,
+                  "height": 390,
+                  "mode": "resize-crop"
+                },
+                "store_slideshow_small_zoom": {
+                  "width": 710,
+                  "height": 516,
+                  "mode": "resize-crop"
+                },
+                "store_slideshow_large_zoom": {
+                  "width": 1420,
+                  "height": 1032,
+                  "mode": "resize-crop"
+                },
+                "store_thumb_listing_small": {
+                  "width": 186,
+                  "height": 63,
+                  "mode": "resize-crop"
+                },
+                "store_thumb_sku_detail": {
+                  "width": 318,
+                  "height": 248,
+                  "mode": "resize-crop"
+                },
+                "avatar": {
+                  "width": 76,
+                  "height": 76,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "banner": {
+                  "width": 1140,
+                  "height": 380,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "cover": {
+                  "width": 1140,
+                  "height": "",
+                  "mode": "resize",
+                  "delete": "1--1"
+                },
+                "logo": {
+                  "width": 175,
+                  "height": 175,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "icon": {
+                  "width": 45,
+                  "height": 45,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                },
+                "background_blur": {
+                  "width": 1366,
+                  "height": 768,
+                  "mode": "resize-crop",
+                  "delete": "1--1"
+                }
+              }
+            },
+            "distant_id": null,
+            "distant_source": null,
+            "publish_end": null,
+            "publish_start": null,
+            "purpose": "full",
+            "slug": "bdkpvl2bpxaqa",
+            "source_duration": null,
+            "source_extension": "png",
+            "source_name": "Drake",
+            "status": "P",
+            "tag_string": "",
+            "time_modified": "2014-08-04 15:03:03",
+            "type": "I",
+            "source_url": "/media/bdkpvl2bpxaqar/source/Drake.png",
+            "source_stream": {
+              "progressive": "/media/bdkpvl2bpxaqar/source/Drake.png"
+            },
+            "images": {
+              "heap_note": "/media/bdkpvl2bpxaqar/heap_note/Drake.png",
+              "heap_thumb": "/media/bdkpvl2bpxaqar/heap_thumb/Drake.png",
+              "heap_infobox": "/media/bdkpvl2bpxaqar/heap_infobox/Drake.png",
+              "post_section_header": "/media/bdkpvl2bpxaqar/post_section_header/Drake.png",
+              "channel_item_full": "/media/bdkpvl2bpxaqar/channel_item_full/Drake.png",
+              "home_transmissions_item_expanded": "/media/bdkpvl2bpxaqar/home_transmissions_item_expanded/Drake.png",
+              "subscribers_vault_thumbnail": "/media/bdkpvl2bpxaqar/subscribers_vault_thumbnail/Drake.png",
+              "slideshow": "/media/bdkpvl2bpxaqar/slideshow/Drake.png",
+              "slideshow_pager": "/media/bdkpvl2bpxaqar/slideshow_pager/Drake.png",
+              "slideshow_wide": "/media/bdkpvl2bpxaqar/slideshow_wide/Drake.png",
+              "vault_thumb": "/media/bdkpvl2bpxaqar/vault_thumb/Drake.png",
+              "post": "/media/bdkpvl2bpxaqar/post/Drake.png",
+              "wallpaper_thumb": "/media/bdkpvl2bpxaqar/wallpaper_thumb/Drake.png",
+              "product_thumb_large": "/media/bdkpvl2bpxaqar/product_thumb_large/Drake.png",
+              "product_thumb_medium_and_small": "/media/bdkpvl2bpxaqar/product_thumb_medium_and_small/Drake.png",
+              "component_description": "/media/bdkpvl2bpxaqar/component_description/Drake.png",
+              "product_thumb_in_description": "/media/bdkpvl2bpxaqar/product_thumb_in_description/Drake.png",
+              "product_thumb_shipmod": "/media/bdkpvl2bpxaqar/product_thumb_shipmod/Drake.png",
+              "press_latest_post": "/media/bdkpvl2bpxaqar/press_latest_post/Drake.png",
+              "store_small": "/media/bdkpvl2bpxaqar/store_small/Drake.png",
+              "store_large": "/media/bdkpvl2bpxaqar/store_large/Drake.png",
+              "store_hub_small": "/media/bdkpvl2bpxaqar/store_hub_small/Drake.png",
+              "store_hub_large": "/media/bdkpvl2bpxaqar/store_hub_large/Drake.png",
+              "store_slideshow_small": "/media/bdkpvl2bpxaqar/store_slideshow_small/Drake.png",
+              "store_slideshow_large": "/media/bdkpvl2bpxaqar/store_slideshow_large/Drake.png",
+              "store_slideshow_small_zoom": "/media/bdkpvl2bpxaqar/store_slideshow_small_zoom/Drake.png",
+              "store_slideshow_large_zoom": "/media/bdkpvl2bpxaqar/store_slideshow_large_zoom/Drake.png",
+              "store_thumb_listing_small": "/media/bdkpvl2bpxaqar/store_thumb_listing_small/Drake.png",
+              "store_thumb_sku_detail": "/media/bdkpvl2bpxaqar/store_thumb_sku_detail/Drake.png",
+              "store_upgrade_half": "/media/bdkpvl2bpxaqar/store_upgrade_half/Drake.png",
+              "sku_widget_thumbnail": "/media/bdkpvl2bpxaqar/sku_widget_thumbnail/Drake.png",
+              "sku_widget_modal": "/media/bdkpvl2bpxaqar/sku_widget_modal/Drake.png",
+              "avatar": "/media/bdkpvl2bpxaqar/avatar/Drake.png",
+              "banner": "/media/bdkpvl2bpxaqar/banner/Drake.png",
+              "cover": "/media/bdkpvl2bpxaqar/cover/Drake.png",
+              "logo": "/media/bdkpvl2bpxaqar/logo/Drake.png",
+              "icon": "/media/bdkpvl2bpxaqar/icon/Drake.png",
+              "background_blur": "/media/bdkpvl2bpxaqar/background_blur/Drake.png",
+              "texture": "/media/bdkpvl2bpxaqar/texture/Drake.png",
+              "hub_large": "/media/bdkpvl2bpxaqar/hub_large/Drake.png",
+              "hub_medium": "/media/bdkpvl2bpxaqar/hub_medium/Drake.png",
+              "hub_small": "/media/bdkpvl2bpxaqar/hub_small/Drake.png",
+              "hub_tile": "/media/bdkpvl2bpxaqar/hub_tile/Drake.png",
+              "wallpaper_3840x2160": "/media/bdkpvl2bpxaqar/wallpaper_3840x2160/Drake.png",
+              "wallpaper_1920x1080": "/media/bdkpvl2bpxaqar/wallpaper_1920x1080/Drake.png",
+              "wallpaper_512x384": "/media/bdkpvl2bpxaqar/wallpaper_512x384/Drake.png",
+              "wsc_event_thumb": "/media/bdkpvl2bpxaqar/wsc_event_thumb/Drake.png",
+              "manufacturer_logo_xs": "/media/bdkpvl2bpxaqar/manufacturer_logo_xs/Drake.png"
+            },
+            "membership.id": 448178,
+            "membership.slot": "icon"
+          }
+        ]
+      },
+      "media": [
+        {
+          "id": 3911708,
+          "cover_data": null,
+          "depot": "S3MediaProd",
+          "depot_status": "R",
+          "derived_data": {
+            "sizes": {
+              "heap_note": {
+                "width": 24,
+                "height": 24,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "heap_thumb": {
+                "width": 61,
+                "height": 61,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "heap_infobox": {
+                "width": 165,
+                "height": 165,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "post_section_header": {
+                "width": 1118,
+                "height": 351,
+                "mode": "resize-crop"
+              },
+              "channel_item_full": {
+                "width": 1119,
+                "height": 600,
+                "mode": "resize-crop"
+              },
+              "home_transmissions_item_expanded": {
+                "width": 530,
+                "height": 280,
+                "mode": "resize-crop"
+              },
+              "subscribers_vault_thumbnail": {
+                "width": 216,
+                "height": 133,
+                "mode": "resize-crop"
+              },
+              "slideshow": {
+                "width": 648,
+                "height": 366,
+                "mode": "resize-crop"
+              },
+              "slideshow_pager": {
+                "width": 88,
+                "height": 50,
+                "mode": "resize-crop"
+              },
+              "slideshow_wide": {
+                "width": 1200,
+                "height": 800,
+                "mode": "resize"
+              },
+              "vault_thumb": {
+                "width": 335,
+                "height": null,
+                "mode": "resize"
+              },
+              "post": {
+                "width": 500,
+                "height": null,
+                "mode": "resize"
+              },
+              "wallpaper_thumb": {
+                "width": 620,
+                "height": 400,
+                "mode": "resize-crop"
+              },
+              "product_thumb_large": {
+                "width": 341,
+                "height": 204,
+                "mode": "resize-crop"
+              },
+              "product_thumb_medium_and_small": {
+                "width": 180,
+                "height": 150,
+                "mode": "resize-crop"
+              },
+              "component_description": {
+                "width": 415,
+                "height": null,
+                "mode": "resize"
+              },
+              "product_thumb_in_description": {
+                "width": 350,
+                "height": 350,
+                "mode": "resize-crop"
+              },
+              "product_thumb_shipmod": {
+                "width": 248,
+                "height": 188,
+                "mode": "resize-crop"
+              },
+              "press_latest_post": {
+                "width": 509,
+                "height": 211,
+                "mode": "resize-crop"
+              },
+              "store_small": {
+                "width": 351,
+                "height": 210,
+                "mode": "resize-crop"
+              },
+              "store_large": {
+                "width": 818,
+                "height": 288,
+                "mode": "resize-crop"
+              },
+              "store_hub_small": {
+                "width": 600,
+                "height": 210,
+                "mode": "resize-crop"
+              },
+              "store_hub_large": {
+                "width": 1200,
+                "height": 420,
+                "mode": "resize-crop"
+              },
+              "store_slideshow_small": {
+                "width": 800,
+                "height": 300,
+                "mode": "resize-crop"
+              },
+              "store_slideshow_large": {
+                "width": 1140,
+                "height": 390,
+                "mode": "resize-crop"
+              },
+              "store_slideshow_small_zoom": {
+                "width": 710,
+                "height": 516,
+                "mode": "resize-crop"
+              },
+              "store_slideshow_large_zoom": {
+                "width": 1420,
+                "height": 1032,
+                "mode": "resize-crop"
+              },
+              "store_thumb_listing_small": {
+                "width": 186,
+                "height": 63,
+                "mode": "resize-crop"
+              },
+              "store_thumb_sku_detail": {
+                "width": 318,
+                "height": 248,
+                "mode": "resize-crop"
+              },
+              "store_upgrade_half": {
+                "width": 400,
+                "height": 300,
+                "mode": "resize-crop"
+              },
+              "sku_widget_thumbnail": {
+                "width": 370,
+                "height": 250,
+                "mode": "resize-crop"
+              },
+              "sku_widget_modal": {
+                "width": 650,
+                "height": 300,
+                "mode": "resize-crop"
+              },
+              "avatar": {
+                "width": 76,
+                "height": 76,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "banner": {
+                "width": 1140,
+                "height": 380,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "cover": {
+                "width": 1140,
+                "height": "",
+                "mode": "resize",
+                "delete": "1--1"
+              },
+              "logo": {
+                "width": 175,
+                "height": 175,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "icon": {
+                "width": 45,
+                "height": 45,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "background_blur": {
+                "width": 1366,
+                "height": 768,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "texture": {
+                "width": 512,
+                "height": 512,
+                "mode": "resize-crop"
+              },
+              "hub_large": {
+                "width": 1020,
+                "height": "\\>",
+                "mode": "resize"
+              },
+              "hub_medium": {
+                "width": 360,
+                "height": 210,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "hub_small": {
+                "width": 150,
+                "height": 90,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "hub_tile": {
+                "width": 360,
+                "height": 355,
+                "mode": "resize-crop",
+                "delete": "1--1"
+              },
+              "wallpaper_3840x2160": {
+                "width": 3840,
+                "height": 2160,
+                "mode": "resize-crop"
+              },
+              "wallpaper_1920x1080": {
+                "width": 1920,
+                "height": 1080,
+                "mode": "resize-crop"
+              },
+              "wallpaper_512x384": {
+                "width": 512,
+                "height": 384,
+                "mode": "resize-crop"
+              },
+              "wsc_event_thumb": {
+                "width": 440,
+                "height": 557,
+                "mode": "resize-crop"
+              },
+              "manufacturer_logo_xs": {
+                "width": 64,
+                "height": 64,
+                "mode": "resize-crop"
+              }
+            }
+          },
+          "distant_id": null,
+          "distant_source": null,
+          "publish_end": null,
+          "publish_start": null,
+          "purpose": "full",
+          "slug": "zzdts6fpnwojx",
+          "source_duration": null,
+          "source_extension": "jpg",
+          "source_name": "SC_DRAK_Marauder_SW_4k",
+          "status": "P",
+          "tag_string": "tag.Drake Marauder STF Nov 2026",
+          "time_modified": "2026-11-13 13:43:13",
+          "type": "I",
+          "source_url": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/source.jpg",
+          "source_stream": {
+            "progressive": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/source.jpg"
+          },
+          "images": {
+            "heap_note": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/heap_note.jpg",
+            "heap_thumb": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/heap_thumb.jpg",
+            "heap_infobox": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/heap_infobox.jpg",
+            "post_section_header": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/post_section_header.jpg",
+            "channel_item_full": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/channel_item_full.jpg",
+            "home_transmissions_item_expanded": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/home_transmissions_item_expanded.jpg",
+            "subscribers_vault_thumbnail": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/subscribers_vault_thumbnail.jpg",
+            "slideshow": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/slideshow.jpg",
+            "slideshow_pager": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/slideshow_pager.jpg",
+            "slideshow_wide": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/slideshow_wide.jpg",
+            "vault_thumb": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/vault_thumb.jpg",
+            "post": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/post.jpg",
+            "wallpaper_thumb": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/wallpaper_thumb.jpg",
+            "product_thumb_large": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/product_thumb_large.jpg",
+            "product_thumb_medium_and_small": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/product_thumb_medium_and_small.jpg",
+            "component_description": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/component_description.jpg",
+            "product_thumb_in_description": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/product_thumb_in_description.jpg",
+            "product_thumb_shipmod": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/product_thumb_shipmod.jpg",
+            "press_latest_post": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/press_latest_post.jpg",
+            "store_small": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_small.jpg",
+            "store_large": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_large.jpg",
+            "store_hub_small": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_hub_small.jpg",
+            "store_hub_large": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_hub_large.jpg",
+            "store_slideshow_small": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_slideshow_small.jpg",
+            "store_slideshow_large": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_slideshow_large.jpg",
+            "store_slideshow_small_zoom": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_slideshow_small_zoom.jpg",
+            "store_slideshow_large_zoom": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_slideshow_large_zoom.jpg",
+            "store_thumb_listing_small": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_thumb_listing_small.jpg",
+            "store_thumb_sku_detail": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_thumb_sku_detail.jpg",
+            "store_upgrade_half": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/store_upgrade_half.jpg",
+            "sku_widget_thumbnail": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/sku_widget_thumbnail.jpg",
+            "sku_widget_modal": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/sku_widget_modal.jpg",
+            "avatar": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/avatar.jpg",
+            "banner": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/banner.jpg",
+            "cover": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/cover.jpg",
+            "logo": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/logo.jpg",
+            "icon": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/icon.jpg",
+            "background_blur": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/background_blur.jpg",
+            "texture": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/texture.jpg",
+            "hub_large": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/hub_large.jpg",
+            "hub_medium": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/hub_medium.jpg",
+            "hub_small": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/hub_small.jpg",
+            "hub_tile": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/hub_tile.jpg",
+            "wallpaper_3840x2160": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/wallpaper_3840x2160.jpg",
+            "wallpaper_1920x1080": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/wallpaper_1920x1080.jpg",
+            "wallpaper_512x384": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/wallpaper_512x384.jpg",
+            "wsc_event_thumb": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/wsc_event_thumb.jpg",
+            "manufacturer_logo_xs": "https://media.robertsspaceindustries.com/zzdts6fpnwojx/manufacturer_logo_xs.jpg"
+          },
+          "membership.id": 641827,
+          "membership.slot": "thumbnail"
+        }
+      ],
+      "time_modified.unfiltered": "2026-11-17 15:46:40",
+      "compiled": {
+        "RSIAvionic": {
+          "radar": [
+            {
+              "type": "radar",
+              "name": "Capston",
+              "mounts": 1,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIAvionic",
+              "loadout": null
+            }
+          ],
+          "computers": []
+        },
+        "RSIPropulsion": {
+          "fuel_tanks": [
+            {
+              "type": "fuel_tanks",
+              "name": "Internal Tank",
+              "mounts": 1,
+              "component_size": "",
+              "size": "",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
+            }
+          ],
+          "quantum_drives": [
+            {
+              "type": "quantum_drives",
+              "name": "Rush",
+              "mounts": 1,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
+            }
+          ],
+          "jump_modules": [
+            {
+              "type": "jump_modules",
+              "name": "Explorer",
+              "mounts": 1,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
+            }
+          ],
+          "quantum_fuel_tanks": [
+            {
+              "type": "quantum_fuel_tanks",
+              "name": "Internal Tank",
+              "mounts": 1,
+              "component_size": "",
+              "size": "",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIPropulsion",
+              "loadout": null
+            }
+          ]
+        },
+        "RSIThruster": {
+          "main_thrusters": [],
+          "maneuvering_thrusters": []
+        },
+        "RSIModular": {
+          "power_plants": [
+            {
+              "type": "power_plants",
+              "name": "LightBlossom",
+              "mounts": 2,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
+            }
+          ],
+          "coolers": [
+            {
+              "type": "coolers",
+              "name": "Frost-Star",
+              "mounts": 2,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
+            }
+          ],
+          "shield_generators": [
+            {
+              "type": "shield_generators",
+              "name": "5SA 'Rhada'",
+              "mounts": 2,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
+            }
+          ],
+          "life_support": [
+            {
+              "type": "life_support",
+              "name": "ComfortAir",
+              "mounts": 1,
+              "component_size": "",
+              "size": "1",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIModular",
+              "loadout": null
+            }
+          ]
+        },
+        "RSIWeapon": {
+          "weapons": [
+            {
+              "type": "weapons",
+              "name": "VariPuck S3 Gimbal Mount",
+              "mounts": 7,
+              "component_size": "",
+              "size": "3",
+              "details": null,
+              "quantity": 1,
+              "manufacturer": null,
+              "component_class": "RSIWeapon",
+              "loadout": [
+                {
+                  "name": "CF-337 Panther Repeater",
+                  "size": 3,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "turrets": [],
+          "missiles": [
+            {
+              "type": "missiles",
+              "name": "MSD-221 Missile Rack",
+              "mounts": 2,
+              "component_size": "",
+              "size": "2",
               "details": null,
               "quantity": 1,
               "manufacturer": null,
